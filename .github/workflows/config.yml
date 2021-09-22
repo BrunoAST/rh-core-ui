@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Run install dependencies
         run: npm install
-        
-      - name: Run audit
-        run: npm audit fix
   
   test:
     runs-on: ubuntu-latest
