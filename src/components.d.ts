@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RhSideBar {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLRhSideBarElement extends Components.RhSideBar, HTMLStencilElement {
+    }
+    var HTMLRhSideBarElement: {
+        prototype: HTMLRhSideBarElement;
+        new (): HTMLRhSideBarElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "rh-side-bar": HTMLRhSideBarElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RhSideBar {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "rh-side-bar": RhSideBar;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
         }
     }
 }
