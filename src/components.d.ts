@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MenuItems } from "./types/menu-items";
 export namespace Components {
     interface MyComponent {
         /**
@@ -21,6 +22,10 @@ export namespace Components {
         "middle": string;
     }
     interface RhSideBar {
+        "menuItems": MenuItems[];
+    }
+    interface RhSideBarItems {
+        "menuItems": MenuItems[];
     }
 }
 declare global {
@@ -36,9 +41,16 @@ declare global {
         prototype: HTMLRhSideBarElement;
         new (): HTMLRhSideBarElement;
     };
+    interface HTMLRhSideBarItemsElement extends Components.RhSideBarItems, HTMLStencilElement {
+    }
+    var HTMLRhSideBarItemsElement: {
+        prototype: HTMLRhSideBarItemsElement;
+        new (): HTMLRhSideBarItemsElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "rh-side-bar": HTMLRhSideBarElement;
+        "rh-side-bar-items": HTMLRhSideBarItemsElement;
     }
 }
 declare namespace LocalJSX {
@@ -57,10 +69,15 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface RhSideBar {
+        "menuItems"?: MenuItems[];
+    }
+    interface RhSideBarItems {
+        "menuItems"?: MenuItems[];
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "rh-side-bar": RhSideBar;
+        "rh-side-bar-items": RhSideBarItems;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +86,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
+            "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
         }
     }
 }
