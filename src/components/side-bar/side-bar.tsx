@@ -1,5 +1,5 @@
 import { Component, getAssetPath, h, Prop } from "@stencil/core";
-import { Items } from "../../types/items";
+import { MenuItems } from "../../types/menu-items";
 
 @Component({
   tag: "rh-side-bar",
@@ -8,7 +8,7 @@ import { Items } from "../../types/items";
   assetsDirs: ["assets"]
 })
 export class SideBar {
-  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: Items[] = [];
+  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 
   render() {
     return [
