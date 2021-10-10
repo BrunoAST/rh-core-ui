@@ -1,4 +1,4 @@
-import { Component, getAssetPath, h, Prop } from "@stencil/core";
+import { Component, h, Prop } from "@stencil/core";
 import { MenuItems } from "../../types/menu-items";
 
 @Component({
@@ -16,15 +16,14 @@ export class SideBar {
         <header class="header">
           <h1 class="header__title">Logo</h1>
           <div class="header__menu">
-            <img src={getAssetPath("../../assets/menu.svg")} alt="Menu" />
           </div>
         </header>
 
         <rh-side-bar-items menuItems={this.menuItems} />
 
-        <footer>
+        {/* <footer>
           Login/Logout
-        </footer>
+        </footer> */}
       </aside>
     ];
   }
