@@ -1,11 +1,10 @@
 @import "../../../../theme/reset.scss";
 @import "../../../../theme/partials/colors";
 @import "../../../../theme/partials/font";
-@import "../../../../assets/fontawesome/css/all.min.css";
 
 .items-list {
   &__active {
-    i {
+    .icon {
       color: $secondary;
     }
 
@@ -24,7 +23,7 @@
     transition: all 500ms ease-in-out;
 
     &:hover {
-      i {
+      .icon {
         color: $secondary;
       }
 
@@ -37,7 +36,7 @@
       border-top: 1px solid $gray-lighter;
     }
 
-    i {
+    .icon {
       font-size: $default;
     }
 

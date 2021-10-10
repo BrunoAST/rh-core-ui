@@ -1,6 +1,6 @@
 {
-  "name": "@sqrh/customizable-side-bar",
-  "version": "0.0.1",
+  "name": "customizable-side-bar-backup-2",
+  "version": "0.0.3",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
-    "@stencil/sass": "^1.4.1"
+    "@stencil/sass": "^1.4.1",
+    "ionicons": "^5.5.3"
   },
   "devDependencies": {
     "@types/faker": "^5.5.8",

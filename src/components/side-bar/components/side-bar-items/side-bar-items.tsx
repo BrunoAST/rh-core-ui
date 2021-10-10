@@ -1,13 +1,11 @@
 import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
 import { MenuItems } from "../../../../types/menu-items";
+import 'ionicons';
 
 @Component({
   tag: "rh-side-bar-items",
-  styleUrls: [
-    "./side-bar-items.scss",
-  ],
-  assetsDirs: ["assets"],
-  shadow: false
+  styleUrl: "./side-bar-items.scss",
+  shadow: true
 })
 export class SideBarItems {
   @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
@@ -32,7 +30,7 @@ export class SideBarItems {
               class={`items-list__item ${this.isActiveCssClass(item)}`}
               onClick={this.onItemClicked.bind(this, item)}
             >
-              <i class={item?.faIcon}></i>
+              <ion-icon class="icon" name={item.ionIconName}></ion-icon>
               <span>{item.name}</span>
             </li>
           )
