@@ -1,4 +1,4 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Component, h, Prop, Watch } from "@stencil/core";
 import { MenuItems } from "../../../../types/menu-items";
 
 @Component({
@@ -14,14 +14,13 @@ export class SideBarItems {
 
   render() {
     return [
-      <i class="fas fa-user"></i>,
       <ul class="items-list">
         {
           this.menuItems.map(item =>
             <li class="items-list__item">{item.name}</li>
           )
         }
-      </ul>
+      </ul >
     ];
   }
 }

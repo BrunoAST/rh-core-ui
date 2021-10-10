@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/my-component/my-component.tsx</title>
+    <title>Code coverage report for components/side-bar/side-bar.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/my-component</a> my-component.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/side-bar</a> side-bar.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -88,10 +88,19 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -110,47 +119,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, getAssetPath, h, Prop } from "@stencil/core";
+import { MenuItems } from "../../types/menu-items";
 &nbsp;
 @Component({
-  tag: 'my-component',
-  styleUrl: './my-component.scss',
+  tag: "rh-side-bar",
+  styleUrl: "./side-bar.scss",
   shadow: true,
+  assetsDirs: ["assets"]
 })
-export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-&nbsp;
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-&nbsp;
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-&nbsp;
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
+export class SideBar {
+  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 &nbsp;
   render() {
-    return &lt;div&gt;Hello, World! I'm {this.getText()}&lt;/div&gt;;
+    return [
+      &lt;aside class="container"&gt;
+        &lt;header class="header"&gt;
+          &lt;h1 class="header__title"&gt;Logo&lt;/h1&gt;
+          &lt;div class="header__menu"&gt;
+            &lt;img src={getAssetPath("../../assets/menu.svg")} alt="Menu" /&gt;
+          &lt;/div&gt;
+        &lt;/header&gt;
+&nbsp;
+        &lt;rh-side-bar-items menuItems={this.menuItems} /&gt;
+&nbsp;
+        &lt;footer&gt;
+          Login/Logout
+        &lt;/footer&gt;
+      &lt;/aside&gt;
+    ];
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -160,7 +157,7 @@ export class MyComponent {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 09 2021 23:49:03 GMT-0300 (Brasilia Standard Time)
+                at Sat Oct 09 2021 22:44:38 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
