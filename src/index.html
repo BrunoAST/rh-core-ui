@@ -20,11 +20,22 @@
       nomodule
       src="/build/customizable-side-bar.js"
     ></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/fontawesome/css/all.css"
+    >
   </head>
 
-  <body>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+  <body style="margin: 0; padding: 0;">
+    <i class="fas fa-border-all"></i>
     <rh-side-bar></rh-side-bar>
   </body>
+
+  <script>
+    const el = document.querySelector("rh-side-bar");
+    el.menuItems = [{ name: "TESTE", url: "URL" }, { name: "ANOTHER", url: "URL" }];
+  </script>
 
 </html>
