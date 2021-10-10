@@ -73,6 +73,7 @@ declare namespace LocalJSX {
     }
     interface RhSideBarItems {
         "menuItems"?: MenuItems[];
+        "onItemClicked"?: (event: CustomEvent<string>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

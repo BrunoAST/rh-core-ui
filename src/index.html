@@ -29,13 +29,28 @@
   </head>
 
   <body style="margin: 0; padding: 0;">
-    <i class="fas fa-border-all"></i>
     <rh-side-bar></rh-side-bar>
   </body>
 
   <script>
     const el = document.querySelector("rh-side-bar");
-    el.menuItems = [{ name: "TESTE", url: "URL" }, { name: "ANOTHER", url: "URL" }];
+
+    el.menuItems = [
+      { name: "Início", url: "http://google.com", faIcon: "fas fa-border-all", isActive: true },
+      { name: "Fatores", url: "http://facebook.com", faIcon: "fas fa-chart-pie", isActive: false },
+      { name: "Perguntas", url: "http://amazon.com", faIcon: "fas fa-comment-dots", isActive: false },
+      { name: "Usuários", url: "http://youtube.com", faIcon: "fas fa-user", isActive: false },
+      { name: "Relatórios", url: "http://twitter.com", faIcon: "fas fa-file-alt", isActive: false },
+      { name: "Resultados", url: "http://hbo.com", faIcon: "fas fa-poll", isActive: false }
+    ];
+
+    el.addEventListener("itemClicked", (data) => {
+      const items = el.menuItems.map(item => {
+        item.isActive = item.url == data.detail ? true : false;
+        return item;
+      });
+      el.menuItems = items;
+    });
   </script>
 
 </html>

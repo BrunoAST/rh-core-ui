@@ -1,7 +1,50 @@
 @import "../../../../theme/reset.scss";
+@import "../../../../theme/partials/colors";
+@import "../../../../theme/partials/font";
+@import "../../../../assets/fontawesome/css/all.min.css";
 
 .items-list {
+  &__active {
+    i {
+      color: $secondary;
+    }
+
+    span {
+      color: $font-primary;
+    }
+  }
+
   &__item {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
     padding: 16px 0;
+    border-bottom: 1px solid $gray-lighter;
+    color: $gray;
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+      i {
+        color: $secondary;
+      }
+
+      span {
+        color: $font-primary;
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid $gray-lighter;
+    }
+
+    i {
+      font-size: $default;
+    }
+
+    span {
+      font-size: $default;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
   }
 }
