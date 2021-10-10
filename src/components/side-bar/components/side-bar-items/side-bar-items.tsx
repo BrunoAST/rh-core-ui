@@ -12,7 +12,7 @@ export class SideBarItems {
 
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
 
-  isActiveCssClass(item: MenuItems): string {
+  checkIsActive(item: MenuItems): string {
     return item.isActive ? "items-list__active" : null;
   }
 
@@ -27,7 +27,8 @@ export class SideBarItems {
           this.menuItems.map((item, index) =>
             <li
               key={index}
-              class={`items-list__item ${this.isActiveCssClass(item)}`}
+              id={`item-${index}`}
+              class={`items-list__item ${this.checkIsActive(item)}`}
               onClick={this.onItemClicked.bind(this, item)}
             >
               <ion-icon class="icon" name={item.ionIconName}></ion-icon>
