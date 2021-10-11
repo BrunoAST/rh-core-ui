@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633905477023" clover="3.2.0">
-  <project timestamp="1633905477023" name="All files">
-    <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7" elements="23" coveredelements="23" complexity="0" loc="14" ncloc="14" packages="2" files="2" classes="2"/>
+<coverage generated="1633948105419" clover="3.2.0">
+  <project timestamp="1633948105419" name="All files">
+    <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="10" elements="33" coveredelements="33" complexity="0" loc="21" ncloc="21" packages="2" files="2" classes="2"/>
     <package name="components.side-bar.components.side-bar-items">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
       <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\customizable-side-bar\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="16" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
     </package>
     <package name="utils.component-setup">
@@ -22,9 +29,9 @@
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
     </package>
