@@ -41,11 +41,7 @@
     ];
 
     el.addEventListener("itemClicked", (data) => {
-      const items = el.menuItems.map(item => {
-        item.isActive = item.url == data.detail ? true : false;
-        return item;
-      });
-      el.menuItems = items;
+      console.log(data.detail);
     });
   </script>
 

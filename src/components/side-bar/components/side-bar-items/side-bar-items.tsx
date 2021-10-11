@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { Component, Event, Element, EventEmitter, h, Prop } from "@stencil/core";
 import { MenuItems } from "../../../../types/menu-items";
 import 'ionicons';
 
@@ -8,15 +8,24 @@ import 'ionicons';
   shadow: true
 })
 export class SideBarItems {
+  @Element() element: HTMLElement;
+
   @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
 
-  checkIsActive(item: MenuItems): string {
-    return item.isActive ? "items-list__active" : null;
+  setActiveItem(itemIndex: number): void {
+    const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item"));
+    items.forEach((_, index) =>
+      this.element.shadowRoot.getElementById(`item-${index}`).classList.toggle("items-list__active", index === itemIndex)
+    );
+    this.menuItems = this.menuItems.map((item, index) => {
+      item.isActive = itemIndex === index ? true : false;
+      return item;
+    });
   }
 
-  onItemClicked(item: MenuItems): void {
+  emitItemUrl(item: MenuItems): void {
     this.itemClicked.emit(item.url);
   }
 
@@ -28,8 +37,11 @@ export class SideBarItems {
             <li
               key={index}
               id={`item-${index}`}
-              class={`items-list__item ${this.checkIsActive(item)}`}
-              onClick={this.onItemClicked.bind(this, item)}
+              class="items-list__item"
+              onClick={() => {
+                this.emitItemUrl(item);
+                this.setActiveItem(index);
+              }}
             >
               <ion-icon class="icon" name={item.ionIconName}></ion-icon>
               <span>{item.name}</span>
