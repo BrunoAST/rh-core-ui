@@ -1,4 +1,4 @@
-import { Component, Event, Element, EventEmitter, h, Prop } from "@stencil/core";
+import { Component, Event, Element, EventEmitter, h, Prop, Listen } from "@stencil/core";
 import { MenuItems } from "../../../../types/menu-items";
 import 'ionicons';
 
@@ -13,6 +13,16 @@ export class SideBarItems {
   @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
+
+  @Listen("isBarCollapsed", { target: "body" })
+  onIsBarCollapsed(event: CustomEvent): void {
+    console.log("IS BAR COLLAPSED: ", event.detail);
+    const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item > span"));
+    console.log("ITEMS: ", items);
+    items.forEach((item) => {
+      item.classList.toggle("item-title-hidden");
+    });
+  }
 
   setActiveItem(itemIndex: number): void {
     const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item"));
