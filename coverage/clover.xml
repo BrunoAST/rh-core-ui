@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634300959563" clover="3.2.0">
-  <project timestamp="1634300959563" name="All files">
+<coverage generated="1634301561440" clover="3.2.0">
+  <project timestamp="1634301561440" name="All files">
     <metrics statements="26" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="10" elements="40" coveredelements="33" complexity="0" loc="26" ncloc="26" packages="2" files="2" classes="2"/>
     <package name="components.side-bar.components.side-bar-items">
       <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="8"/>
-      <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\customizable-side-bar\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
+      <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
         <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -30,7 +30,7 @@
     </package>
     <package name="utils.component-setup">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\customizable-side-bar\src\utils\component-setup\component-setup.ts">
+      <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
