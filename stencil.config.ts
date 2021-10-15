@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'customizable-side-bar',
+  namespace: 'rh-core-ui',
   outputTargets: [
     {
       type: 'dist',

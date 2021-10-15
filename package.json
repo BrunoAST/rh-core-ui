@@ -1,5 +1,5 @@
 {
-  "name": "customizable-side-bar-backup-3",
+  "name": "rh-core-ui-3",
   "version": "0.0.3",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/customizable-side-bar/customizable-side-bar.esm.js",
+  "unpkg": "dist/rh-core-ui/rh-core-ui.esm.js",
   "files": [
     "dist/",
     "loader/"
