@@ -35,7 +35,9 @@ sonar.login=caab0f3a1409f2929dae5e4daf18e095e7366608
 
 sonar.sources=src
 sonar.projectBaseDir=.
+sonar.test.inclusions=src/**/*spec.ts,src/**/*spec.tsx
+sonar.inclusions=src/**
+sonar.exclusions=**/node_modules, src/**/*.json, src/**/*.md, src/**/*.snap, src/**/*spec.ts*, src/**/*types.ts
 sonar.javascript.lcov.reportPaths=coverage/lcov.info
 sonar.typescript.lcov.reportPaths=coverage/lcov.info
-sonar.exclusions=**/node_modules
 ```
