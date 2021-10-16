@@ -3,7 +3,7 @@
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=BrunoAST_rh-core-ui)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
 
-[![Coverage Status](https://coveralls.io/repos/github/BrunoAST/rh-core-ui/badge.svg?branch=master)](https://coveralls.io/github/BrunoAST/rh-core-ui?branch=master)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=BrunoAST_rh-core-ui&metric=coverage)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=BrunoAST_rh-core-ui&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=BrunoAST_rh-core-ui&metric=bugs)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=BrunoAST_rh-core-ui&metric=code_smells)](https://sonarcloud.io/dashboard?id=BrunoAST_rh-core-ui)
