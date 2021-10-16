@@ -5,8 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { MenuItems } from "./components/side-bar/types/menu-items";
 export namespace Components {
+    interface RhButton {
+        "disabled": boolean;
+        "ionIconName": string;
+        "titleValue": string;
+        "variant": ButtonVariant;
+    }
     interface RhSideBar {
         "menuItems": MenuItems[];
     }
@@ -15,6 +22,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRhButtonElement extends Components.RhButton, HTMLStencilElement {
+    }
+    var HTMLRhButtonElement: {
+        prototype: HTMLRhButtonElement;
+        new (): HTMLRhButtonElement;
+    };
     interface HTMLRhSideBarElement extends Components.RhSideBar, HTMLStencilElement {
     }
     var HTMLRhSideBarElement: {
@@ -28,11 +41,19 @@ declare global {
         new (): HTMLRhSideBarItemsElement;
     };
     interface HTMLElementTagNameMap {
+        "rh-button": HTMLRhButtonElement;
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
     }
 }
 declare namespace LocalJSX {
+    interface RhButton {
+        "disabled"?: boolean;
+        "ionIconName"?: string;
+        "onButtonClicked"?: (event: CustomEvent<any>) => void;
+        "titleValue"?: string;
+        "variant"?: ButtonVariant;
+    }
     interface RhSideBar {
         "menuItems"?: MenuItems[];
         "onIsBarCollapsed"?: (event: CustomEvent<boolean>) => void;
@@ -42,6 +63,7 @@ declare namespace LocalJSX {
         "onItemClicked"?: (event: CustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "rh-button": RhButton;
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
     }
@@ -50,6 +72,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
         }

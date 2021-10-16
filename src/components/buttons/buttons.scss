@@ -1,0 +1,96 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset.scss";
+@import "../../theme/font-family.scss";
+
+:host {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: capitalize;
+  transition: all 200ms ease;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.filled,
+.stroked,
+.basic,
+.underlined,
+.icon {
+  padding: 8px 32px;
+  color: $tertiary;
+  background-color: $white;
+  font-size: $default;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(2, 8, 20, 0.1), 0px 1px 2px rgba(2, 8, 20, 0.08);
+
+  &:hover {
+    filter: brightness(97%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transform: scale(1.01);
+  }
+}
+
+.filled {
+  background-color: $tertiary;
+  color: $white;
+
+  &:hover {
+    background-color: darken($tertiary, 10%);
+  }
+}
+
+.stroked {
+  border: 1px solid $tertiary;
+}
+
+.underlined {
+  text-decoration: underline;
+  box-shadow: none;
+
+  &:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.icon {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid $primary-accent;
+}
+
+.ripple {
+  transition: transform 300ms ease;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $gray-lighter;
+    padding: 50%;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: all 500ms;
+  }
+
+  &:active::before {
+    transition: 0s;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
