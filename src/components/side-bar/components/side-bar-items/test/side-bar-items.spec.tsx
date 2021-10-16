@@ -1,6 +1,6 @@
 import { h } from "@stencil/core";
 import faker from "faker";
-import { MenuItems } from "../../../../../types/menu-items";
+import { MenuItems } from "../../../types/menu-items";
 import componentSetup from "../../../../../utils/component-setup/component-setup";
 import { SideBarItems } from "../side-bar-items";
 

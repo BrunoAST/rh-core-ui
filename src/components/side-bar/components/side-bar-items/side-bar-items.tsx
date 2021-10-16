@@ -1,5 +1,5 @@
 import { Component, Event, Element, EventEmitter, h, Prop, Listen } from "@stencil/core";
-import { MenuItems } from "../../../../types/menu-items";
+import { MenuItems } from "../../types/menu-items";
 import 'ionicons';
 
 @Component({
