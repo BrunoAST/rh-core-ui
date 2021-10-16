@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MenuItems } from "./types/menu-items";
+import { MenuItems } from "./components/side-bar/types/menu-items";
 export namespace Components {
     interface RhSideBar {
         "menuItems": MenuItems[];

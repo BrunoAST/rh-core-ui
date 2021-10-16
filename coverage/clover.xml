@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634301561440" clover="3.2.0">
-  <project timestamp="1634301561440" name="All files">
-    <metrics statements="26" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="10" elements="40" coveredelements="33" complexity="0" loc="26" ncloc="26" packages="2" files="2" classes="2"/>
-    <package name="components.side-bar.components.side-bar-items">
-      <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="8"/>
-      <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
-        <metrics statements="20" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="8"/>
+<coverage generated="1634397827207" clover="3.2.0">
+  <project timestamp="1634397827207" name="All files">
+    <metrics statements="36" coveredstatements="36" conditionals="2" coveredconditionals="2" methods="17" coveredmethods="17" elements="55" coveredelements="55" complexity="0" loc="36" ncloc="36" packages="4" files="4" classes="4"/>
+    <package name="components.side-bar">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <file name="side-bar.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\side-bar.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="33" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="47" count="6" type="stmt"/>
-        <line num="52" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.side-bar.components.side-bar-items">
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="10"/>
+      <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="10"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.side-bar.components.side-bar-items.test">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="mock-menu-items.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\test\mock-menu-items.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
     </package>
     <package name="utils.component-setup">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
     </package>
   </project>
