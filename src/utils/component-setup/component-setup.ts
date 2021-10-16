@@ -4,9 +4,9 @@ type ComponentSetupType = {
   shadowRoot: ShadowRoot;
 }
 
-const componentSetup = async (templateBody: any, component: any): Promise<ComponentSetupType> => {
+const componentSetup = async (templateBody: any, ...component: any): Promise<ComponentSetupType> => {
   const { root } = await newSpecPage({
-    components: [component],
+    components: [...component],
     template: () => templateBody
   });
   return {
