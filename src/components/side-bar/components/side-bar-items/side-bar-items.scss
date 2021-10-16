@@ -1,6 +1,11 @@
 @import "../../../../theme/reset.scss";
+@import "../../../../theme/font-family.scss";
 @import "../../../../theme/partials/colors";
 @import "../../../../theme/partials/font";
+
+:host {
+  font-family: "Poppins", sans-serif;
+}
 
 .items-list {
   &__active {

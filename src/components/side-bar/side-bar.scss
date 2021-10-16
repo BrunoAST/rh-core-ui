@@ -1,10 +1,10 @@
 @import "../../theme/partials/colors";
 @import "../../theme/partials/font";
 @import "../../theme/reset.scss";
+@import "../../theme/font-family.scss";
 
 :host {
-  font: inherit;
-  font-size: inherit;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
