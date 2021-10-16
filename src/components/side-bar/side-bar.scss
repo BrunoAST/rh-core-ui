@@ -46,8 +46,8 @@ aside.container-collapsed-desktop {
 
   &__title {
     color: $font-primary;
-    font-size: 24px;
-    text-transform: uppercase;
+    font-size: $level2;
+    text-transform: capitalize;
   }
 
   &__menu-icon {
