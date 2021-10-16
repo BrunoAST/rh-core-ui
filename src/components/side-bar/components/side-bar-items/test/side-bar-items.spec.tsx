@@ -1,13 +1,7 @@
 import { h } from "@stencil/core";
-import faker from "faker";
-import { MenuItems } from "../../../types/menu-items";
 import componentSetup from "../../../../../utils/component-setup/component-setup";
 import { SideBarItems } from "../side-bar-items";
-
-const menuItems: MenuItems[] = [
-  { name: faker.random.word(), url: faker.internet.url(), isActive: false },
-  { name: faker.random.word(), url: faker.internet.url(), isActive: false }
-];
+import { menuItems } from "./mock-menu-items";
 
 describe("SideBarItems component", () => {
   test("Should render menu items", async () => {
