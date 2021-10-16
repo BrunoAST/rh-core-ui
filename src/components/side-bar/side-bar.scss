@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   background-color: $white;
-  width: 330px;
+  width: 260px;
   max-width: 80%;
   height: 100vh;
   padding: 36px 24px;
@@ -52,7 +52,7 @@ aside.container-collapsed-desktop {
 
   &__menu-icon {
     cursor: pointer;
-    font-size: $level2;
+    font-size: $level3;
     color: $secondary;
   }
 }

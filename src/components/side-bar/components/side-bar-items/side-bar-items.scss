@@ -41,13 +41,13 @@
       border-top: 1px solid $gray-lighter;
     }
 
-    .icon {
-      font-size: $default;
+    .icon,
+    span {
+      font-size: $level1;
+      font-weight: normal;
     }
 
     span {
-      font-size: $default;
-      font-weight: bold;
       text-transform: capitalize;
     }
   }

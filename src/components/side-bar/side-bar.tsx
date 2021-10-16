@@ -29,7 +29,7 @@ export class SideBar {
     return [
       <aside ref={element => this.barContainer = element} class="container">
         <header class="header">
-          <h1 class="header__title">Logo</h1>
+          <h1 class="header__title">Innove</h1>
           <button id="header-button" onClick={this.toggleBarState.bind(this)}>
             <ion-icon class="header__menu-icon" name="menu"></ion-icon>
           </button>
