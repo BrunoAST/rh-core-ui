@@ -9,7 +9,7 @@ const menuItems: MenuItems[] = [
   { name: faker.random.word(), url: faker.internet.url(), isActive: false }
 ];
 
-describe("SideBar component", () => {
+describe("SideBarItems component", () => {
   test("Should render menu items", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-side-bar-items menuItems={menuItems} />,
