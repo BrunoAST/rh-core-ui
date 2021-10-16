@@ -15,10 +15,8 @@ export class SideBarItems {
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
 
   @Listen("isBarCollapsed", { target: "body" })
-  onIsBarCollapsed(event: CustomEvent): void {
-    console.log("IS BAR COLLAPSED: ", event.detail);
+  onIsBarCollapsed(): void {
     const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item > span"));
-    console.log("ITEMS: ", items);
     items.forEach((item) => {
       item.classList.toggle("item-title-hidden");
     });
