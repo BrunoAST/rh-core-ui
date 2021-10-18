@@ -11,7 +11,7 @@ export class Tooltip {
 
   @Prop({ attribute: "value" }) value: string;
   @Prop({ attribute: "ariaDescribedBy" }) ariaDescribedBy: string;
-  @Prop({ attribute: "position" }) position: TooltipPosition = "right";
+  @Prop({ attribute: "position" }) position: TooltipPosition = "top";
 
   render() {
     return [
