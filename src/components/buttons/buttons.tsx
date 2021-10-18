@@ -8,10 +8,9 @@ import 'ionicons';
   shadow: true
 })
 export class Buttons {
-  @Prop({ attribute: "titleValue" }) titleValue = "";
   @Prop({ attribute: "disabled", mutable: true, reflect: true }) disabled = false;
   @Prop({ attribute: "ionIconName" }) ionIconName: string;
-  @Prop({ attribute: "variant", mutable: true, reflect: true }) variant: ButtonVariant = "basic";
+  @Prop({ attribute: "variant" }) variant: ButtonVariant = "basic";
 
   @Event() buttonClicked: EventEmitter;
 
@@ -19,11 +18,12 @@ export class Buttons {
     return [
       <button
         class={`ripple ${this.variant}`}
+        aria-disabled={this.disabled}
         disabled={this.disabled}
         onClick={() => this.buttonClicked.emit()}
       >
         {this.ionIconName && <ion-icon name={this.ionIconName}></ion-icon>}
-        {this.variant !== "icon" && this.titleValue}
+        {this.variant !== "icon" && <slot></slot>}
       </button>
     ];
   }

@@ -12,7 +12,6 @@ export namespace Components {
     interface RhButton {
         "disabled": boolean;
         "ionIconName": string;
-        "titleValue": string;
         "variant": ButtonVariant;
     }
     interface RhSideBar {
@@ -64,7 +63,6 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "ionIconName"?: string;
         "onButtonClicked"?: (event: CustomEvent<any>) => void;
-        "titleValue"?: string;
         "variant"?: ButtonVariant;
     }
     interface RhSideBar {
