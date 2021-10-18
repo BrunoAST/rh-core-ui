@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { MenuItems } from "./components/side-bar/types/menu-items";
+import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
     interface RhButton {
         "disabled": boolean;
@@ -19,6 +20,11 @@ export namespace Components {
     }
     interface RhSideBarItems {
         "menuItems": MenuItems[];
+    }
+    interface RhTooltip {
+        "ariaDescribedBy": string;
+        "position": TooltipPosition;
+        "value": string;
     }
 }
 declare global {
@@ -40,10 +46,17 @@ declare global {
         prototype: HTMLRhSideBarItemsElement;
         new (): HTMLRhSideBarItemsElement;
     };
+    interface HTMLRhTooltipElement extends Components.RhTooltip, HTMLStencilElement {
+    }
+    var HTMLRhTooltipElement: {
+        prototype: HTMLRhTooltipElement;
+        new (): HTMLRhTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "rh-button": HTMLRhButtonElement;
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
+        "rh-tooltip": HTMLRhTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,10 +75,16 @@ declare namespace LocalJSX {
         "menuItems"?: MenuItems[];
         "onItemClicked"?: (event: CustomEvent<string>) => void;
     }
+    interface RhTooltip {
+        "ariaDescribedBy"?: string;
+        "position"?: TooltipPosition;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "rh-button": RhButton;
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
+        "rh-tooltip": RhTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -75,6 +94,7 @@ declare module "@stencil/core" {
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
+            "rh-tooltip": LocalJSX.RhTooltip & JSXBase.HTMLAttributes<HTMLRhTooltipElement>;
         }
     }
 }
