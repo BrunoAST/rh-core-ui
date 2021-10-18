@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element, Event, EventEmitter } from "@stencil/core";
+import { Component, h, Prop, Event, EventEmitter } from "@stencil/core";
 import { ButtonVariant } from "./types/button-variant";
 import 'ionicons';
 
@@ -8,8 +8,6 @@ import 'ionicons';
   shadow: true
 })
 export class Buttons {
-  @Element() element: HTMLElement;
-
   @Prop({ attribute: "titleValue" }) titleValue = "";
   @Prop({ attribute: "disabled", mutable: true, reflect: true }) disabled = false;
   @Prop({ attribute: "ionIconName" }) ionIconName: string;
