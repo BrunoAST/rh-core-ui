@@ -11,6 +11,7 @@ export class Buttons {
   @Prop({ attribute: "disabled", mutable: true, reflect: true }) disabled = false;
   @Prop({ attribute: "ionIconName" }) ionIconName: string;
   @Prop({ attribute: "variant" }) variant: ButtonVariant = "basic";
+  @Prop({ attribute: "ariaLabel" }) ariaLabel: string;
 
   @Event() buttonClicked: EventEmitter;
 
@@ -21,6 +22,7 @@ export class Buttons {
         aria-disabled={this.disabled}
         disabled={this.disabled}
         onClick={() => this.buttonClicked.emit()}
+        aria-label={this.ariaLabel}
       >
         {this.ionIconName && <ion-icon name={this.ionIconName}></ion-icon>}
         {this.variant !== "icon" && <slot></slot>}

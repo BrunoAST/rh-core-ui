@@ -10,6 +10,7 @@ import { MenuItems } from "./components/side-bar/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
     interface RhButton {
+        "ariaLabel": string;
         "disabled": boolean;
         "ionIconName": string;
         "variant": ButtonVariant;
@@ -60,6 +61,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface RhButton {
+        "ariaLabel"?: string;
         "disabled"?: boolean;
         "ionIconName"?: string;
         "onButtonClicked"?: (event: CustomEvent<any>) => void;

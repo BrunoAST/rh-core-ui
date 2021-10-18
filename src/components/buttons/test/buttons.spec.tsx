@@ -11,6 +11,30 @@ describe("Buttons component", () => {
     expect(document.querySelector("rh-button").textContent).toBe("Button title");
   });
 
+  test("Should have aria label", async () => {
+    const { shadowRoot } = await componentSetup(
+      <rh-button ariaLabel="Aria label test"></rh-button>,
+      Buttons
+    );
+    expect(shadowRoot.querySelector("button").getAttribute("aria-label")).toBe("Aria label test");
+  });
+
+  test("Should not have ion icon element when no icon is passed", async () => {
+    const { shadowRoot } = await componentSetup(
+      <rh-button></rh-button>,
+      Buttons
+    );
+    expect(shadowRoot.querySelector("ion-icon")).toBe(null);
+  });
+
+  test("Should contain an ion icon", async () => {
+    const { shadowRoot } = await componentSetup(
+      <rh-button ionIconName="save-outline"></rh-button>,
+      Buttons
+    );
+    expect(shadowRoot.querySelector("ion-icon").getAttribute("name")).toBe("save-outline");
+  });
+
   test("Should start with disabled false", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-button />,
