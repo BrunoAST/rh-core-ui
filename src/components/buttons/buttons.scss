@@ -19,6 +19,10 @@ button {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+
+  &:focus {
+    outline: 3px solid rgba($primary, 0.5);
+  }
 }
 
 .filled,
