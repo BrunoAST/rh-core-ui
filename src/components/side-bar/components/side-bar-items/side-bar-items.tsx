@@ -14,8 +14,8 @@ export class SideBarItems {
 
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
 
-  @Listen("isBarCollapsed", { target: "body" })
-  onIsBarCollapsed(): void {
+  @Listen("isCollapsed", { target: "body" })
+  onToggleTitleVisibility(): void {
     const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item > span"));
     items.forEach((item) => {
       item.classList.toggle("item-title-hidden");
@@ -51,7 +51,7 @@ export class SideBarItems {
                 this.setActiveItem(index);
               }}
             >
-              <ion-icon class="icon" name={item.ionIconName}></ion-icon>
+              <ion-icon class="icon" name={item.ionIconName} />
               <span>{item.name}</span>
             </li>
           )
