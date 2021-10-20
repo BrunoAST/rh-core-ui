@@ -69,7 +69,7 @@ declare namespace LocalJSX {
     }
     interface RhSideBar {
         "menuItems"?: MenuItems[];
-        "onIsBarCollapsed"?: (event: CustomEvent<boolean>) => void;
+        "onIsCollapsed"?: (event: CustomEvent<boolean>) => void;
     }
     interface RhSideBarItems {
         "menuItems"?: MenuItems[];

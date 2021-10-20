@@ -5,7 +5,7 @@ import { menuItems } from "../components/side-bar-items/test/mock-menu-items";
 import { SideBar } from "../side-bar";
 
 describe("SideBar component", () => {
-  test("Should not have item-title-hidden when isBarCollapsed is false", async () => {
+  test("Should not have item-title-hidden when isCollapsed is false", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-side-bar menuItems={menuItems} />,
       SideBarItems, SideBar
@@ -17,7 +17,7 @@ describe("SideBar component", () => {
     });
   });
 
-  test("Should add item-title-hidden when isBarCollapsed is true", async () => {
+  test("Should add item-title-hidden when isCollapsed is true", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-side-bar menuItems={menuItems} />,
       SideBarItems, SideBar
@@ -28,5 +28,17 @@ describe("SideBar component", () => {
     items.forEach(item => {
       expect(item.classList.contains("item-title-hidden")).toBeTruthy();
     });
+  });
+
+  test("Should collapse side bar when click in backdrop", async () => {
+    let isCollapsed: boolean;
+    const { shadowRoot } = await componentSetup(
+      <rh-side-bar menuItems={menuItems} onIsCollapsed={(event) => isCollapsed = event.detail} />,
+      SideBarItems, SideBar
+    );
+    (shadowRoot.getElementById("header-button") as HTMLButtonElement).click();
+    expect(isCollapsed).toBeTruthy();
+    (shadowRoot.querySelector(".backdrop") as HTMLButtonElement).click();
+    expect(isCollapsed).toBeFalsy();
   });
 });
