@@ -9,37 +9,31 @@ import 'ionicons';
   assetsDirs: ["assets"]
 })
 export class SideBar {
-  barContainer: HTMLElement;
+  containerRef: HTMLElement;
+  backdropRef: HTMLElement;
 
   @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 
-  @Event() isBarCollapsed: EventEmitter<boolean>;
+  @Event() isCollapsed: EventEmitter<boolean>;
 
-  componentWillRender(): void {
-    this.isBarCollapsed.emit(false);
-  }
-
-  toggleBarState(): void {
-    this.barContainer.classList.toggle("container-collapsed-desktop");
-    const isCollapsed = this.barContainer.classList.contains("container-collapsed-desktop");
-    this.isBarCollapsed.emit(isCollapsed);
+  toggle(): void {
+    this.containerRef.classList.toggle("container__collapsed");
+    const isCollapsed = this.containerRef.classList.contains("container__collapsed");
+    this.backdropRef.classList.toggle("backdrop__active", !isCollapsed);
+    this.isCollapsed.emit(isCollapsed);
   }
 
   render() {
     return [
-      <aside ref={element => this.barContainer = element} class="container">
+      <div class="backdrop" onClick={() => this.toggle()} ref={element => this.backdropRef = element} />,
+      <aside class="container" ref={element => this.containerRef = element}>
         <header class="header">
           <h1 class="header__title">Innove</h1>
-          <button id="header-button" onClick={this.toggleBarState.bind(this)}>
-            <ion-icon class="header__menu-icon" name="menu"></ion-icon>
+          <button id="header-button" onClick={() => this.toggle()}>
+            <ion-icon class="header__menu-icon" name="menu" />
           </button>
         </header>
-
         <rh-side-bar-items menuItems={this.menuItems} />
-
-        {/* <footer>
-          Login/Logout
-        </footer> */}
       </aside>
     ];
   }
