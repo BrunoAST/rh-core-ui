@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634695560142" clover="3.2.0">
-  <project timestamp="1634695560142" name="All files">
-    <metrics statements="49" coveredstatements="49" conditionals="6" coveredconditionals="6" methods="24" coveredmethods="24" elements="79" coveredelements="79" complexity="0" loc="49" ncloc="49" packages="6" files="6" classes="6"/>
+<coverage generated="1635090838157" clover="3.2.0">
+  <project timestamp="1635090838157" name="All files">
+    <metrics statements="51" coveredstatements="51" conditionals="6" coveredconditionals="6" methods="25" coveredmethods="25" elements="82" coveredelements="82" complexity="0" loc="51" ncloc="51" packages="6" files="6" classes="6"/>
     <package name="components.buttons">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="buttons.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\buttons\buttons.tsx">
@@ -16,21 +16,23 @@
       </file>
     </package>
     <package name="components.side-bar">
-      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <file name="side-bar.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\side-bar.tsx">
-        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.side-bar.components.side-bar-items">
@@ -40,10 +42,10 @@
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="4" type="stmt"/>
@@ -51,8 +53,8 @@
         <line num="31" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="32" count="4" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
-        <line num="41" count="6" type="stmt"/>
-        <line num="45" count="12" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="2" type="stmt"/>
       </file>
@@ -81,9 +83,9 @@
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="stmt"/>
         <line num="7" count="4" type="stmt"/>
-        <line num="8" count="24" type="stmt"/>
-        <line num="10" count="24" type="stmt"/>
-        <line num="12" count="24" type="stmt"/>
+        <line num="8" count="25" type="stmt"/>
+        <line num="10" count="25" type="stmt"/>
+        <line num="12" count="25" type="stmt"/>
         <line num="17" count="4" type="stmt"/>
       </file>
     </package>

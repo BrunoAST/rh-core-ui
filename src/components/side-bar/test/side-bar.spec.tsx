@@ -33,12 +33,22 @@ describe("SideBar component", () => {
   test("Should collapse side bar when click in backdrop", async () => {
     let isCollapsed: boolean;
     const { shadowRoot } = await componentSetup(
-      <rh-side-bar menuItems={menuItems} onIsCollapsed={(event) => isCollapsed = event.detail} />,
-      SideBarItems, SideBar
+      <rh-side-bar onIsCollapsed={(event) => isCollapsed = event.detail} />,
+      SideBar
     );
     (shadowRoot.getElementById("header-button") as HTMLButtonElement).click();
     expect(isCollapsed).toBeTruthy();
-    (shadowRoot.querySelector(".backdrop") as HTMLButtonElement).click();
+    (shadowRoot.querySelector(".backdrop") as HTMLDivElement).click();
     expect(isCollapsed).toBeFalsy();
+  });
+
+  test("Should add main-content__collapsed class when click in menu toggle", async () => {
+    const { shadowRoot } = await componentSetup(
+      <rh-side-bar menuItems={menuItems} />,
+      SideBar
+    );
+    expect(shadowRoot.querySelector("main").classList.contains("main-content__collapsed")).toBeFalsy();
+    (shadowRoot.getElementById("header-button") as HTMLButtonElement).click();
+    expect(shadowRoot.querySelector("main").classList.contains("main-content__collapsed")).toBeTruthy();
   });
 });
