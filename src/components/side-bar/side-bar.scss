@@ -45,11 +45,15 @@ $container-width-collapsed: 90px;
 }
 
 .main-content {
-  @include transition();
-  margin-left: calc(#{$container-width-expanded} + 16px);
+  margin-left: calc(#{$container-width-collapsed} + 16px);
 
-  &__collapsed {
-    margin-left: calc(#{$container-width-collapsed} + 16px);
+  @media (min-width: 960px) {
+    @include transition();
+    margin-left: calc(#{$container-width-expanded} + 16px);
+
+    &__collapsed {
+      margin-left: calc(#{$container-width-collapsed} + 16px);
+    }
   }
 }
 
