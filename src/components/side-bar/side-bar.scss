@@ -7,24 +7,31 @@
   font-family: "Poppins", sans-serif;
 }
 
+@mixin transition($transition-property: all) {
+  transition: $transition-property 300ms ease-out;
+}
+
+$container-width-expanded: 260px;
+$container-width-collapsed: 90px;
+
 .container {
+  @include transition();
   position: fixed;
   top: 0;
+  width: $container-width-expanded;
   background-color: $white;
-  width: 260px;
   max-width: 80%;
   height: 100vh;
   padding: 36px 24px;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  transition: all 300ms ease-out;
   z-index: 100;
 
   border: 1px solid;
 
   &__collapsed {
-    width: 90px;
+    width: $container-width-collapsed;
     align-items: center;
 
     .header {
@@ -34,6 +41,15 @@
         display: none;
       }
     }
+  }
+}
+
+.main-content {
+  @include transition();
+  margin-left: calc(#{$container-width-expanded} + 16px);
+
+  &__collapsed {
+    margin-left: calc(#{$container-width-collapsed} + 16px);
   }
 }
 
@@ -58,6 +74,7 @@
 }
 
 .backdrop {
+  @include transition(opacity);
   position: fixed;
   top: 0;
   left: 0;
@@ -67,7 +84,6 @@
   z-index: 10;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 300ms ease-out;
 
   &__active {
     @media (max-width: 960px) {
