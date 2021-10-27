@@ -1,4 +1,4 @@
-import { Component, Event, Element, EventEmitter, h, Prop, Listen, State, Watch } from "@stencil/core";
+import { Component, Event, Element, EventEmitter, h, Prop, Listen, State } from "@stencil/core";
 import { MenuItems } from "../../types/menu-items";
 import 'ionicons';
 
