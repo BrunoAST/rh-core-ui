@@ -3,12 +3,12 @@ import componentSetup from "../../../utils/component-setup/component-setup";
 import { Tooltip } from "../tooltip";
 
 describe("Tooltip component", () => {
-  test("Should have tooltip role", async () => {
+  test("Should have role tooltip", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-tooltip />,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").getAttribute("role")).toBe("tooltip");
+    expect(shadowRoot.querySelector(".container").getAttribute("role")).toBe("tooltip");
   });
 
   test("Should receive a value", async () => {
@@ -16,8 +16,8 @@ describe("Tooltip component", () => {
       <rh-tooltip value="Hover me" ariaDescribedBy="some-id">Tooltip</rh-tooltip>,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").getAttribute("data-text")).toBe("Hover me");
-    expect(shadowRoot.querySelector("span").getAttribute("id")).toBe("some-id");
+    expect(shadowRoot.querySelector(".tooltip").textContent).toBe("Hover me");
+    expect(shadowRoot.querySelector(".tooltip").getAttribute("id")).toBe("some-id");
     expect(document.querySelector("rh-tooltip").textContent).toBe("Tooltip");
   });
 
@@ -26,7 +26,7 @@ describe("Tooltip component", () => {
       <rh-tooltip />,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").classList.contains("top")).toBeTruthy();
+    expect(shadowRoot.querySelector(".tooltip").classList.contains("top")).toBeTruthy();
   });
 
   test("Should set position bottom", async () => {
@@ -34,7 +34,7 @@ describe("Tooltip component", () => {
       <rh-tooltip position="bottom" />,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").classList.contains("bottom")).toBeTruthy();
+    expect(shadowRoot.querySelector(".tooltip").classList.contains("bottom")).toBeTruthy();
   });
 
   test("Should set position left", async () => {
@@ -42,7 +42,7 @@ describe("Tooltip component", () => {
       <rh-tooltip position="left" />,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").classList.contains("left")).toBeTruthy();
+    expect(shadowRoot.querySelector(".tooltip").classList.contains("left")).toBeTruthy();
   });
 
   test("Should set position right", async () => {
@@ -50,6 +50,6 @@ describe("Tooltip component", () => {
       <rh-tooltip position="right" />,
       Tooltip
     );
-    expect(shadowRoot.querySelector("span").classList.contains("right")).toBeTruthy();
+    expect(shadowRoot.querySelector(".tooltip").classList.contains("right")).toBeTruthy();
   });
 });
