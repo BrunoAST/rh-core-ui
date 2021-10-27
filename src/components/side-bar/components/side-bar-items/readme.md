@@ -27,11 +27,13 @@
 
 ### Depends on
 
+- [rh-tooltip](../../../tooltip)
 - ion-icon
 
 ### Graph
 ```mermaid
 graph TD;
+  rh-side-bar-items --> rh-tooltip
   rh-side-bar-items --> ion-icon
   rh-side-bar --> rh-side-bar-items
   style rh-side-bar-items fill:#f9f,stroke:#333,stroke-width:4px

@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event            | Description | Type                   |
-| ---------------- | ----------- | ---------------------- |
-| `isBarCollapsed` |             | `CustomEvent<boolean>` |
+| Event         | Description | Type                   |
+| ------------- | ----------- | ---------------------- |
+| `isCollapsed` |             | `CustomEvent<boolean>` |
 
 
 ## Dependencies
@@ -31,6 +31,7 @@
 graph TD;
   rh-side-bar --> ion-icon
   rh-side-bar --> rh-side-bar-items
+  rh-side-bar-items --> rh-tooltip
   rh-side-bar-items --> ion-icon
   style rh-side-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
