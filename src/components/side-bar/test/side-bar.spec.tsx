@@ -5,29 +5,26 @@ import { menuItems } from "../components/side-bar-items/test/mock-menu-items";
 import { SideBar } from "../side-bar";
 
 describe("SideBar component", () => {
-  test("Should not have item-title-hidden when isCollapsed is false", async () => {
+  test("Should contain item title span element when isCollapsed is false", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-side-bar menuItems={menuItems} />,
       SideBarItems, SideBar
     );
     const rhSideBarItems: HTMLRhSideBarItemsElement = shadowRoot.querySelector("rh-side-bar-items");
-    const items = rhSideBarItems.shadowRoot.querySelectorAll(".items-list__item > span");
-    items.forEach(item => {
-      expect(item.classList.contains("item-title-hidden")).toBeFalsy();
-    });
+    const items = rhSideBarItems.shadowRoot.querySelectorAll("span.item-title");
+    items.forEach(item => expect(item).not.toBeNull());
   });
 
-  test("Should add item-title-hidden when isCollapsed is true", async () => {
-    const { shadowRoot } = await componentSetup(
+  test("Should not contain item title span element when isCollapsed is true", async () => {
+    const { shadowRoot, waitForChanges } = await componentSetup(
       <rh-side-bar menuItems={menuItems} />,
       SideBarItems, SideBar
     );
     (shadowRoot.getElementById("header-button") as HTMLButtonElement).click();
+    await waitForChanges();
     const rhSideBarItems: HTMLRhSideBarItemsElement = shadowRoot.querySelector("rh-side-bar-items");
-    const items = rhSideBarItems.shadowRoot.querySelectorAll(".items-list__item > span");
-    items.forEach(item => {
-      expect(item.classList.contains("item-title-hidden")).toBeTruthy();
-    });
+    const items = rhSideBarItems.shadowRoot.querySelectorAll("span.item-title");
+    expect(items).toHaveLength(0);
   });
 
   test("Should collapse side bar when click in backdrop", async () => {
