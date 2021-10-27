@@ -1,4 +1,4 @@
-import { Component, Event, Element, EventEmitter, h, Prop, Listen } from "@stencil/core";
+import { Component, Event, Element, EventEmitter, h, Prop, Listen, State, Watch } from "@stencil/core";
 import { MenuItems } from "../../types/menu-items";
 import 'ionicons';
 
@@ -10,16 +10,15 @@ import 'ionicons';
 export class SideBarItems {
   @Element() element: HTMLElement;
 
+  @State() isCollapsed: boolean;
+
   @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
 
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
 
   @Listen("isCollapsed", { target: "body" })
-  onToggleTitleVisibility(): void {
-    const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item > span"));
-    items.forEach((item) => {
-      item.classList.toggle("item-title-hidden");
-    });
+  onToggleTitleVisibility({ detail }: CustomEvent): void {
+    this.isCollapsed = detail;
   }
 
   setActiveItem(itemIndex: number): void {
@@ -51,8 +50,15 @@ export class SideBarItems {
                 this.setActiveItem(index);
               }}
             >
-              <ion-icon class="icon" name={item.ionIconName} />
-              <span>{item.name}</span>
+              {
+                this.isCollapsed ?
+                  <rh-tooltip value={item.name} position="right" class="tooltip">
+                    <ion-icon class="icon" name={item.ionIconName} />
+                  </rh-tooltip> :
+
+                  [<ion-icon class="icon" name={item.ionIconName} />,
+                  <span class="item-title">{item.name}</span>]
+              }
             </li>
           )
         }
