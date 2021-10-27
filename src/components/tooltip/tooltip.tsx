@@ -15,14 +15,12 @@ export class Tooltip {
 
   render() {
     return [
-      <span
-        class={`tooltip ${this.position}`}
-        role="tooltip"
-        id={this.ariaDescribedBy}
-        data-text={this.value}
-      >
+      <div class="container" role="tooltip">
+        <div class={`tooltip ${this.position}`} id={this.ariaDescribedBy}>
+          {this.value}
+        </div>
         <slot></slot>
-      </span>
+      </div>
     ];
   }
 }
