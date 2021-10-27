@@ -3,10 +3,6 @@
 @import "../../theme/reset.scss";
 @import "../../theme/font-family.scss";
 
-:host {
-  font-family: "Poppins", sans-serif;
-}
-
 $tooltip-space: -50px;
 
 .container {
