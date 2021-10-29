@@ -16,11 +16,14 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:watch": "stencil build --docs --watch --serve",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e --coverage",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "sonar": "sonar-scanner",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "storybook": "start-storybook -p 6006 -s dist",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
@@ -28,8 +31,14 @@
     "ionicons": "^5.5.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/html": "^6.3.12",
     "@types/faker": "^5.5.8",
     "@types/jest": "^26.0.24",
+    "babel-loader": "^8.2.3",
     "faker": "^5.5.3",
     "git-commit-msg-linter": "^3.2.8",
     "jest": "^26.6.3",
