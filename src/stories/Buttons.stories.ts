@@ -64,26 +64,15 @@ export default {
 }
 
 const Template = ({ variant, ionIconName, ariaLabel, slot }) => {
-  // if (ionIconName) {
   return `
-      <rh-button
-        variant=${variant}
-        ariaLabel=${ariaLabel}
-        ionIconName=${ionIconName}
-      >
-        ${slot}
-      </rh-button>
-    `;
-  // }
-
-  // return `
-  //   <rh-button
-  //     variant=${variant}
-  //     ariaLabel=${ariaLabel}
-  //   >
-  //     ${slot}
-  //   </rh-button>
-  // `;
+    <rh-button
+      variant=${variant}
+      ariaLabel=${ariaLabel}
+      ionIconName=${ionIconName}
+    >
+      ${slot}
+    </rh-button>
+  `;
 }
 
 export const Basic = Template.bind({});
