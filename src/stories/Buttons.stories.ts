@@ -1,3 +1,5 @@
+import "ionicons";
+
 export default {
   title: "Componentes/Botões",
   parameters: {
@@ -56,11 +58,14 @@ export default {
       }
     }
   },
+  args: {
+    ionIconName: ""
+  }
 }
 
 const Template = ({ variant, ionIconName, ariaLabel, slot }) => {
-  if (ionIconName) {
-    return `
+  // if (ionIconName) {
+  return `
       <rh-button
         variant=${variant}
         ariaLabel=${ariaLabel}
@@ -69,16 +74,16 @@ const Template = ({ variant, ionIconName, ariaLabel, slot }) => {
         ${slot}
       </rh-button>
     `;
-  }
+  // }
 
-  return `
-    <rh-button
-      variant=${variant}
-      ariaLabel=${ariaLabel}
-    >
-      ${slot}
-    </rh-button>
-  `;
+  // return `
+  //   <rh-button
+  //     variant=${variant}
+  //     ariaLabel=${ariaLabel}
+  //   >
+  //     ${slot}
+  //   </rh-button>
+  // `;
 }
 
 export const Basic = Template.bind({});
