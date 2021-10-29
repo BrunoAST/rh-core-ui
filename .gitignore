@@ -1,6 +1,7 @@
 dist/
 www/
 loader/
+storybook-static/
 .scannerwork/
 coverage/coverage-final.json
 
