@@ -21,9 +21,9 @@
     "test": "stencil test --spec --e2e --coverage",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "sonar": "sonar-scanner",
-    "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s dist",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "storybook-prod": "concurrently \"npm run build-storybook\" \"npm run build\""
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
@@ -39,6 +39,7 @@
     "@types/faker": "^5.5.8",
     "@types/jest": "^26.0.24",
     "babel-loader": "^8.2.3",
+    "concurrently": "^6.3.0",
     "faker": "^5.5.3",
     "git-commit-msg-linter": "^3.2.8",
     "jest": "^26.6.3",
