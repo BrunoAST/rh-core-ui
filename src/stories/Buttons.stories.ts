@@ -3,8 +3,9 @@ import "ionicons";
 export default {
   title: "Componentes/Botões",
   parameters: {
+    layout: "centered",
     actions: {
-      handles: ['buttonClicked'],
+      handles: ["buttonClicked"],
     },
   },
   argTypes: {
