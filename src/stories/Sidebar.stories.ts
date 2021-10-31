@@ -22,7 +22,7 @@ export default {
       }
     },
     isCollapsed: {
-      description: "Evento emitido sempre que um clique é realizado no botão de abrir/fechar menu.",
+      description: "Evento emitido sempre que um clique é realizado no botão de abrir/fechar menu. O valor boleano é emitido na propriedade `detail` do evento",
       table: {
         defaultValue: {
           summary: "CustomEvent<boolean>"
@@ -30,7 +30,7 @@ export default {
       }
     },
     itemClicked: {
-      description: "Evento emitido sempre que um clique é realizado em um item da lista",
+      description: "Evento emitido sempre que um clique é realizado em um item da lista, a `URL` é emitida na propriedade `detail` do evento",
       table: {
         defaultValue: {
           summary: "CustomEvent<string>"
