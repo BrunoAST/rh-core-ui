@@ -60,20 +60,19 @@ export default {
     }
   },
   args: {
+    disabled: false,
     ionIconName: ""
   }
 }
 
-const Template = ({ variant, ionIconName, ariaLabel, slot }) => {
-  return `
-    <rh-button
-      variant=${variant}
-      ariaLabel=${ariaLabel}
-      ionIconName=${ionIconName}
-    >
-      ${slot}
-    </rh-button>
-  `;
+const Template = ({ variant, ionIconName, ariaLabel, disabled, slot }) => {
+  const button = document.createElement("rh-button");
+  button.variant = variant;
+  button.ionIconName = ionIconName;
+  button.ariaLabel = ariaLabel;
+  button.disabled = disabled;
+  button.innerHTML = slot;
+  return button;
 }
 
 export const Basic = Template.bind({});
