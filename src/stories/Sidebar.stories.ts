@@ -8,8 +8,10 @@ export default {
     actions: {
       handles: ["isCollapsed", "itemClicked"]
     },
-    componentSubtitle: "Em dispositivos móveis, um backdrop será exibido quando o menu estiver expandido. Quando o menu estiver colapsado e um hover for realizado em algum item da lista, um tooltip será exibido.",
-    docs: { inlineStories: false, iframeHeight: 500 },
+    componentSubtitle: "Em dispositivos móveis, um backdrop será exibido quando o menu estiver expandido. " +
+      "Quando o menu estiver colapsado e um 'hover' for realizado em algum item da lista, um tooltip será exibido. " +
+      "O conteúdo filho da sidebar 'slot' não será empurrado para a direita também",
+    docs: { inlineStories: false, iframeHeight: 500, iframeWidth: 1000 },
   },
   argTypes: {
     menuItems: {
@@ -36,9 +38,14 @@ export default {
           summary: "CustomEvent<string>"
         }
       }
-    }
+    },
+    slot: {
+      control: { type: "text" },
+      description: "Conteúdo filho da sidebar, aceita qualquer conteúdo HTML"
+    },
   },
   args: {
+    slot: "Sou um conteúdo filho da sidebar!",
     menuItems: [
       {
         name: "Início",
@@ -80,9 +87,10 @@ export default {
   }
 } as Meta;
 
-const Template = ({ menuItems }) => {
+const Template = ({ menuItems, slot }) => {
   const sideBar = document.createElement("rh-side-bar");
   sideBar.menuItems = menuItems;
+  sideBar.innerHTML = slot;
   return sideBar;
 }
 
