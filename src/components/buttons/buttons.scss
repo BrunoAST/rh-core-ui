@@ -1,7 +1,8 @@
 @import "../../theme/partials/colors";
 @import "../../theme/partials/font";
-@import "../../theme/reset.scss";
-@import "../../theme/font-family.scss";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/focus-mixin";
 
 button {
   cursor: pointer;
@@ -15,10 +16,7 @@ button {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-
-  &:focus {
-    outline: 3px solid rgba($primary, 0.5);
-  }
+  @include focus-outline();
 
   &:disabled {
     background-color: $button-disabled-bg;
