@@ -1,0 +1,92 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: $primary-accent;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.select-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  width: 100%;
+
+  .options-container {
+    order: 1;
+    background-color: $white;
+    color: $gray-dark;
+    font-weight: normal;
+    font-size: $default;
+    max-height: 0;
+    opacity: 0;
+    width: 100%;
+    transition: all 400ms;
+    overflow: hidden;
+    border: 1px solid $primary-accent;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+  }
+
+  .options-container.active + .selected .icon {
+    transform: rotateX(180deg);
+  }
+
+  .options-container.active + .selected {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .selected,
+  .option {
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+
+  .option {
+    &.is-hovered,
+    &:hover {
+      background-color: rgba($primary-lighter, 0.5);
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid $primary-accent;
+    }
+
+    .radio {
+      display: none;
+    }
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  .selected {
+    order: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: $white;
+    border-radius: 8px;
+    border: 1px solid $primary-accent;
+    border-radius: 8px;
+
+    .icon {
+      transition: all 400ms;
+    }
+  }
+}

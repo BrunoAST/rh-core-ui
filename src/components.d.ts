@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/buttons/types/button-variant";
+import { SelectOptions } from "./components/select/types/select-options";
 import { MenuItems } from "./components/side-bar/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
@@ -14,6 +15,11 @@ export namespace Components {
         "disabled": boolean;
         "ionIconName": string;
         "variant": ButtonVariant;
+    }
+    interface RhSelect {
+        "label": string;
+        "options": SelectOptions[];
+        "placeholder": string;
     }
     interface RhSideBar {
         "menuItems": MenuItems[];
@@ -33,6 +39,12 @@ declare global {
     var HTMLRhButtonElement: {
         prototype: HTMLRhButtonElement;
         new (): HTMLRhButtonElement;
+    };
+    interface HTMLRhSelectElement extends Components.RhSelect, HTMLStencilElement {
+    }
+    var HTMLRhSelectElement: {
+        prototype: HTMLRhSelectElement;
+        new (): HTMLRhSelectElement;
     };
     interface HTMLRhSideBarElement extends Components.RhSideBar, HTMLStencilElement {
     }
@@ -54,6 +66,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "rh-button": HTMLRhButtonElement;
+        "rh-select": HTMLRhSelectElement;
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
         "rh-tooltip": HTMLRhTooltipElement;
@@ -66,6 +79,12 @@ declare namespace LocalJSX {
         "ionIconName"?: string;
         "onButtonClicked"?: (event: CustomEvent<any>) => void;
         "variant"?: ButtonVariant;
+    }
+    interface RhSelect {
+        "label"?: string;
+        "onCurrentSelectedValue"?: (event: CustomEvent<string>) => void;
+        "options"?: SelectOptions[];
+        "placeholder"?: string;
     }
     interface RhSideBar {
         "menuItems"?: MenuItems[];
@@ -82,6 +101,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "rh-button": RhButton;
+        "rh-select": RhSelect;
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
         "rh-tooltip": RhTooltip;
@@ -92,6 +112,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
+            "rh-select": LocalJSX.RhSelect & JSXBase.HTMLAttributes<HTMLRhSelectElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
             "rh-tooltip": LocalJSX.RhTooltip & JSXBase.HTMLAttributes<HTMLRhTooltipElement>;
