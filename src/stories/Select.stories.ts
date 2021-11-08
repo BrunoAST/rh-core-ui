@@ -5,7 +5,7 @@ import { SelectOptions } from "../components/select/types/select-options";
 export default {
   title: "Componentes/Inputs/Select",
   parameters: {
-    layout: "padded",
+    layout: "centered",
     actions: {
       handles: ["currentSelectedValue"]
     }
