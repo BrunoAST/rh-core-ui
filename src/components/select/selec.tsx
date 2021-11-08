@@ -123,6 +123,7 @@ export class Select {
             }
           </ul>
           <div
+            tabIndex={0}
             class="selected"
             ref={element => this.selectedRef = element}
             onClick={() => this.toggleActive()}

@@ -2,6 +2,7 @@
 @import "../../theme/partials/font";
 @import "../../theme/reset";
 @import "../../theme/font-family";
+@import "../../theme/mixin/focus-mixin";
 
 .select-container {
   display: flex;
@@ -87,6 +88,7 @@
     border-radius: 8px;
     border: 1px solid $primary-accent;
     border-radius: 8px;
+    @include focus-outline;
 
     .icon {
       transition: all 400ms;
