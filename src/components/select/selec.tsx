@@ -29,6 +29,14 @@ export class Select {
     this.currentSelectedValue.emit(this.selectedValue);
   }
 
+  @Listen("click", { target: "body" })
+  closeOnClickOutside(event: Event): void {
+    const didClickedOutside = !(event.target as HTMLElement).classList.contains("hydrated");
+    if (didClickedOutside) {
+      this.closeOptions();
+    }
+  }
+
   @Listen("keydown", { target: "body" })
   supportKeyboardNavigation(event: KeyboardEvent): void {
     event.preventDefault();
