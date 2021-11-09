@@ -11,7 +11,7 @@
 | ------------- | ------------- | ----------- | ----------------- | ----------- |
 | `label`       | `label`       |             | `string`          | `undefined` |
 | `options`     | --            |             | `SelectOptions[]` | `[]`        |
-| `placeholder` | `placeholder` |             | `string`          | `undefined` |
+| `placeholder` | `placeholder` |             | `string`          | `""`        |
 
 
 ## Events

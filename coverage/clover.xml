@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1635337403864" clover="3.2.0">
-  <project timestamp="1635337403864" name="All files">
-    <metrics statements="49" coveredstatements="49" conditionals="8" coveredconditionals="8" methods="24" coveredmethods="24" elements="81" coveredelements="81" complexity="0" loc="49" ncloc="49" packages="6" files="6" classes="6"/>
+<coverage generated="1636420768484" clover="3.2.0">
+  <project timestamp="1636420768484" name="All files">
+    <metrics statements="103" coveredstatements="103" conditionals="27" coveredconditionals="27" methods="45" coveredmethods="45" elements="175" coveredelements="175" complexity="0" loc="103" ncloc="103" packages="9" files="9" classes="9"/>
     <package name="components.buttons">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-      <file name="buttons.tsx" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\components\buttons\buttons.tsx">
+      <file name="buttons.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\buttons\buttons.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -15,9 +15,73 @@
         <line num="24" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="components.select">
+      <metrics statements="49" coveredstatements="49" conditionals="19" coveredconditionals="19" methods="19" coveredmethods="19"/>
+      <file name="select.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\select\select.tsx">
+        <metrics statements="49" coveredstatements="49" conditionals="19" coveredconditionals="19" methods="19" coveredmethods="19"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="15" count="14" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
+        <line num="20" count="14" type="stmt"/>
+        <line num="21" count="14" type="stmt"/>
+        <line num="24" count="49" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="34" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="20" type="stmt"/>
+        <line num="43" count="20" type="stmt"/>
+        <line num="45" count="16" type="stmt"/>
+        <line num="46" count="16" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="61" count="4" type="cond" truecount="5" falsecount="0"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="74" count="7" type="stmt"/>
+        <line num="75" count="7" type="stmt"/>
+        <line num="79" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="15" type="stmt"/>
+        <line num="85" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="93" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="99" count="16" type="stmt"/>
+        <line num="100" count="16" type="stmt"/>
+        <line num="101" count="160" type="stmt"/>
+        <line num="102" count="16" type="stmt"/>
+        <line num="103" count="16" type="stmt"/>
+        <line num="107" count="14" type="stmt"/>
+        <line num="111" count="14" type="stmt"/>
+        <line num="114" count="111" type="stmt"/>
+        <line num="118" count="3" type="stmt"/>
+        <line num="129" count="14" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.select.test">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="mock-select-options.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\select\test\mock-select-options.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+      </file>
+    </package>
     <package name="components.side-bar">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
-      <file name="side-bar.tsx" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\components\side-bar\side-bar.tsx">
+      <file name="side-bar.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\side-bar.tsx">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -37,7 +101,7 @@
     </package>
     <package name="components.side-bar.components.side-bar-items">
       <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
-      <file name="side-bar-items.tsx" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
+      <file name="side-bar-items.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\side-bar-items.tsx">
         <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -59,7 +123,7 @@
     </package>
     <package name="components.side-bar.components.side-bar-items.test">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="mock-menu-items.ts" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\test\mock-menu-items.ts">
+      <file name="mock-menu-items.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\side-bar\components\side-bar-items\test\mock-menu-items.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -67,7 +131,7 @@
     </package>
     <package name="components.tooltip">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="tooltip.tsx" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\components\tooltip\tooltip.tsx">
+      <file name="tooltip.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\tooltip\tooltip.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -75,16 +139,24 @@
         <line num="17" count="6" type="stmt"/>
       </file>
     </package>
+    <package name="test.helpers">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="dispatch-keydown-event.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\test\helpers\dispatch-keydown-event.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="20" type="stmt"/>
+      </file>
+    </package>
     <package name="utils.component-setup">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="component-setup.ts" path="C:\Users\Pichau\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
+      <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="25" type="stmt"/>
-        <line num="11" count="25" type="stmt"/>
-        <line num="13" count="25" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="39" type="stmt"/>
+        <line num="11" count="39" type="stmt"/>
+        <line num="13" count="39" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
       </file>
     </package>
   </project>

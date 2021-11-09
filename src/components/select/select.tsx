@@ -12,7 +12,7 @@ export class Select {
   optionsContainerRef: HTMLUListElement;
 
   @Prop() label: string;
-  @Prop() placeholder: string;
+  @Prop() placeholder: string = "";
   @Prop() options: SelectOptions[] = [];
 
   @Event() currentSelectedValue: EventEmitter<string>;
@@ -31,10 +31,7 @@ export class Select {
 
   @Listen("click", { target: "body" })
   closeOnClickOutside(event: Event): void {
-    const didClickedOutside = !(event.target as HTMLElement).classList.contains("hydrated");
-    if (didClickedOutside) {
-      this.closeOptions();
-    }
+    !(event.target as HTMLElement).classList.contains("hydrated") && this.closeOptions();
   }
 
   @Listen("keydown", { target: "body" })
@@ -72,6 +69,7 @@ export class Select {
 
   private closeOptions(): void {
     this.optionsContainerRef.classList.remove("active");
+    this.selectedIndex = -1;
   }
 
   private handleArrowDown(): void {
