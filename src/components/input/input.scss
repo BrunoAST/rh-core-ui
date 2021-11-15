@@ -1,0 +1,73 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/focus-mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: $default;
+    color: $gray-accent;
+
+    &.invalid-label {
+      color: $red-accent;
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+
+    input {
+      border-radius: 8px;
+      border: 1px solid $gray-accent;
+      padding: 8px 12px;
+      font-family: "Poppins", sans-serif;
+
+      &.invalid-input {
+        border-color: $red-accent;
+      }
+
+      &::-ms-reveal,
+      ::-ms-clear {
+        display: none;
+      }
+    }
+
+    .icon + input {
+      padding: 8px 36px 8px 12px;
+    }
+
+    .icon {
+      position: absolute;
+      font-size: 1.5rem;
+      cursor: pointer;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.invalid-icon {
+        color: $red-accent;
+      }
+    }
+  }
+
+  &:focus-within {
+    .input-wrapper .icon:not(.invalid-icon),
+    label:not(.invalid-label) {
+      color: $primary-accent;
+    }
+
+    .input-wrapper input {
+      &.invalid-input {
+        @include focus-outline-error;
+      }
+
+      border-color: $primary-accent;
+      @include focus-outline;
+    }
+  }
+}
