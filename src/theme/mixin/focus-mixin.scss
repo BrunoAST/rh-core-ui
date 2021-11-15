@@ -3,3 +3,10 @@
     outline: 3px solid rgba($primary, 0.5);
   }
 }
+
+@mixin focus-outline-error() {
+  &:focus {
+    outline: 3px solid rgba($red-accent, 0.5);
+  }
+}
+
