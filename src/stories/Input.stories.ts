@@ -4,7 +4,10 @@ import "ionicons";
 export default {
   title: "Componentes/Inputs/Input",
   parameters: {
-    layout: "centered"
+    layout: "centered",
+    actions: {
+      handles: ["value"],
+    },
   },
   argTypes: {
     isInvalid: {
