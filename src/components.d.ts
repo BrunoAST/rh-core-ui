@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/buttons/types/button-variant";
+import { InputTextType } from "./components/input-text/types/input-text-type";
 import { SelectOptions } from "./components/select/types/select-options";
 import { MenuItems } from "./components/side-bar/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
@@ -22,7 +23,7 @@ export namespace Components {
         "label": string;
         "name": string;
         "placeholder": string;
-        "type": string;
+        "type": InputTextType;
     }
     interface RhSelect {
         "label": string;
@@ -102,7 +103,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onValue"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
-        "type"?: string;
+        "type"?: InputTextType;
     }
     interface RhSelect {
         "label"?: string;

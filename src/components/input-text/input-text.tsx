@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
+import { InputTextType } from "./types/input-text-type";
 import "ionicons";
 
 @Component({
@@ -7,7 +8,7 @@ import "ionicons";
   shadow: true
 })
 export class InputText {
-  @Prop({ reflect: true }) type = "text";
+  @Prop({ reflect: true }) type: InputTextType = "text";
   @Prop() name: string;
   @Prop() placeholder: string;
   @Prop() label: string;

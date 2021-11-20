@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type      | Default     |
-| ------------- | ------------- | ----------- | --------- | ----------- |
-| `ariaLabel`   | `aria-label`  |             | `string`  | `undefined` |
-| `isInvalid`   | `is-invalid`  |             | `boolean` | `false`     |
-| `label`       | `label`       |             | `string`  | `undefined` |
-| `name`        | `name`        |             | `string`  | `undefined` |
-| `placeholder` | `placeholder` |             | `string`  | `undefined` |
-| `type`        | `type`        |             | `string`  | `"text"`    |
+| Property      | Attribute     | Description | Type                   | Default     |
+| ------------- | ------------- | ----------- | ---------------------- | ----------- |
+| `ariaLabel`   | `aria-label`  |             | `string`               | `undefined` |
+| `isInvalid`   | `is-invalid`  |             | `boolean`              | `false`     |
+| `label`       | `label`       |             | `string`               | `undefined` |
+| `name`        | `name`        |             | `string`               | `undefined` |
+| `placeholder` | `placeholder` |             | `string`               | `undefined` |
+| `type`        | `type`        |             | `"password" \| "text"` | `"text"`    |
 
 
 ## Events
