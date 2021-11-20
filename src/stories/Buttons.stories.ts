@@ -5,7 +5,7 @@ export default {
   parameters: {
     layout: "centered",
     actions: {
-      handles: ["buttonClicked"],
+      handles: ["clicked"],
     },
   },
   argTypes: {
@@ -50,7 +50,7 @@ export default {
       control: { type: "text" },
       description: "Conteúdo filho do botão, aceita qualquer conteúdo HTML"
     },
-    buttonClicked: {
+    clicked: {
       description: "Evento de click do botão",
       table: {
         defaultValue: {
