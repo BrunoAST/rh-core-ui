@@ -2,7 +2,7 @@ import { Meta } from "@storybook/html";
 import "ionicons";
 
 export default {
-  title: "Componentes/Inputs/Input",
+  title: "Componentes/Inputs/Input Text",
   parameters: {
     layout: "centered",
     actions: {
@@ -21,18 +21,18 @@ export default {
     }
   },
   args: {
-    label: "E-mail",
+    label: "Nome",
     type: "text",
     isInvalid: false
   }
 } as Meta;
 
 const Template = ({ label, type, isInvalid }) => {
-  const input = document.createElement("rh-input");
-  input.label = label;
-  input.type = type;
-  input.isInvalid = isInvalid;
-  return input;
+  const inputText = document.createElement("rh-input-text");
+  inputText.label = label;
+  inputText.type = type;
+  inputText.isInvalid = isInvalid;
+  return inputText;
 }
 
-export const Input = Template.bind({});
+export const InputText = Template.bind({});
