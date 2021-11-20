@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop, State, Watch } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
 import "ionicons";
 
 @Component({
@@ -12,18 +12,12 @@ export class Input {
   @Prop() placeholder: string;
   @Prop() label: string;
   @Prop() ariaLabel: string;
-  @Prop({ reflect: true, mutable: true }) isInvalid = false;
+  @Prop({ reflect: true }) isInvalid = false;
 
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
-  @State() currentValue: any;
 
   @Event() value: EventEmitter;
-
-  @Watch("currentValue")
-  emitOnCurrentValueChange(newValue: string): void {
-    this.value.emit(newValue);
-  }
 
   togglePasswordVisibility(): void {
     this.isPasswordHidden = !this.isPasswordHidden;
@@ -54,7 +48,7 @@ export class Input {
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
             placeholder={this.placeholder}
-            value={this.currentValue}
+            onInput={(event) => this.value.emit((event.target as HTMLInputElement).value)}
           />
         </span>
       </div>
