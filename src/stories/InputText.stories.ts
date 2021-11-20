@@ -6,10 +6,57 @@ export default {
   parameters: {
     layout: "centered",
     actions: {
-      handles: ["value"],
+      handles: ["value"]
     },
+    docs: { inlineStories: false }
   },
   argTypes: {
+    type: {
+      control: { type: "radio" },
+      options: ["text", "password"],
+      description: "Define o tipo de exibição do conteúdo",
+      table: {
+        defaultValue: {
+          summary: "text"
+        }
+      }
+    },
+    name: {
+      control: { type: "text" },
+      description: "Nome do form control submetido com o formulário como parte do conjunto `name/value`",
+      table: {
+        defaultValue: {
+          summary: ""
+        }
+      }
+    },
+    placeholder: {
+      control: { type: "text" },
+      description: "Texto que aparece no input quando nenhum valor foi inserido",
+      table: {
+        defaultValue: {
+          summary: ""
+        }
+      }
+    },
+    label: {
+      control: { type: "text" },
+      description: "Provém uma explicação sobre do que se trata o input",
+      table: {
+        defaultValue: {
+          summary: ""
+        }
+      }
+    },
+    ariaLabel: {
+      control: { type: "text" },
+      description: "Descreve o input. Utilizado por ferramentas de acessibilidade",
+      table: {
+        defaultValue: {
+          summary: ""
+        }
+      }
+    },
     isInvalid: {
       control: { type: "boolean" },
       description: "Define os estado de validade do input",
@@ -18,11 +65,22 @@ export default {
           summary: "false"
         }
       }
+    },
+    value: {
+      description: "Evento emitido sempre que o valor do input é alterado. O valor em string é emitido na propriedade `detail` do evento",
+      table: {
+        defaultValue: {
+          summary: "CustomEvent<string>"
+        }
+      }
     }
   },
   args: {
     label: "Nome",
     type: "text",
+    name: "",
+    placeholder: "",
+    ariaLabel: "",
     isInvalid: false
   }
 } as Meta;
