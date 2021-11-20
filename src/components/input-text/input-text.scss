@@ -29,6 +29,7 @@
 
       &.invalid-input {
         border-color: $red-accent;
+        color: $red-accent;
       }
 
       &::-ms-reveal,
