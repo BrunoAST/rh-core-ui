@@ -100,7 +100,7 @@ describe("Buttons component", () => {
   test("Should emit when button clicked", async () => {
     const onClick = jest.fn();
     const { shadowRoot } = await componentSetup(
-      <rh-button onButtonClicked={onClick}>Button</rh-button>,
+      <rh-button onClicked={onClick}>Button</rh-button>,
       Buttons
     );
     shadowRoot.querySelector("button").click();

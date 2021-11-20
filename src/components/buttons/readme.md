@@ -17,9 +17,9 @@
 
 ## Events
 
-| Event           | Description | Type               |
-| --------------- | ----------- | ------------------ |
-| `buttonClicked` |             | `CustomEvent<any>` |
+| Event     | Description | Type               |
+| --------- | ----------- | ------------------ |
+| `clicked` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

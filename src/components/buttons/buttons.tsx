@@ -13,7 +13,7 @@ export class Buttons {
   @Prop({ attribute: "variant" }) variant: ButtonVariant = "basic";
   @Prop({ attribute: "ariaLabel" }) ariaLabel: string;
 
-  @Event() buttonClicked: EventEmitter;
+  @Event() clicked: EventEmitter;
 
   render() {
     return [
@@ -21,7 +21,7 @@ export class Buttons {
         class={`ripple ${this.variant}`}
         aria-disabled={this.disabled}
         disabled={this.disabled}
-        onClick={() => this.buttonClicked.emit()}
+        onClick={() => this.clicked.emit()}
         aria-label={this.ariaLabel}
       >
         {this.ionIconName && <ion-icon name={this.ionIconName}></ion-icon>}

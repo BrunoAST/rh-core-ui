@@ -93,7 +93,7 @@ declare namespace LocalJSX {
         "ariaLabel"?: string;
         "disabled"?: boolean;
         "ionIconName"?: string;
-        "onButtonClicked"?: (event: CustomEvent<any>) => void;
+        "onClicked"?: (event: CustomEvent<any>) => void;
         "variant"?: ButtonVariant;
     }
     interface RhInputText {
