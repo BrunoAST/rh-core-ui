@@ -2,11 +2,11 @@ import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
 import "ionicons";
 
 @Component({
-  tag: "rh-input",
-  styleUrl: "./input.scss",
+  tag: "rh-input-text",
+  styleUrl: "./input-text.scss",
   shadow: true
 })
-export class Input {
+export class InputText {
   @Prop({ reflect: true }) type = "text";
   @Prop() name: string;
   @Prop() placeholder: string;

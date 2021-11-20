@@ -33,8 +33,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  rh-input --> ion-icon
-  style rh-input fill:#f9f,stroke:#333,stroke-width:4px
+  rh-input-text --> ion-icon
+  style rh-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

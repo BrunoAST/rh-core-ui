@@ -16,7 +16,7 @@ export namespace Components {
         "ionIconName": string;
         "variant": ButtonVariant;
     }
-    interface RhInput {
+    interface RhInputText {
         "ariaLabel": string;
         "isInvalid": boolean;
         "label": string;
@@ -48,11 +48,11 @@ declare global {
         prototype: HTMLRhButtonElement;
         new (): HTMLRhButtonElement;
     };
-    interface HTMLRhInputElement extends Components.RhInput, HTMLStencilElement {
+    interface HTMLRhInputTextElement extends Components.RhInputText, HTMLStencilElement {
     }
-    var HTMLRhInputElement: {
-        prototype: HTMLRhInputElement;
-        new (): HTMLRhInputElement;
+    var HTMLRhInputTextElement: {
+        prototype: HTMLRhInputTextElement;
+        new (): HTMLRhInputTextElement;
     };
     interface HTMLRhSelectElement extends Components.RhSelect, HTMLStencilElement {
     }
@@ -80,7 +80,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "rh-button": HTMLRhButtonElement;
-        "rh-input": HTMLRhInputElement;
+        "rh-input-text": HTMLRhInputTextElement;
         "rh-select": HTMLRhSelectElement;
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
@@ -95,7 +95,7 @@ declare namespace LocalJSX {
         "onButtonClicked"?: (event: CustomEvent<any>) => void;
         "variant"?: ButtonVariant;
     }
-    interface RhInput {
+    interface RhInputText {
         "ariaLabel"?: string;
         "isInvalid"?: boolean;
         "label"?: string;
@@ -125,7 +125,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "rh-button": RhButton;
-        "rh-input": RhInput;
+        "rh-input-text": RhInputText;
         "rh-select": RhSelect;
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
@@ -137,7 +137,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
-            "rh-input": LocalJSX.RhInput & JSXBase.HTMLAttributes<HTMLRhInputElement>;
+            "rh-input-text": LocalJSX.RhInputText & JSXBase.HTMLAttributes<HTMLRhInputTextElement>;
             "rh-select": LocalJSX.RhSelect & JSXBase.HTMLAttributes<HTMLRhSelectElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
