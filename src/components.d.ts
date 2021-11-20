@@ -20,6 +20,7 @@ export namespace Components {
     interface RhInputText {
         "ariaLabel": string;
         "isInvalid": boolean;
+        "isRequired": boolean;
         "label": string;
         "name": string;
         "placeholder": string;
@@ -99,6 +100,7 @@ declare namespace LocalJSX {
     interface RhInputText {
         "ariaLabel"?: string;
         "isInvalid"?: boolean;
+        "isRequired"?: boolean;
         "label"?: string;
         "name"?: string;
         "onValue"?: (event: CustomEvent<any>) => void;

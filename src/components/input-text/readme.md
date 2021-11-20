@@ -11,6 +11,7 @@
 | ------------- | ------------- | ----------- | ---------------------- | ----------- |
 | `ariaLabel`   | `aria-label`  |             | `string`               | `undefined` |
 | `isInvalid`   | `is-invalid`  |             | `boolean`              | `false`     |
+| `isRequired`  | `is-required` |             | `boolean`              | `false`     |
 | `label`       | `label`       |             | `string`               | `undefined` |
 | `name`        | `name`        |             | `string`               | `undefined` |
 | `placeholder` | `placeholder` |             | `string`               | `undefined` |

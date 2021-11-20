@@ -16,6 +16,10 @@
     &.invalid-label {
       color: $red-accent;
     }
+
+    .required-indicator {
+      padding-left: 4px;
+    }
   }
 
   .input-wrapper {

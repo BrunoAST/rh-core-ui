@@ -14,6 +14,7 @@ export class InputText {
   @Prop() label: string;
   @Prop() ariaLabel: string;
   @Prop({ reflect: true }) isInvalid = false;
+  @Prop({ reflect: true }) isRequired = false;
 
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
@@ -32,7 +33,10 @@ export class InputText {
   render() {
     return [
       <div class="container">
-        <label class={this.toggleValidState("invalid-label")}>{this.label}</label>
+        <label class={this.toggleValidState("invalid-label")}>
+          {this.label}
+          {this.isRequired && <span class="required-indicator">*</span>}
+        </label>
         <span class="input-wrapper">
           {
             this.type === "password" &&
@@ -46,9 +50,11 @@ export class InputText {
             class={this.toggleValidState("invalid-input")}
             type={this.currentInputType}
             name={this.name}
+            required={this.isRequired}
+            placeholder={this.placeholder}
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
-            placeholder={this.placeholder}
+            aria-required={this.isRequired}
             onInput={(event) => this.value.emit((event.target as HTMLInputElement).value)}
           />
         </span>
