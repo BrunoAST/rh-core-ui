@@ -8,13 +8,13 @@ import "ionicons";
   shadow: true
 })
 export class InputText {
-  @Prop({ reflect: true }) type: InputTextType = "text";
+  @Prop({ reflect: true, mutable: true }) type: InputTextType = "text";
   @Prop() name: string;
   @Prop() placeholder: string;
   @Prop() label: string;
   @Prop() ariaLabel: string;
-  @Prop({ reflect: true }) isInvalid = false;
-  @Prop({ reflect: true }) isRequired = false;
+  @Prop({ reflect: true, mutable: true }) isInvalid = false;
+  @Prop({ reflect: true, mutable: true }) isRequired = false;
 
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
