@@ -66,6 +66,15 @@ export default {
         }
       }
     },
+    isRequired: {
+      control: { type: "boolean" },
+      description: "Define os estado de obrigatoriedade do input",
+      table: {
+        defaultValue: {
+          summary: "false"
+        }
+      }
+    },
     value: {
       description: "Evento emitido sempre que o valor do input é alterado. O valor em string é emitido na propriedade `detail` do evento",
       table: {
@@ -81,15 +90,17 @@ export default {
     name: "",
     placeholder: "",
     ariaLabel: "",
-    isInvalid: false
+    isInvalid: false,
+    isRequired: false
   }
 } as Meta;
 
-const Template = ({ label, type, isInvalid }) => {
+const Template = ({ label, type, isInvalid, isRequired }) => {
   const inputText = document.createElement("rh-input-text");
   inputText.label = label;
   inputText.type = type;
   inputText.isInvalid = isInvalid;
+  inputText.isRequired = isRequired;
   return inputText;
 }
 
