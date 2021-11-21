@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637499073896" clover="3.2.0">
-  <project timestamp="1637499073897" name="All files">
-    <metrics statements="124" coveredstatements="124" conditionals="37" coveredconditionals="37" methods="52" coveredmethods="52" elements="213" coveredelements="213" complexity="0" loc="124" ncloc="124" packages="12" files="12" classes="12"/>
+<coverage generated="1637502782561" clover="3.2.0">
+  <project timestamp="1637502782562" name="All files">
+    <metrics statements="133" coveredstatements="133" conditionals="37" coveredconditionals="37" methods="55" coveredmethods="55" elements="225" coveredelements="225" complexity="0" loc="133" ncloc="133" packages="13" files="13" classes="13"/>
     <package name="components.buttons">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="buttons.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\buttons\buttons.tsx">
@@ -148,6 +148,21 @@
         <line num="4" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="components.text-area">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="text-area.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\text-area\text-area.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="22" count="13" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="components.tooltip">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="tooltip.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\tooltip\tooltip.tsx">
@@ -182,20 +197,20 @@
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="54" type="stmt"/>
-        <line num="11" count="54" type="stmt"/>
-        <line num="13" count="54" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="67" type="stmt"/>
+        <line num="11" count="67" type="stmt"/>
+        <line num="13" count="67" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
       </file>
     </package>
     <package name="utils.form">
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="toggle-valid-state.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\form\toggle-valid-state.ts">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="33" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
   </project>
