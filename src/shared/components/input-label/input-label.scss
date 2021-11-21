@@ -1,0 +1,17 @@
+@import "../../../theme/partials/colors";
+@import "../../../theme/partials/font";
+@import "../../../theme/reset";
+@import "../../../theme/font-family";
+
+label {
+  font-size: $default;
+  color: $gray-accent;
+
+  &.invalid-label {
+    color: $red-accent;
+  }
+
+  .required-indicator {
+    padding-left: 4px;
+  }
+}
