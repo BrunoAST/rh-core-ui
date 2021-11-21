@@ -32,14 +32,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -115,14 +115,9 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -131,16 +126,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,14 +145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,6 +176,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
 import { InputTextType } from "./types/input-text-type";
 import "ionicons";
+import { toggleValidState } from "../../utils/form/toggle-valid-state";
 &nbsp;
 @Component({
   tag: "rh-input-text",
@@ -213,28 +202,21 @@ export class InputText {
     this.currentInputType = this.isPasswordHidden ? "password" : "text";
   }
 &nbsp;
-  toggleValidState(invalidClass: string): string {
-    return this.isInvalid ? invalidClass : "";
-  }
-&nbsp;
   render() {
     return [
       &lt;div class="container"&gt;
-        &lt;label class={this.toggleValidState("invalid-label")}&gt;
-          {this.label}
-          {this.isRequired &amp;&amp; &lt;span class="required-indicator"&gt;*&lt;/span&gt;}
-        &lt;/label&gt;
+        &lt;rh-input-label label={this.label} isInvalid={this.isInvalid} isRequired={this.isRequired} /&gt;
         &lt;span class="input-wrapper"&gt;
           {
             this.type === "password" &amp;&amp;
             &lt;ion-icon
-              class={`${this.toggleValidState("invalid-icon")} icon`}
+              class={`${toggleValidState(this.isInvalid, "invalid-icon")} icon`}
               name={this.isPasswordHidden ? "eye-off" : "eye"}
               onClick={this.togglePasswordVisibility.bind(this)}
             /&gt;
           }
           &lt;input
-            class={this.toggleValidState("invalid-input")}
+            class={toggleValidState(this.isInvalid, "invalid-input")}
             type={this.currentInputType}
             name={this.name}
             required={this.isRequired}
@@ -256,7 +238,7 @@ export class InputText {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Nov 20 2021 19:30:11 GMT-0300 (Brasilia Standard Time)
+                at Sun Nov 21 2021 09:51:13 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
