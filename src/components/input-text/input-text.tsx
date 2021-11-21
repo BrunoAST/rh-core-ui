@@ -1,6 +1,7 @@
 import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
 import { InputTextType } from "./types/input-text-type";
 import "ionicons";
+import { toggleValidState } from "../../utils/form/toggle-valid-state";
 
 @Component({
   tag: "rh-input-text",
@@ -26,14 +27,10 @@ export class InputText {
     this.currentInputType = this.isPasswordHidden ? "password" : "text";
   }
 
-  toggleValidState(invalidClass: string): string {
-    return this.isInvalid ? invalidClass : "";
-  }
-
   render() {
     return [
       <div class="container">
-        <label class={this.toggleValidState("invalid-label")}>
+        <label class={toggleValidState(this.isInvalid, "invalid-label")}>
           {this.label}
           {this.isRequired && <span class="required-indicator">*</span>}
         </label>
@@ -41,13 +38,13 @@ export class InputText {
           {
             this.type === "password" &&
             <ion-icon
-              class={`${this.toggleValidState("invalid-icon")} icon`}
+              class={`${toggleValidState(this.isInvalid, "invalid-icon")} icon`}
               name={this.isPasswordHidden ? "eye-off" : "eye"}
               onClick={this.togglePasswordVisibility.bind(this)}
             />
           }
           <input
-            class={this.toggleValidState("invalid-input")}
+            class={toggleValidState(this.isInvalid, "invalid-input")}
             type={this.currentInputType}
             name={this.name}
             required={this.isRequired}
