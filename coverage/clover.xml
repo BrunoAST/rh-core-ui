@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637502782561" clover="3.2.0">
-  <project timestamp="1637502782562" name="All files">
-    <metrics statements="133" coveredstatements="133" conditionals="37" coveredconditionals="37" methods="55" coveredmethods="55" elements="225" coveredelements="225" complexity="0" loc="133" ncloc="133" packages="13" files="13" classes="13"/>
+<coverage generated="1637516450809" clover="3.2.0">
+  <project timestamp="1637516450809" name="All files">
+    <metrics statements="140" coveredstatements="140" conditionals="39" coveredconditionals="39" methods="59" coveredmethods="59" elements="238" coveredelements="238" complexity="0" loc="140" ncloc="140" packages="14" files="14" classes="14"/>
+    <package name="components.breadcrumbs">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="breadcrumbs.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\breadcrumbs\breadcrumbs.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="components.buttons">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="buttons.tsx" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\components\buttons\buttons.tsx">
@@ -197,12 +210,12 @@
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="component-setup.ts" path="C:\Users\Bruno\Documents\Github\rh-core-ui\src\utils\component-setup\component-setup.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="9" count="67" type="stmt"/>
-        <line num="11" count="67" type="stmt"/>
-        <line num="13" count="67" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="70" type="stmt"/>
+        <line num="11" count="70" type="stmt"/>
+        <line num="13" count="70" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
       </file>
     </package>
     <package name="utils.form">
