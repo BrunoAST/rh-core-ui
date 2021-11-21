@@ -7,10 +7,6 @@ const input = (shadowRoot: ShadowRoot): HTMLInputElement => {
   return shadowRoot.querySelector("input");
 }
 
-const label = (shadowRoot: ShadowRoot): HTMLLabelElement => {
-  return shadowRoot.querySelector("label");
-}
-
 const eyeIcon = (shadowRoot: ShadowRoot): HTMLIonIconElement => {
   return shadowRoot.querySelector("ion-icon");
 }
@@ -49,12 +45,6 @@ describe("Input text component", () => {
     });
   });
 
-  test("Should receive a label", async () => {
-    const labelText = faker.random.word();
-    const { shadowRoot } = await componentSetup(<rh-input-text label={labelText} />, InputText);
-    expect(label(shadowRoot).textContent).toBe(labelText);
-  });
-
   test("Should receive a name", async () => {
     const name = faker.random.word();
     const { shadowRoot } = await componentSetup(<rh-input-text name={name} />, InputText);
@@ -82,10 +72,8 @@ describe("Input text component", () => {
 
     test("Should set isRequired to true", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text isRequired label={faker.random.word()} />, InputText);
-      const requiredIndicator = shadowRoot.querySelector("label > span");
       expect(input(shadowRoot).hasAttribute("required")).toBeTruthy();
       expect(input(shadowRoot).hasAttribute("aria-required")).toBeTruthy();
-      expect(requiredIndicator.textContent).toBe("*");
     });
   });
 
@@ -114,7 +102,6 @@ describe("Input text component", () => {
 
     test("Should set invalid classes when isInvalid is true", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text isInvalid type="password" />, InputText);
-      expect(label(shadowRoot).classList.contains("invalid-label")).toBeTruthy();
       expect(eyeIcon(shadowRoot).classList.contains("invalid-icon")).toBeTruthy();
       expect(input(shadowRoot).classList.contains("invalid-input")).toBeTruthy();
     });
