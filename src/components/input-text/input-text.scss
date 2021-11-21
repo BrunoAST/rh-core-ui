@@ -9,23 +9,11 @@
   flex-direction: column;
   gap: 8px;
 
-  label {
-    font-size: $default;
-    color: $gray-accent;
-
-    &.invalid-label {
-      color: $red-accent;
-    }
-
-    .required-indicator {
-      padding-left: 4px;
-    }
-  }
-
   .input-wrapper {
     position: relative;
 
     input {
+      background-color: $white;
       border-radius: 8px;
       border: 1px solid $gray-accent;
       padding: 8px 12px;

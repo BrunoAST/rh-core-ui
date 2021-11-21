@@ -30,10 +30,7 @@ export class InputText {
   render() {
     return [
       <div class="container">
-        <label class={toggleValidState(this.isInvalid, "invalid-label")}>
-          {this.label}
-          {this.isRequired && <span class="required-indicator">*</span>}
-        </label>
+        <rh-input-label label={this.label} isInvalid={this.isInvalid} isRequired={this.isRequired} />
         <span class="input-wrapper">
           {
             this.type === "password" &&

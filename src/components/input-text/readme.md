@@ -29,11 +29,13 @@
 
 ### Depends on
 
+- [rh-input-label](../../shared/components/input-label)
 - ion-icon
 
 ### Graph
 ```mermaid
 graph TD;
+  rh-input-text --> rh-input-label
   rh-input-text --> ion-icon
   style rh-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
