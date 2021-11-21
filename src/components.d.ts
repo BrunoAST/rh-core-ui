@@ -5,12 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BreadcrumbsPaths } from "./components/breadcrumbs/types/breadcrumbs-paths";
 import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { InputTextType } from "./components/input-text/types/input-text-type";
 import { SelectOptions } from "./components/select/types/select-options";
 import { MenuItems } from "./components/side-bar/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
+    interface RhBreadcrumbs {
+        "paths": BreadcrumbsPaths[];
+    }
     interface RhButton {
         "ariaLabel": string;
         "disabled": boolean;
@@ -59,6 +63,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRhBreadcrumbsElement extends Components.RhBreadcrumbs, HTMLStencilElement {
+    }
+    var HTMLRhBreadcrumbsElement: {
+        prototype: HTMLRhBreadcrumbsElement;
+        new (): HTMLRhBreadcrumbsElement;
+    };
     interface HTMLRhButtonElement extends Components.RhButton, HTMLStencilElement {
     }
     var HTMLRhButtonElement: {
@@ -108,6 +118,7 @@ declare global {
         new (): HTMLRhTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "rh-breadcrumbs": HTMLRhBreadcrumbsElement;
         "rh-button": HTMLRhButtonElement;
         "rh-input-label": HTMLRhInputLabelElement;
         "rh-input-text": HTMLRhInputTextElement;
@@ -119,6 +130,10 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface RhBreadcrumbs {
+        "onPathClicked"?: (event: CustomEvent<string>) => void;
+        "paths"?: BreadcrumbsPaths[];
+    }
     interface RhButton {
         "ariaLabel"?: string;
         "disabled"?: boolean;
@@ -172,6 +187,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "rh-breadcrumbs": RhBreadcrumbs;
         "rh-button": RhButton;
         "rh-input-label": RhInputLabel;
         "rh-input-text": RhInputText;
@@ -186,6 +202,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rh-breadcrumbs": LocalJSX.RhBreadcrumbs & JSXBase.HTMLAttributes<HTMLRhBreadcrumbsElement>;
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
             "rh-input-label": LocalJSX.RhInputLabel & JSXBase.HTMLAttributes<HTMLRhInputLabelElement>;
             "rh-input-text": LocalJSX.RhInputText & JSXBase.HTMLAttributes<HTMLRhInputTextElement>;

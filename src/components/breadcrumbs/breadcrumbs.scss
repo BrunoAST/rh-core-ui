@@ -1,0 +1,29 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  li {
+    font-size: $default;
+    color: $gray;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      color: $font-primary;
+    }
+
+    .icon {
+      padding-left: 8px;
+      color: $font-primary;
+    }
+  }
+}
