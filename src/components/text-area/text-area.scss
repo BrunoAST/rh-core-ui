@@ -1,0 +1,25 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/focus-mixin";
+@import "../../theme/mixin/input-mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include base-input-styles;
+
+  &:focus-within {
+    textarea {
+      &.invalid-text-area {
+        @include focus-outline-error;
+      }
+
+      border-color: $primary-accent;
+      @include focus-outline;
+    }
+  }
+}
