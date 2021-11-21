@@ -1,0 +1,19 @@
+@mixin base-input-styles() {
+  input {
+    background-color: $white;
+    border-radius: 8px;
+    border: 1px solid $gray-accent;
+    padding: 8px 12px;
+    font-family: "Poppins", sans-serif;
+
+    &.invalid-input {
+      border-color: $red-accent;
+      color: $red-accent;
+    }
+
+    &::-ms-reveal,
+    ::-ms-clear {
+      display: none;
+    }
+  }
+}
