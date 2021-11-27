@@ -14,7 +14,7 @@
 
   &:focus-within {
     textarea {
-      &.invalid-text-area {
+      &.invalid-input {
         @include focus-outline-error;
       }
 
