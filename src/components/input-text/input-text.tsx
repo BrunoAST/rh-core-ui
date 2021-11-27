@@ -42,6 +42,7 @@ export class InputText {
           }
           <input
             class={toggleValidState(this.isInvalid, "invalid-input")}
+            title={this.label}
             type={this.currentInputType}
             name={this.name}
             required={this.isRequired}
@@ -51,6 +52,7 @@ export class InputText {
             aria-required={this.isRequired}
             onInput={(event) => this.value.emit((event.target as HTMLInputElement).value)}
           />
+          <slot name="error-message"></slot>
         </span>
       </div>
     ];
