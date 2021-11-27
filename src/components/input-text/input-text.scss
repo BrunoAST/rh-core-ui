@@ -15,7 +15,7 @@
     @include base-input-styles;
 
     .icon + input {
-      padding: 8px 36px 8px 12px;
+      padding: 8px 36px inherit 12px;
     }
 
     .icon {
