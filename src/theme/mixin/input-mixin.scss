@@ -1,4 +1,6 @@
 @mixin base-input-styles() {
+  padding-bottom: 1.5rem;
+
   input {
     background-color: $white;
     border-radius: 8px;
