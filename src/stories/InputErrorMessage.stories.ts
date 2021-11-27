@@ -14,21 +14,26 @@ export default {
           summary: "false"
         }
       }
-    }
+    },
+    slot: {
+      control: { type: "text" },
+      description: "Espaço onde a mensagem de erro é definida"
+    },
   },
   args: {
-    isVisible: false
+    isVisible: false,
+    slot: "Campo obrigatório"
   }
 } as Meta;
 
-const Template = ({ isVisible }) => {
+const Template = ({ isVisible, slot }) => {
   return `
     <rh-input-text label="Teste" is-required is-invalid="${isVisible}">
       <rh-input-error-message slot="error-message" is-visible="${isVisible}">
-        Campo obrigatório
+        ${slot}
       </rh-input-error-message>
     </rh-input-text>
   `;
-};
+}
 
 export const InputErrorMessage = Template.bind({});
