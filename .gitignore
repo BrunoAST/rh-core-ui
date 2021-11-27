@@ -3,7 +3,9 @@ www/
 loader/
 storybook-static/
 .scannerwork/
-coverage/
+coverage/lcov-report/
+coverage/clover.xml
+coverage/coverage-final.json
 
 *~
 *.sw[mnpcod]
