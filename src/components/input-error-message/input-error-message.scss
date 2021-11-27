@@ -1,0 +1,14 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+
+.container {
+  position: absolute;
+  padding: 0.2rem 0 0.3rem 0.3rem;
+
+  .message {
+    color: $red-accent;
+    font-size: 12px;
+  }
+}

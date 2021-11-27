@@ -21,6 +21,9 @@ export namespace Components {
         "ionIconName": string;
         "variant": ButtonVariant;
     }
+    interface RhInputErrorMessage {
+        "isVisible": boolean;
+    }
     interface RhInputLabel {
         "isInvalid": boolean;
         "isRequired": boolean;
@@ -75,6 +78,12 @@ declare global {
         prototype: HTMLRhButtonElement;
         new (): HTMLRhButtonElement;
     };
+    interface HTMLRhInputErrorMessageElement extends Components.RhInputErrorMessage, HTMLStencilElement {
+    }
+    var HTMLRhInputErrorMessageElement: {
+        prototype: HTMLRhInputErrorMessageElement;
+        new (): HTMLRhInputErrorMessageElement;
+    };
     interface HTMLRhInputLabelElement extends Components.RhInputLabel, HTMLStencilElement {
     }
     var HTMLRhInputLabelElement: {
@@ -120,6 +129,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "rh-breadcrumbs": HTMLRhBreadcrumbsElement;
         "rh-button": HTMLRhButtonElement;
+        "rh-input-error-message": HTMLRhInputErrorMessageElement;
         "rh-input-label": HTMLRhInputLabelElement;
         "rh-input-text": HTMLRhInputTextElement;
         "rh-select": HTMLRhSelectElement;
@@ -140,6 +150,9 @@ declare namespace LocalJSX {
         "ionIconName"?: string;
         "onClicked"?: (event: CustomEvent<any>) => void;
         "variant"?: ButtonVariant;
+    }
+    interface RhInputErrorMessage {
+        "isVisible"?: boolean;
     }
     interface RhInputLabel {
         "isInvalid"?: boolean;
@@ -189,6 +202,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "rh-breadcrumbs": RhBreadcrumbs;
         "rh-button": RhButton;
+        "rh-input-error-message": RhInputErrorMessage;
         "rh-input-label": RhInputLabel;
         "rh-input-text": RhInputText;
         "rh-select": RhSelect;
@@ -204,6 +218,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "rh-breadcrumbs": LocalJSX.RhBreadcrumbs & JSXBase.HTMLAttributes<HTMLRhBreadcrumbsElement>;
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
+            "rh-input-error-message": LocalJSX.RhInputErrorMessage & JSXBase.HTMLAttributes<HTMLRhInputErrorMessageElement>;
             "rh-input-label": LocalJSX.RhInputLabel & JSXBase.HTMLAttributes<HTMLRhInputLabelElement>;
             "rh-input-text": LocalJSX.RhInputText & JSXBase.HTMLAttributes<HTMLRhInputTextElement>;
             "rh-select": LocalJSX.RhSelect & JSXBase.HTMLAttributes<HTMLRhSelectElement>;
