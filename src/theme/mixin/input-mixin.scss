@@ -1,12 +1,15 @@
+@import "../partials/colors";
+
 @mixin base-input-styles() {
   padding-bottom: 1.5rem;
 
-  input {
+  input, textarea {
     background-color: $white;
     border-radius: 8px;
     border: 1px solid $gray-accent;
     padding: 8px 12px;
     font-family: "Poppins", sans-serif;
+    resize: none;
 
     &.invalid-input {
       border-color: $red-accent;
