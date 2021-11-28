@@ -14,6 +14,7 @@
 | `isInvalid`   | `is-invalid`  |             | `boolean` | `false`     |
 | `isRequired`  | `is-required` |             | `boolean` | `false`     |
 | `label`       | `label`       |             | `string`  | `undefined` |
+| `minLength`   | `min-length`  |             | `number`  | `undefined` |
 | `name`        | `name`        |             | `string`  | `undefined` |
 | `placeholder` | `placeholder` |             | `string`  | `undefined` |
 | `rows`        | `rows`        |             | `number`  | `3`         |
