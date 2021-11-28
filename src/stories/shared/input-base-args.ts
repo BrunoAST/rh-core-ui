@@ -53,6 +53,14 @@ export const inputsBaseArgTypes = {
       }
     }
   },
+  minLength: {
+    description: "Define a validação da quantidade mínima de caracteres que o input pode receber",
+    table: {
+      defaultValue: {
+        summary: "undefined"
+      }
+    }
+  },
   value: {
     description: "Evento emitido sempre que o valor do input é alterado. O valor em string é emitido na propriedade `detail` do evento",
     table: {
@@ -69,7 +77,8 @@ export const inputsBaseArgs = {
   placeholder: "",
   ariaLabel: "",
   isInvalid: false,
-  isRequired: false
+  isRequired: false,
+  minLength: 5
 }
 
 export const inputsBaseParameters = {

@@ -26,7 +26,7 @@ export default {
   }
 } as Meta;
 
-const Template = ({ label, type, name, placeholder, ariaLabel, isInvalid, isRequired }) => {
+const Template = ({ label, type, name, placeholder, ariaLabel, isInvalid, isRequired, minLength }) => {
   const inputText = document.createElement("rh-input-text");
   inputText.label = label;
   inputText.type = type;
@@ -35,6 +35,7 @@ const Template = ({ label, type, name, placeholder, ariaLabel, isInvalid, isRequ
   inputText.ariaLabel = ariaLabel;
   inputText.isInvalid = isInvalid;
   inputText.isRequired = isRequired;
+  inputText.minLength = minLength;
   return inputText;
 }
 
