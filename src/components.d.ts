@@ -171,7 +171,7 @@ declare namespace LocalJSX {
         "maxLength"?: number;
         "minLength"?: number;
         "name"?: string;
-        "onValue"?: (event: CustomEvent<any>) => void;
+        "onValueUpdated"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "type"?: InputTextType;
     }
@@ -198,7 +198,7 @@ declare namespace LocalJSX {
         "maxLength"?: number;
         "minLength"?: number;
         "name"?: string;
-        "onValue"?: (event: CustomEvent<any>) => void;
+        "onValueUpdated"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "rows"?: number;
     }

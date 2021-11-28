@@ -107,7 +107,7 @@ describe("Text area component", () => {
     const expectedValue = faker.random.word();
     let value;
     const { shadowRoot } = await componentSetup(
-      <rh-text-area onValue={(event: CustomEvent) => value = event.detail} />,
+      <rh-text-area onValueUpdated={(event: CustomEvent) => value = event.detail} />,
       TextArea
     );
     textArea(shadowRoot).value = expectedValue;
