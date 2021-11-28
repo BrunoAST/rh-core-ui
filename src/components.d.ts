@@ -39,6 +39,7 @@ export namespace Components {
         "name": string;
         "placeholder": string;
         "type": InputTextType;
+        "value": string;
     }
     interface RhSelect {
         "label": string;
@@ -62,6 +63,7 @@ export namespace Components {
         "name": string;
         "placeholder": string;
         "rows": number;
+        "value": string;
     }
     interface RhTooltip {
         "ariaDescribedBy": string;
@@ -174,6 +176,7 @@ declare namespace LocalJSX {
         "onValueUpdated"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "type"?: InputTextType;
+        "value"?: string;
     }
     interface RhSelect {
         "label"?: string;
@@ -201,6 +204,7 @@ declare namespace LocalJSX {
         "onValueUpdated"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "rows"?: number;
+        "value"?: string;
     }
     interface RhTooltip {
         "ariaDescribedBy"?: string;

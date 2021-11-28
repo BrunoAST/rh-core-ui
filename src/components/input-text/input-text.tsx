@@ -10,6 +10,7 @@ import { toggleValidState } from "../../utils/form/toggle-valid-state";
 })
 export class InputText {
   @Prop({ reflect: true, mutable: true }) type: InputTextType = "text";
+  @Prop() value: string;
   @Prop() name: string;
   @Prop() placeholder: string;
   @Prop() label: string;
@@ -51,6 +52,7 @@ export class InputText {
             placeholder={this.placeholder}
             minLength={this.minLength}
             maxLength={this.maxLength}
+            value={this.value}
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
             aria-required={this.isRequired}

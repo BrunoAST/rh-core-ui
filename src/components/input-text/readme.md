@@ -18,6 +18,7 @@
 | `name`        | `name`        |             | `string`               | `undefined` |
 | `placeholder` | `placeholder` |             | `string`               | `undefined` |
 | `type`        | `type`        |             | `"password" \| "text"` | `"text"`    |
+| `value`       | `value`       |             | `string`               | `undefined` |
 
 
 ## Events
