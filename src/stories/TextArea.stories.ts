@@ -32,11 +32,12 @@ export default {
     label: "Descrição",
     cols: 100,
     rows: 3,
-    minLength: 50
+    minLength: 50,
+    maxLength: 70
   }
 } as Meta;
 
-const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid, minLength }) => {
+const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid, minLength, maxLength }) => {
   const textArea = document.createElement("rh-text-area");
   textArea.name = name;
   textArea.placeholder = placeholder;
@@ -47,6 +48,7 @@ const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired,
   textArea.isInvalid = isInvalid;
   textArea.isRequired = isRequired;
   textArea.minLength = minLength;
+  textArea.maxLength = maxLength;
   return textArea;
 }
 
