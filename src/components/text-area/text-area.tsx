@@ -18,7 +18,7 @@ export class TextArea {
   @Prop({ reflect: true, mutable: true }) minLength: number;
   @Prop({ reflect: true, mutable: true }) maxLength: number;
 
-  @Event() value: EventEmitter;
+  @Event() valueUpdated: EventEmitter;
 
   render() {
     return [
@@ -36,7 +36,7 @@ export class TextArea {
           aria-label={this.ariaLabel}
           aria-invalid={this.isInvalid}
           aria-required={this.isRequired}
-          onInput={(event) => this.value.emit((event.target as HTMLInputElement).value)}
+          onInput={(event) => this.valueUpdated.emit((event.target as HTMLInputElement).value)}
         />
       </div>
     ];

@@ -23,9 +23,9 @@
 
 ## Events
 
-| Event   | Description | Type               |
-| ------- | ----------- | ------------------ |
-| `value` |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `valueUpdated` |             | `CustomEvent<any>` |
 
 
 ## Dependencies
