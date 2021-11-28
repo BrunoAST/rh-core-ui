@@ -103,6 +103,15 @@ describe("Text area component", () => {
     expect(textArea(shadowRoot).getAttribute("rows")).toBe("10");
   });
 
+    test("Should bind the current value", async () => {
+    const currentValue = faker.random.word();
+    const { shadowRoot } = await componentSetup(
+      <rh-text-area value={currentValue} />,
+      TextArea
+    );
+    expect(textArea(shadowRoot).getAttribute("value")).toBe(currentValue);
+  });
+
   test("Should emit the value", async () => {
     const expectedValue = faker.random.word();
     let value;
