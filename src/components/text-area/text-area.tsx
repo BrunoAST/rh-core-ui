@@ -16,6 +16,7 @@ export class TextArea {
   @Prop({ reflect: true, mutable: true }) isInvalid = false;
   @Prop({ reflect: true, mutable: true }) isRequired = false;
   @Prop({ reflect: true, mutable: true }) minLength: number;
+  @Prop({ reflect: true, mutable: true }) maxLength: number;
 
   @Event() value: EventEmitter;
 
@@ -31,6 +32,7 @@ export class TextArea {
           placeholder={this.placeholder}
           required={this.isRequired}
           minLength={this.minLength}
+          maxLength={this.maxLength}
           aria-label={this.ariaLabel}
           aria-invalid={this.isInvalid}
           aria-required={this.isRequired}

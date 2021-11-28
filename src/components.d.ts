@@ -34,6 +34,7 @@ export namespace Components {
         "isInvalid": boolean;
         "isRequired": boolean;
         "label": string;
+        "maxLength": number;
         "minLength": number;
         "name": string;
         "placeholder": string;
@@ -56,6 +57,7 @@ export namespace Components {
         "isInvalid": boolean;
         "isRequired": boolean;
         "label": string;
+        "maxLength": number;
         "minLength": number;
         "name": string;
         "placeholder": string;
@@ -166,6 +168,7 @@ declare namespace LocalJSX {
         "isInvalid"?: boolean;
         "isRequired"?: boolean;
         "label"?: string;
+        "maxLength"?: number;
         "minLength"?: number;
         "name"?: string;
         "onValue"?: (event: CustomEvent<any>) => void;
@@ -192,6 +195,7 @@ declare namespace LocalJSX {
         "isInvalid"?: boolean;
         "isRequired"?: boolean;
         "label"?: string;
+        "maxLength"?: number;
         "minLength"?: number;
         "name"?: string;
         "onValue"?: (event: CustomEvent<any>) => void;
