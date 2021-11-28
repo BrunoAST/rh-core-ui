@@ -125,7 +125,7 @@ describe("Input text component", () => {
     const expectedValue = faker.random.word();
     let value;
     const { shadowRoot } = await componentSetup(
-      <rh-input-text onValue={(event: CustomEvent) => value = event.detail} />,
+      <rh-input-text onValueUpdated={(event: CustomEvent) => value = event.detail} />,
       InputText
     );
     input(shadowRoot).value = expectedValue;
