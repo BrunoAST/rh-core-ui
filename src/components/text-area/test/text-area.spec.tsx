@@ -8,6 +8,50 @@ const textArea = (shadowRoot: ShadowRoot): HTMLTextAreaElement => {
 }
 
 describe("Text area component", () => {
+  describe("isRequired", () => {
+    test("Should start with isRequired false", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
+      expect(textArea(shadowRoot).hasAttribute("required")).toBeFalsy();
+      expect(textArea(shadowRoot).hasAttribute("aria-required")).toBeFalsy();
+    });
+
+    test("Should set isRequired to true", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area isRequired label={faker.random.word()} />, TextArea);
+      expect(textArea(shadowRoot).hasAttribute("required")).toBeTruthy();
+      expect(textArea(shadowRoot).hasAttribute("aria-required")).toBeTruthy();
+    });
+  });
+
+  describe("isInvalid", () => {
+    test("Should start with isInvalid false", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
+      expect(textArea(shadowRoot).hasAttribute("aria-invalid")).toBeFalsy();
+    });
+
+    test("Should set isInvalid to true", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area isInvalid />, TextArea);
+      expect(textArea(shadowRoot).hasAttribute("aria-invalid")).toBeTruthy();
+    });
+
+    test("Should set invalid classes when isInvalid is true", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area isInvalid />, TextArea);
+      expect(textArea(shadowRoot).classList.contains("invalid-input")).toBeTruthy();
+    });
+  });
+
+  describe("min length", () => {
+    test("Should start with min length null", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
+      expect(textArea(shadowRoot).getAttribute("minlength")).toBeNull();
+    });
+
+    test("Should receive min length", async () => {
+      const minLength = faker.datatype.number(100);
+      const { shadowRoot } = await componentSetup(<rh-text-area minLength={minLength} />, TextArea);
+      expect(textArea(shadowRoot).getAttribute("minlength")).toBe(minLength.toString());
+    });
+  });
+
   test("Should receive a name", async () => {
     const name = faker.random.word();
     const { shadowRoot } = await componentSetup(<rh-text-area name={name} />, TextArea);
@@ -56,36 +100,5 @@ describe("Text area component", () => {
     textArea(shadowRoot).value = expectedValue;
     textArea(shadowRoot).dispatchEvent(new Event("input"));
     expect(value).toBe(expectedValue);
-  });
-
-  describe("isRequired", () => {
-    test("Should start with isRequired false", async () => {
-      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
-      expect(textArea(shadowRoot).hasAttribute("required")).toBeFalsy();
-      expect(textArea(shadowRoot).hasAttribute("aria-required")).toBeFalsy();
-    });
-
-    test("Should set isRequired to true", async () => {
-      const { shadowRoot } = await componentSetup(<rh-text-area isRequired label={faker.random.word()} />, TextArea);
-      expect(textArea(shadowRoot).hasAttribute("required")).toBeTruthy();
-      expect(textArea(shadowRoot).hasAttribute("aria-required")).toBeTruthy();
-    });
-  });
-
-  describe("isInvalid", () => {
-    test("Should start with isInvalid false", async () => {
-      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
-      expect(textArea(shadowRoot).hasAttribute("aria-invalid")).toBeFalsy();
-    });
-
-    test("Should set isInvalid to true", async () => {
-      const { shadowRoot } = await componentSetup(<rh-text-area isInvalid />, TextArea);
-      expect(textArea(shadowRoot).hasAttribute("aria-invalid")).toBeTruthy();
-    });
-
-    test("Should set invalid classes when isInvalid is true", async () => {
-      const { shadowRoot } = await componentSetup(<rh-text-area isInvalid />, TextArea);
-      expect(textArea(shadowRoot).classList.contains("invalid-input")).toBeTruthy();
-    });
   });
 });
