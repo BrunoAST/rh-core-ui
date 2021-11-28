@@ -7,6 +7,7 @@ import { toggleValidState } from "../../utils/form/toggle-valid-state";
   shadow: true
 })
 export class TextArea {
+  @Prop() value: string;
   @Prop() name: string;
   @Prop() placeholder: string;
   @Prop() label: string;
@@ -33,6 +34,7 @@ export class TextArea {
           required={this.isRequired}
           minLength={this.minLength}
           maxLength={this.maxLength}
+          value={this.value}
           aria-label={this.ariaLabel}
           aria-invalid={this.isInvalid}
           aria-required={this.isRequired}

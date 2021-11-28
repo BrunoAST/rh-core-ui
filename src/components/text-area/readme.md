@@ -19,6 +19,7 @@
 | `name`        | `name`        |             | `string`  | `undefined` |
 | `placeholder` | `placeholder` |             | `string`  | `undefined` |
 | `rows`        | `rows`        |             | `number`  | `3`         |
+| `value`       | `value`       |             | `string`  | `undefined` |
 
 
 ## Events
