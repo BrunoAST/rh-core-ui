@@ -69,11 +69,11 @@ export const inputsBaseArgTypes = {
       }
     }
   },
-  value: {
+  valueUpdated: {
     description: "Evento emitido sempre que o valor do input é alterado. O valor em string é emitido na propriedade `detail` do evento",
     table: {
       defaultValue: {
-        summary: "CustomEvent<string>"
+        summary: "CustomEvent<any>"
       }
     }
   }
@@ -93,7 +93,7 @@ export const inputsBaseArgs = {
 export const inputsBaseParameters = {
   layout: "centered",
   actions: {
-    handles: ["value"]
+    handles: ["valueUpdated"]
   },
   docs: { inlineStories: false }
 }
