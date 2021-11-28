@@ -16,6 +16,7 @@ export class InputText {
   @Prop() ariaLabel: string;
   @Prop({ reflect: true, mutable: true }) isInvalid = false;
   @Prop({ reflect: true, mutable: true }) isRequired = false;
+  @Prop({ reflect: true, mutable: true }) minLength: number;
 
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
@@ -47,6 +48,7 @@ export class InputText {
             name={this.name}
             required={this.isRequired}
             placeholder={this.placeholder}
+            minLength={this.minLength}
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
             aria-required={this.isRequired}
