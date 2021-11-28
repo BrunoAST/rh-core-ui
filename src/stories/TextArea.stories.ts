@@ -37,8 +37,9 @@ export default {
   }
 } as Meta;
 
-const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid, minLength, maxLength }) => {
+const Template = ({ value, label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid, minLength, maxLength }) => {
   const textArea = document.createElement("rh-text-area");
+  textArea.value = value;
   textArea.name = name;
   textArea.placeholder = placeholder;
   textArea.label = label;

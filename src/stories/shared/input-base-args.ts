@@ -1,4 +1,13 @@
 export const inputsBaseArgTypes = {
+  value: {
+    control: { type: "text" },
+    description: "Valor atual presente no input",
+    table: {
+      defaultValue: {
+        summary: "undefined"
+      }
+    }
+  },
   name: {
     control: { type: "text" },
     description: "Nome do form control submetido com o formulário como parte do conjunto `name/value`",
@@ -80,6 +89,7 @@ export const inputsBaseArgTypes = {
 }
 
 export const inputsBaseArgs = {
+  value: "",
   label: "Nome",
   name: "",
   placeholder: "",
