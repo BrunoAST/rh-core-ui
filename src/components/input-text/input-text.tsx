@@ -22,7 +22,7 @@ export class InputText {
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
 
-  @Event() value: EventEmitter;
+  @Event() valueUpdated: EventEmitter;
 
   togglePasswordVisibility(): void {
     this.isPasswordHidden = !this.isPasswordHidden;
@@ -54,7 +54,7 @@ export class InputText {
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
             aria-required={this.isRequired}
-            onInput={(event) => this.value.emit((event.target as HTMLInputElement).value)}
+            onInput={(event) => this.valueUpdated.emit((event.target as HTMLInputElement).value)}
           />
           <slot name="error-message"></slot>
         </span>
