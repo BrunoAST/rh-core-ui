@@ -52,6 +52,19 @@ describe("Text area component", () => {
     });
   });
 
+  describe("max length", () => {
+    test("Should start with max length null", async () => {
+      const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
+      expect(textArea(shadowRoot).getAttribute("maxlength")).toBeNull();
+    });
+
+    test("Should receive max length", async () => {
+      const maxLength = faker.datatype.number(100);
+      const { shadowRoot } = await componentSetup(<rh-text-area maxLength={maxLength} />, TextArea);
+      expect(textArea(shadowRoot).getAttribute("maxlength")).toBe(maxLength.toString());
+    });
+  });
+
   test("Should receive a name", async () => {
     const name = faker.random.word();
     const { shadowRoot } = await componentSetup(<rh-text-area name={name} />, TextArea);
