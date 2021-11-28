@@ -31,11 +31,12 @@ export default {
     ...inputsBaseArgs,
     label: "Descrição",
     cols: 100,
-    rows: 3
+    rows: 3,
+    minLength: 50
   }
 } as Meta;
 
-const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid }) => {
+const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired, isInvalid, minLength }) => {
   const textArea = document.createElement("rh-text-area");
   textArea.name = name;
   textArea.placeholder = placeholder;
@@ -45,6 +46,7 @@ const Template = ({ label, placeholder, name, ariaLabel, cols, rows, isRequired,
   textArea.rows = rows;
   textArea.isInvalid = isInvalid;
   textArea.isRequired = isRequired;
+  textArea.minLength = minLength;
   return textArea;
 }
 
