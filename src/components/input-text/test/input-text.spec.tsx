@@ -45,24 +45,6 @@ describe("Input text component", () => {
     });
   });
 
-  test("Should receive a name", async () => {
-    const name = faker.random.word();
-    const { shadowRoot } = await componentSetup(<rh-input-text name={name} />, InputText);
-    expect(input(shadowRoot).getAttribute("name")).toBe(name);
-  });
-
-  test("Should receive a placeholder", async () => {
-    const placeholder = faker.random.word();
-    const { shadowRoot } = await componentSetup(<rh-input-text placeholder={placeholder} />, InputText);
-    expect(input(shadowRoot).getAttribute("placeholder")).toBe(placeholder);
-  });
-
-  test("Should receive an ariaLabel", async () => {
-    const ariaLabel = faker.random.word();
-    const { shadowRoot } = await componentSetup(<rh-input-text ariaLabel={ariaLabel} />, InputText);
-    expect(input(shadowRoot).getAttribute("aria-label")).toBe(ariaLabel);
-  });
-
   describe("isRequired", () => {
     test("Should start with isRequired false", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text />, InputText);
@@ -75,18 +57,6 @@ describe("Input text component", () => {
       expect(input(shadowRoot).hasAttribute("required")).toBeTruthy();
       expect(input(shadowRoot).hasAttribute("aria-required")).toBeTruthy();
     });
-  });
-
-  test("Should emit the value", async () => {
-    const expectedValue = faker.random.word();
-    let value;
-    const { shadowRoot } = await componentSetup(
-      <rh-input-text onValue={(event: CustomEvent) => value = event.detail} />,
-      InputText
-    );
-    input(shadowRoot).value = expectedValue;
-    input(shadowRoot).dispatchEvent(new Event("input"));
-    expect(value).toBe(expectedValue);
   });
 
   describe("isInvalid", () => {
@@ -105,5 +75,48 @@ describe("Input text component", () => {
       expect(eyeIcon(shadowRoot).classList.contains("invalid-icon")).toBeTruthy();
       expect(input(shadowRoot).classList.contains("invalid-input")).toBeTruthy();
     });
+  });
+
+  describe("min length", () => {
+    test("Should start with min length null", async () => {
+      const { shadowRoot } = await componentSetup(<rh-input-text />, InputText);
+      expect(input(shadowRoot).getAttribute("minlength")).toBeNull();
+    });
+
+    test("Should receive min length", async () => {
+      const minLength = faker.datatype.number(100);
+      const { shadowRoot } = await componentSetup(<rh-input-text minLength={minLength} />, InputText);
+      expect(input(shadowRoot).getAttribute("minlength")).toBe(minLength.toString());
+    });
+  });
+
+  test("Should receive a name", async () => {
+    const name = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-input-text name={name} />, InputText);
+    expect(input(shadowRoot).getAttribute("name")).toBe(name);
+  });
+
+  test("Should receive a placeholder", async () => {
+    const placeholder = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-input-text placeholder={placeholder} />, InputText);
+    expect(input(shadowRoot).getAttribute("placeholder")).toBe(placeholder);
+  });
+
+  test("Should receive an ariaLabel", async () => {
+    const ariaLabel = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-input-text ariaLabel={ariaLabel} />, InputText);
+    expect(input(shadowRoot).getAttribute("aria-label")).toBe(ariaLabel);
+  });
+
+  test("Should emit the value", async () => {
+    const expectedValue = faker.random.word();
+    let value;
+    const { shadowRoot } = await componentSetup(
+      <rh-input-text onValue={(event: CustomEvent) => value = event.detail} />,
+      InputText
+    );
+    input(shadowRoot).value = expectedValue;
+    input(shadowRoot).dispatchEvent(new Event("input"));
+    expect(value).toBe(expectedValue);
   });
 });
