@@ -17,6 +17,7 @@ export class InputText {
   @Prop({ reflect: true, mutable: true }) isInvalid = false;
   @Prop({ reflect: true, mutable: true }) isRequired = false;
   @Prop({ reflect: true, mutable: true }) minLength: number;
+  @Prop({ reflect: true, mutable: true }) maxLength: number;
 
   @State() currentInputType = this.type;
   @State() isPasswordHidden = true;
@@ -49,6 +50,7 @@ export class InputText {
             required={this.isRequired}
             placeholder={this.placeholder}
             minLength={this.minLength}
+            maxLength={this.maxLength}
             aria-label={this.ariaLabel}
             aria-invalid={this.isInvalid}
             aria-required={this.isRequired}
