@@ -57,7 +57,10 @@ jobs:
         with:
           node-version: '14'
           
-      - name: Run build
+      - name: Run install dependencies
+        run: npm install
+          
+      - name: Run build project
         run: npm run build
           
       - uses: JS-DevTools/npm-publish@v1
