@@ -16,7 +16,7 @@ export default {
       description: "Lista com todos os caminhos referentes ao nível de uma página",
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: "BreadcrumbsPaths[]"
         }
       }
     },

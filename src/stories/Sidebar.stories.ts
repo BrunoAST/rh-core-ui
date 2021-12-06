@@ -19,7 +19,7 @@ export default {
       description: "Lista que renderiza os itens do menu",
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: "MenuItems[]"
         }
       }
     },

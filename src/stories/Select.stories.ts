@@ -34,7 +34,7 @@ export default {
       description: "Lista com todas as opções que serão exibidas no select",
       table: {
         defaultValue: {
-          summary: "[]"
+          summary: "SelectOptions[]"
         }
       }
     },
