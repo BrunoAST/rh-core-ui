@@ -9,7 +9,7 @@ import { BreadcrumbsPaths } from "./components/breadcrumbs/types/breadcrumbs-pat
 import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { InputTextType } from "./components/input-text/types/input-text-type";
 import { SelectOptions } from "./components/select/types/select-options";
-import { MenuItems } from "./components/side-bar/types/menu-items";
+import { MenuItems } from "./shared/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
     interface RhBreadcrumbs {
@@ -47,9 +47,11 @@ export namespace Components {
         "placeholder": string;
     }
     interface RhSideBar {
+        "currentActiveIndex": number;
         "menuItems": MenuItems[];
     }
     interface RhSideBarItems {
+        "currentActiveIndex": number;
         "menuItems": MenuItems[];
     }
     interface RhTextArea {
@@ -185,10 +187,12 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface RhSideBar {
+        "currentActiveIndex"?: number;
         "menuItems"?: MenuItems[];
         "onIsCollapsed"?: (event: CustomEvent<boolean>) => void;
     }
     interface RhSideBarItems {
+        "currentActiveIndex"?: number;
         "menuItems"?: MenuItems[];
         "onItemClicked"?: (event: CustomEvent<string>) => void;
     }

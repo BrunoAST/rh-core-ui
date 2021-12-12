@@ -1,6 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
-import { MenuItems } from "./types/menu-items";
 import 'ionicons';
+import { MenuItems } from "../../shared/types/menu-items";
 
 @Component({
   tag: "rh-side-bar",
@@ -13,9 +13,10 @@ export class SideBar {
   backdropRef: HTMLElement;
   mainContentRef: HTMLElement;
 
-  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
-
   @Event() isCollapsed: EventEmitter<boolean>;
+
+  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
+  @Prop({ mutable: true, reflect: true }) currentActiveIndex: number;
 
   toggle(): void {
     this.containerRef.classList.toggle("container__collapsed");
@@ -35,7 +36,7 @@ export class SideBar {
             <ion-icon class="header__menu-icon" name="menu" />
           </button>
         </header>
-        <rh-side-bar-items menuItems={this.menuItems} />
+        <rh-side-bar-items menuItems={this.menuItems} currentActiveIndex={this.currentActiveIndex} />
       </aside>,
       <main ref={element => this.mainContentRef = element} class="main-content">
         <slot></slot>

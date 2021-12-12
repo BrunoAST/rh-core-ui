@@ -1,5 +1,5 @@
-import { Component, Event, Element, EventEmitter, h, Prop, Listen, State } from "@stencil/core";
-import { MenuItems } from "../../types/menu-items";
+import { Component, Event, Element, EventEmitter, h, Listen, State, Prop } from "@stencil/core";
+import { MenuItems } from "../../../../shared/types/menu-items";
 import 'ionicons';
 
 @Component({
@@ -12,24 +12,14 @@ export class SideBarItems {
 
   @State() isCollapsed: boolean;
 
-  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
-
   @Event({ bubbles: true, composed: true }) itemClicked: EventEmitter<string>;
+
+  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
+  @Prop({ mutable: true, reflect: true }) currentActiveIndex: number;
 
   @Listen("isCollapsed", { target: "body" })
   onToggleTitleVisibility({ detail }: CustomEvent): void {
     this.isCollapsed = detail;
-  }
-
-  setActiveItem(itemIndex: number): void {
-    const items = Array.from(this.element.shadowRoot.querySelectorAll(".items-list__item"));
-    items.forEach((_, index) =>
-      this.element.shadowRoot.getElementById(`item-${index}`).classList.toggle("items-list__active", index === itemIndex)
-    );
-    this.menuItems = this.menuItems.map((item, index) => {
-      item.isActive = itemIndex === index ? true : false;
-      return item;
-    });
   }
 
   emitItemUrl(item: MenuItems): void {
@@ -44,10 +34,10 @@ export class SideBarItems {
             <li
               key={index}
               id={`item-${index}`}
-              class="items-list__item"
+              class={`items-list__item ${this.currentActiveIndex == index ? "items-list__active" : ""}`}
               onClick={() => {
                 this.emitItemUrl(item);
-                this.setActiveItem(index);
+                this.currentActiveIndex = index;
               }}
             >
               {
@@ -55,9 +45,10 @@ export class SideBarItems {
                   <rh-tooltip value={item.name} position="right" class="tooltip">
                     <ion-icon class="icon" name={item.ionIconName} />
                   </rh-tooltip> :
-
-                  [<ion-icon class="icon" name={item.ionIconName} />,
-                  <span class="item-title">{item.name}</span>]
+                  [
+                    <ion-icon class="icon" name={item.ionIconName} />,
+                    <span class="item-title">{item.name}</span>
+                  ]
               }
             </li>
           )
