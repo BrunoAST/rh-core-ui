@@ -27,6 +27,7 @@ export class TextArea {
         <rh-input-label label={this.label} isInvalid={this.isInvalid} isRequired={this.isRequired} />
         <textarea
           class={toggleValidState(this.isInvalid, "invalid-input")}
+          title={this.label}
           name={this.name}
           cols={this.cols}
           rows={this.rows}
