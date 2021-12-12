@@ -3,6 +3,10 @@ import componentSetup from "../../../../../utils/component-setup/component-setup
 import { SideBarItems } from "../side-bar-items";
 import { menuItems } from "./mock-menu-items";
 
+const menuElements = (shadowRoot: ShadowRoot): HTMLLIElement[] => {
+  return Array.from(shadowRoot.querySelectorAll("li"));
+}
+
 describe("SideBarItems component", () => {
   test("Should render menu items", async () => {
     const { shadowRoot } = await componentSetup(
@@ -20,18 +24,29 @@ describe("SideBarItems component", () => {
       }} />,
       SideBarItems
     );
-    const listItem = shadowRoot.getElementById("item-0");
+    const listItem = menuElements(shadowRoot)[0];
     listItem.click();
   });
 
-  test("Should set active to an item when clicked", async () => {
+   test("Should set current active index", async () => {
+    const currentActiveIndex = 1;
     const { shadowRoot } = await componentSetup(
+      <rh-side-bar-items menuItems={menuItems} currentActiveIndex={currentActiveIndex} />,
+      SideBarItems
+    );
+    const listItem = menuElements(shadowRoot)[currentActiveIndex];
+    expect(listItem.classList.contains("items-list__active")).toBeTruthy();
+  });
+
+  test("Should set active to an item when clicked", async () => {
+    const { shadowRoot, waitForChanges } = await componentSetup(
       <rh-side-bar-items menuItems={menuItems} />,
       SideBarItems
     );
-    const listItem = shadowRoot.getElementById("item-0");
+    const listItem = menuElements(shadowRoot)[0];
     listItem.click();
-    expect(menuItems[0].isActive).toBeTruthy();
+    expect(listItem.classList.contains("items-list__active")).toBeFalsy();
+    await waitForChanges();
     expect(listItem.classList.contains("items-list__active")).toBeTruthy();
   });
 });
