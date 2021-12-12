@@ -26,4 +26,12 @@
       color: $font-primary;
     }
   }
+
+  @media(max-width: 600px) {
+    flex-direction: column;
+
+    li {
+      font-size: 12px;
+    }
+  }
 }
