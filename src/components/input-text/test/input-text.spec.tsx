@@ -121,6 +121,12 @@ describe("Input text component", () => {
     expect(input(shadowRoot).getAttribute("aria-label")).toBe(ariaLabel);
   });
 
+  test("Should receive a title", async () => {
+    const title = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-input-text label={title} />, InputText);
+    expect(input(shadowRoot).getAttribute("title")).toBe(title);
+  });
+
   test("Should bind the current value", async () => {
     const currentValue = faker.random.word();
     const { shadowRoot } = await componentSetup(

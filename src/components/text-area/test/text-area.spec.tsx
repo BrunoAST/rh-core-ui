@@ -83,6 +83,12 @@ describe("Text area component", () => {
     expect(textArea(shadowRoot).getAttribute("aria-label")).toBe(ariaLabel);
   });
 
+  test("Should receive a title", async () => {
+    const title = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-text-area label={title} />, TextArea);
+    expect(textArea(shadowRoot).getAttribute("title")).toBe(title);
+  });
+
   test("Should start with 20 cols by default", async () => {
     const { shadowRoot } = await componentSetup(<rh-text-area />, TextArea);
     expect(textArea(shadowRoot).getAttribute("cols")).toBe("20");
