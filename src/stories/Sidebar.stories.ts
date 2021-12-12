@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/html';
-import { MenuItems } from '../components/side-bar/types/menu-items';
+import { MenuItems } from '../shared/types/menu-items';
 import 'ionicons';
 
 export default {
@@ -20,6 +20,15 @@ export default {
       table: {
         defaultValue: {
           summary: "MenuItems[]"
+        }
+      }
+    },
+    currentActiveIndex: {
+      control: { type: "number" },
+      description: "Define o item atual do menu que estará em destaque",
+      table: {
+        defaultValue: {
+          summary: "-"
         }
       }
     },
@@ -46,50 +55,46 @@ export default {
   },
   args: {
     slot: "Sou um conteúdo filho da sidebar!",
+    currentActiveIndex: 1,
     menuItems: [
       {
         name: "Início",
         url: "inicio",
-        isActive: false,
         ionIconName: "apps"
       },
       {
         name: "Competências",
         url: "competencias",
-        isActive: false,
         ionIconName: "extension-puzzle"
       },
       {
         name: "Afirmações",
         url: "afirmacoes",
-        isActive: false,
         ionIconName: "list"
       },
       {
         name: "Usuários",
         url: "usuarios",
-        isActive: false,
         ionIconName: "people"
       },
       {
         name: "Testes",
         url: "testes",
-        isActive: false,
         ionIconName: "clipboard"
       },
       {
         name: "Resultados",
         url: "resultados",
-        isActive: false,
         ionIconName: "bar-chart"
       },
     ] as MenuItems[]
   }
 } as Meta;
 
-const Template = ({ menuItems, slot }) => {
+const Template = ({ menuItems, currentActiveIndex, slot }) => {
   const sideBar = document.createElement("rh-side-bar");
   sideBar.menuItems = menuItems;
+  sideBar.currentActiveIndex = currentActiveIndex;
   sideBar.innerHTML = slot;
   return sideBar;
 }
