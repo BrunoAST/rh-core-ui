@@ -1,6 +1,6 @@
 {
   "name": "@innove/rh-core-ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "RH Core UI",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
