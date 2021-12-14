@@ -54,8 +54,8 @@ export class InputText {
             maxLength={this.maxLength}
             value={this.value}
             aria-label={this.ariaLabel}
-            aria-invalid={this.isInvalid}
-            aria-required={this.isRequired}
+            aria-invalid={`${this.isInvalid}`}
+            aria-required={`${this.isRequired}`}
             onInput={(event) => this.valueUpdated.emit((event.target as HTMLInputElement).value)}
           />
           <slot name="error-message"></slot>
