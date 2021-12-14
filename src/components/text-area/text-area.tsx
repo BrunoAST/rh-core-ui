@@ -25,22 +25,25 @@ export class TextArea {
     return [
       <div class="container">
         <rh-input-label label={this.label} isInvalid={this.isInvalid} isRequired={this.isRequired} />
-        <textarea
-          class={toggleValidState(this.isInvalid, "invalid-input")}
-          title={this.label}
-          name={this.name}
-          cols={this.cols}
-          rows={this.rows}
-          placeholder={this.placeholder}
-          required={this.isRequired}
-          minLength={this.minLength}
-          maxLength={this.maxLength}
-          value={this.value}
-          aria-label={this.ariaLabel}
-          aria-invalid={this.isInvalid}
-          aria-required={this.isRequired}
-          onInput={(event) => this.valueUpdated.emit((event.target as HTMLInputElement).value)}
-        />
+        <div class="input-wrapper">
+          <textarea
+            class={toggleValidState(this.isInvalid, "invalid-input")}
+            title={this.label}
+            name={this.name}
+            cols={this.cols}
+            rows={this.rows}
+            placeholder={this.placeholder}
+            required={this.isRequired}
+            minLength={this.minLength}
+            maxLength={this.maxLength}
+            value={this.value}
+            aria-label={this.ariaLabel}
+            aria-invalid={this.isInvalid}
+            aria-required={this.isRequired}
+            onInput={(event) => this.valueUpdated.emit((event.target as HTMLInputElement).value)}
+          />
+          <slot name="error-message"></slot>
+        </div>
       </div>
     ];
   }

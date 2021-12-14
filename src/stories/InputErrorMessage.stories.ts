@@ -26,7 +26,7 @@ export default {
   }
 } as Meta;
 
-const Template = ({ isVisible, slot }) => {
+export const InputText = ({ isVisible, slot }) => {
   return `
     <rh-input-text label="Teste" is-required is-invalid="${isVisible}">
       <rh-input-error-message slot="error-message" is-visible="${isVisible}">
@@ -36,4 +36,12 @@ const Template = ({ isVisible, slot }) => {
   `;
 }
 
-export const InputErrorMessage = Template.bind({});
+export const TextArea = ({ isVisible, slot }) => {
+  return `
+    <rh-text-area label="Teste" is-required is-invalid="${isVisible}">
+      <rh-input-error-message slot="error-message" is-visible="${isVisible}">
+        ${slot}
+      </rh-input-error-message>
+    </rh-text-area>
+  `;
+}
