@@ -49,25 +49,25 @@ describe("Input text component", () => {
     test("Should start with isRequired false", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text />, InputText);
       expect(input(shadowRoot).hasAttribute("required")).toBeFalsy();
-      expect(input(shadowRoot).hasAttribute("aria-required")).toBeFalsy();
+      expect(input(shadowRoot).getAttribute("aria-required")).toBe("false");
     });
 
     test("Should set isRequired to true", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text isRequired label={faker.random.word()} />, InputText);
       expect(input(shadowRoot).hasAttribute("required")).toBeTruthy();
-      expect(input(shadowRoot).hasAttribute("aria-required")).toBeTruthy();
+      expect(input(shadowRoot).getAttribute("aria-required")).toBe("true");
     });
   });
 
   describe("isInvalid", () => {
     test("Should start with isInvalid false", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text />, InputText);
-      expect(input(shadowRoot).hasAttribute("aria-invalid")).toBeFalsy();
+      expect(input(shadowRoot).getAttribute("aria-invalid")).toBe("false");
     });
 
     test("Should set isInvalid to true", async () => {
       const { shadowRoot } = await componentSetup(<rh-input-text isInvalid />, InputText);
-      expect(input(shadowRoot).hasAttribute("aria-invalid")).toBeTruthy();
+      expect(input(shadowRoot).getAttribute("aria-invalid")).toBe("true");
     });
 
     test("Should set invalid classes when isInvalid is true", async () => {
