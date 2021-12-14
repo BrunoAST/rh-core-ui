@@ -15,8 +15,12 @@ export class InputErrorMessage {
     const parent = this.element.parentElement;
     const errorMessageList = Array.from(parent.querySelectorAll("rh-input-error-message"));
     const visibleErrors = errorMessageList.filter(item => item.isVisible);
-    visibleErrors.forEach(item => item.style.display = "none");
-    visibleErrors[0].style.display = "block";
+    visibleErrors.length > 0 && this.applyVisibleErrorForFirstChild(visibleErrors);
+  }
+
+  applyVisibleErrorForFirstChild(errors: HTMLRhInputErrorMessageElement[]): void {
+    errors.forEach(item => item.style.display = "none");
+    errors[0].style.display = "block";
   }
 
   render() {
