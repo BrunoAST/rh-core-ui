@@ -25,6 +25,17 @@ describe("Input range slider component", () => {
     expect(inputRangeSlider().minGap).toBe(minGap);
   });
 
+  test("Should receive a label", async () => {
+    const label = faker.random.words();
+    const { shadowRoot } = await componentSetup(
+      <rh-input-range-slider label={label} />,
+      InputRangeSlider
+    );
+    expect(shadowRoot.querySelector("label").textContent).toBe(label);
+    expect(inputRange(shadowRoot)[0].title).toBe(label);
+    expect(inputRange(shadowRoot)[1].title).toBe(label);
+  });
+
   test("Should set min value", async () => {
     const min = faker.datatype.number({ min: 1, max: 100 });
     const { shadowRoot } = await componentSetup(
