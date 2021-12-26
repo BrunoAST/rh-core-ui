@@ -38,22 +38,20 @@ describe("Input range slider component", () => {
 
   test("Should set min value", async () => {
     const min = faker.datatype.number({ min: 1, max: 100 });
-    const { shadowRoot } = await componentSetup(
+    await componentSetup(
       <rh-input-range-slider min={min} />,
       InputRangeSlider
     );
     expect(inputRangeSlider().min).toBe(min);
-    expect(indicators(shadowRoot)[0].textContent).toBe(`${min}`);
   });
 
   test("Should set max value", async () => {
     const max = faker.datatype.number({ min: 1, max: 100 });
-    const { shadowRoot } = await componentSetup(
+    await componentSetup(
       <rh-input-range-slider max={max} />,
       InputRangeSlider
     );
     expect(inputRangeSlider().max).toBe(max);
-    expect(indicators(shadowRoot)[1].textContent).toBe(`${max}`);
   });
 
   test("Should set initialMinValueCursor", async () => {
