@@ -29,6 +29,13 @@ export namespace Components {
         "isRequired": boolean;
         "label": string;
     }
+    interface RhInputRangeSlider {
+        "initialMaxValueCursor": number;
+        "initialMinValueCursor": number;
+        "max": number;
+        "min": number;
+        "minGap": number;
+    }
     interface RhInputText {
         "ariaLabel": string;
         "isInvalid": boolean;
@@ -98,6 +105,12 @@ declare global {
         prototype: HTMLRhInputLabelElement;
         new (): HTMLRhInputLabelElement;
     };
+    interface HTMLRhInputRangeSliderElement extends Components.RhInputRangeSlider, HTMLStencilElement {
+    }
+    var HTMLRhInputRangeSliderElement: {
+        prototype: HTMLRhInputRangeSliderElement;
+        new (): HTMLRhInputRangeSliderElement;
+    };
     interface HTMLRhInputTextElement extends Components.RhInputText, HTMLStencilElement {
     }
     var HTMLRhInputTextElement: {
@@ -139,6 +152,7 @@ declare global {
         "rh-button": HTMLRhButtonElement;
         "rh-input-error-message": HTMLRhInputErrorMessageElement;
         "rh-input-label": HTMLRhInputLabelElement;
+        "rh-input-range-slider": HTMLRhInputRangeSliderElement;
         "rh-input-text": HTMLRhInputTextElement;
         "rh-select": HTMLRhSelectElement;
         "rh-side-bar": HTMLRhSideBarElement;
@@ -166,6 +180,15 @@ declare namespace LocalJSX {
         "isInvalid"?: boolean;
         "isRequired"?: boolean;
         "label"?: string;
+    }
+    interface RhInputRangeSlider {
+        "initialMaxValueCursor"?: number;
+        "initialMinValueCursor"?: number;
+        "max"?: number;
+        "min"?: number;
+        "minGap"?: number;
+        "onMaxValueUpdated"?: (event: CustomEvent<number>) => void;
+        "onMinValueUpdated"?: (event: CustomEvent<number>) => void;
     }
     interface RhInputText {
         "ariaLabel"?: string;
@@ -220,6 +243,7 @@ declare namespace LocalJSX {
         "rh-button": RhButton;
         "rh-input-error-message": RhInputErrorMessage;
         "rh-input-label": RhInputLabel;
+        "rh-input-range-slider": RhInputRangeSlider;
         "rh-input-text": RhInputText;
         "rh-select": RhSelect;
         "rh-side-bar": RhSideBar;
@@ -236,6 +260,7 @@ declare module "@stencil/core" {
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
             "rh-input-error-message": LocalJSX.RhInputErrorMessage & JSXBase.HTMLAttributes<HTMLRhInputErrorMessageElement>;
             "rh-input-label": LocalJSX.RhInputLabel & JSXBase.HTMLAttributes<HTMLRhInputLabelElement>;
+            "rh-input-range-slider": LocalJSX.RhInputRangeSlider & JSXBase.HTMLAttributes<HTMLRhInputRangeSliderElement>;
             "rh-input-text": LocalJSX.RhInputText & JSXBase.HTMLAttributes<HTMLRhInputTextElement>;
             "rh-select": LocalJSX.RhSelect & JSXBase.HTMLAttributes<HTMLRhSelectElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
