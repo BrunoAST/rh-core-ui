@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property                | Attribute                  | Description | Type     | Default     |
-| ----------------------- | -------------------------- | ----------- | -------- | ----------- |
-| `initialMaxValueCursor` | `initial-max-value-cursor` |             | `number` | `undefined` |
-| `initialMinValueCursor` | `initial-min-value-cursor` |             | `number` | `undefined` |
-| `label`                 | `label`                    |             | `string` | `undefined` |
-| `max`                   | `max`                      |             | `number` | `10`        |
-| `min`                   | `min`                      |             | `number` | `1`         |
-| `minGap`                | `min-gap`                  |             | `number` | `1`         |
+| Property                             | Attribute                  | Description | Type     | Default     |
+| ------------------------------------ | -------------------------- | ----------- | -------- | ----------- |
+| `initialMaxValueCursor` _(required)_ | `initial-max-value-cursor` |             | `number` | `undefined` |
+| `initialMinValueCursor` _(required)_ | `initial-min-value-cursor` |             | `number` | `undefined` |
+| `label` _(required)_                 | `label`                    |             | `string` | `undefined` |
+| `max`                                | `max`                      |             | `number` | `10`        |
+| `min`                                | `min`                      |             | `number` | `1`         |
+| `minGap`                             | `min-gap`                  |             | `number` | `1`         |
 
 
 ## Events

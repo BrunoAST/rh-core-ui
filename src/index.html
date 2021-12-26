@@ -28,22 +28,29 @@
     <div style="width: 80%;">
       <rh-input-range-slider
         label="Selecione o intervalo para nota ideal da competência"
-        initial-min-value-cursor="0"
-        initial-max-value-cursor="10"
+        initial-min-value-cursor="2"
+        initial-max-value-cursor="8"
       ></rh-input-range-slider>
+      <button onclick="logValues()">Log current value</button>
     </div>
   </body>
 
   <script>
     const el = document.querySelector("rh-input-range-slider");
+    let min;
+    let max;
 
     el.addEventListener("maxValueUpdated", (event) => {
-      console.log("MAX VALUE UPDATED: ", event.detail);
+      max = event.detail
     });
 
     el.addEventListener("minValueUpdated", (event) => {
-      console.log("MIN VALUE UPDATED: ", event.detail);
+      min = event.detail
     });
+
+    function logValues() {
+      console.log({ min, max });
+    }
   </script>
 
 </html>

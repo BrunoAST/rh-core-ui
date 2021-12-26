@@ -16,14 +16,16 @@ export class InputRangeSlider {
   @Prop() minGap = 1;
   @Prop() min = 1;
   @Prop() max = 10;
-  @Prop() initialMinValueCursor: number;
-  @Prop() initialMaxValueCursor: number;
-  @Prop() label: string;
+  @Prop() initialMinValueCursor!: number;
+  @Prop() initialMaxValueCursor!: number;
+  @Prop() label!: string;
 
   @Event() minValueUpdated: EventEmitter<number>;
   @Event() maxValueUpdated: EventEmitter<number>;
 
   componentDidRender(): void {
+    this.updateLeftSliderDisplayValue();
+    this.updateRightSliderDisplayValue();
     this.fillColor();
   }
 
@@ -39,8 +41,8 @@ export class InputRangeSlider {
     if (this.currentMaxValue - this.currentMinValue <= this.minGap) {
       this.leftSliderRef.value = `${this.currentMaxValue - this.minGap}`;
     }
-    this.minValueUpdated.emit(this.currentMinValue);
-    this.leftSliderDisplayValueRef.textContent = this.leftSliderRef.value;
+    this.minValueUpdated.emit(Number(this.leftSliderRef.value));
+    this.updateLeftSliderDisplayValue();
     this.fillColor();
   }
 
@@ -48,9 +50,17 @@ export class InputRangeSlider {
     if (this.currentMaxValue - this.currentMinValue <= this.minGap) {
       this.rightSliderRef.value = `${this.currentMinValue + this.minGap}`;
     }
-    this.maxValueUpdated.emit(this.currentMinValue);
-    this.rightSliderDisplayValueRef.textContent = this.rightSliderRef.value;
+    this.maxValueUpdated.emit(Number(this.rightSliderRef.value));
+    this.updateRightSliderDisplayValue();
     this.fillColor();
+  }
+
+  updateLeftSliderDisplayValue(): void {
+    this.leftSliderDisplayValueRef.textContent = this.leftSliderRef.value;
+  }
+
+  updateRightSliderDisplayValue(): void {
+    this.rightSliderDisplayValueRef.textContent = this.rightSliderRef.value;
   }
 
   fillColor(): void {

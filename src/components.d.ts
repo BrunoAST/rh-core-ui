@@ -183,9 +183,9 @@ declare namespace LocalJSX {
         "label"?: string;
     }
     interface RhInputRangeSlider {
-        "initialMaxValueCursor"?: number;
-        "initialMinValueCursor"?: number;
-        "label"?: string;
+        "initialMaxValueCursor": number;
+        "initialMinValueCursor": number;
+        "label": string;
         "max"?: number;
         "min"?: number;
         "minGap"?: number;
