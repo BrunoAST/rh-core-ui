@@ -3,6 +3,12 @@ import faker from "faker";
 import componentSetup from "../../../utils/component-setup/component-setup";
 import { InputRangeSlider } from "../input-range-slider";
 
+const label = faker.random.words();
+const min = 1;
+const max = 10;
+const initialMinValueCursor = faker.datatype.number({ min: 1, max: 10 });
+const initialMaxValueCursor = faker.datatype.number({ min: 1, max: 10 });
+
 const inputRangeSlider = (): HTMLRhInputRangeSliderElement => {
   return document.querySelector("rh-input-range-slider");
 }
@@ -17,85 +23,148 @@ const inputRange = (shadowRoot: ShadowRoot): HTMLInputElement[] => {
 
 describe("Input range slider component", () => {
   test("Should receive minGap", async () => {
-    const minGap = faker.datatype.number({ min: 1, max: 100 });
+    const expectedMinGap = faker.datatype.number({ min: 1, max: 100 });
     await componentSetup(
-      <rh-input-range-slider minGap={minGap} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        minGap={expectedMinGap}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
-    expect(inputRangeSlider().minGap).toBe(minGap);
+    expect(inputRangeSlider().minGap).toBe(expectedMinGap);
   });
 
   test("Should receive a label", async () => {
-    const label = faker.random.words();
+    const expectedLabel = faker.random.words();
     const { shadowRoot } = await componentSetup(
-      <rh-input-range-slider label={label} />,
+      <rh-input-range-slider
+        label={expectedLabel}
+        min={min}
+        max={max}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
-    expect(shadowRoot.querySelector("label").textContent).toBe(label);
-    expect(inputRange(shadowRoot)[0].title).toBe(label);
-    expect(inputRange(shadowRoot)[1].title).toBe(label);
+    expect(shadowRoot.querySelector("label").textContent).toBe(expectedLabel);
+    expect(inputRange(shadowRoot)[0].title).toBe(expectedLabel);
+    expect(inputRange(shadowRoot)[1].title).toBe(expectedLabel);
   });
 
   test("Should set min value", async () => {
-    const min = faker.datatype.number({ min: 1, max: 100 });
+    const expectedMin = faker.datatype.number({ min: 1, max: 100 });
     await componentSetup(
-      <rh-input-range-slider min={min} />,
+      <rh-input-range-slider
+        label={label}
+        min={expectedMin}
+        max={max}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
-    expect(inputRangeSlider().min).toBe(min);
+    expect(inputRangeSlider().min).toBe(expectedMin);
   });
 
   test("Should set max value", async () => {
-    const max = faker.datatype.number({ min: 1, max: 100 });
+    const expectedMax = faker.datatype.number({ min: 1, max: 100 });
     await componentSetup(
-      <rh-input-range-slider max={max} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={expectedMax}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
-    expect(inputRangeSlider().max).toBe(max);
+    expect(inputRangeSlider().max).toBe(expectedMax);
   });
 
   test("Should set initialMinValueCursor", async () => {
-    const value = faker.datatype.number({ min: 1, max: 100 });
+    const expectedValue = faker.datatype.number({ min: 1, max: 100 });
     const { shadowRoot } = await componentSetup(
-      <rh-input-range-slider initialMinValueCursor={value} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        initialMinValueCursor={expectedValue}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
-    expect(inputRange(shadowRoot)[0].value).toBe(`${value}`);
+    expect(inputRange(shadowRoot)[0].value).toBe(`${expectedValue}`);
+    expect(indicators(shadowRoot)[0].textContent).toBe(`${expectedValue}`);
   });
 
   test("Should set initialMaxValueCursor", async () => {
-    const value = faker.datatype.number({ min: 1, max: 100 });
+    const expectedValue = faker.datatype.number({ min: 1, max: 100 });
     const { shadowRoot } = await componentSetup(
-      <rh-input-range-slider initialMaxValueCursor={value} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={expectedValue}
+      />,
       InputRangeSlider
     );
-    expect(inputRange(shadowRoot)[1].value).toBe(`${value}`);
+    expect(inputRange(shadowRoot)[1].value).toBe(`${expectedValue}`);
+    expect(indicators(shadowRoot)[1].textContent).toBe(`${expectedValue}`);
   });
 
   test("Should emit minValueUpdated", async () => {
-    const onMinValueUpdated = jest.fn();
+    const expectedValue = 1;
+    let receivedValue;
     const { shadowRoot } = await componentSetup(
-      <rh-input-range-slider onMinValueUpdated={onMinValueUpdated} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        initialMinValueCursor={2}
+        initialMaxValueCursor={3}
+        onMinValueUpdated={event => receivedValue = event.detail}
+      />,
       InputRangeSlider
     );
+    inputRange(shadowRoot)[0].value = expectedValue.toString();
     inputRange(shadowRoot)[0].dispatchEvent(new Event("input"));
-    expect(onMinValueUpdated).toHaveBeenCalledTimes(1);
+    expect(receivedValue).toBe(expectedValue);
   });
 
   test("Should emit maxValueUpdated", async () => {
-    const onMaxValueUpdated = jest.fn();
+    const expectedValue = 5;
+    let receivedValue;
     const { shadowRoot } = await componentSetup(
-      <rh-input-range-slider onMaxValueUpdated={onMaxValueUpdated} />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        initialMinValueCursor={2}
+        initialMaxValueCursor={3}
+        onMaxValueUpdated={event => receivedValue = event.detail}
+      />,
       InputRangeSlider
     );
+    inputRange(shadowRoot)[1].value = expectedValue.toString();
     inputRange(shadowRoot)[1].dispatchEvent(new Event("input"));
-    expect(onMaxValueUpdated).toHaveBeenCalledTimes(1);
+    expect(receivedValue).toBe(expectedValue);
   });
 
   test("Should call fillColor when componentDidRender", async () => {
     const fillColorSpy = jest.spyOn(InputRangeSlider.prototype, "fillColor");
     await componentSetup(
-      <rh-input-range-slider />,
+      <rh-input-range-slider
+        label={label}
+        min={min}
+        max={max}
+        initialMinValueCursor={initialMinValueCursor}
+        initialMaxValueCursor={initialMaxValueCursor}
+      />,
       InputRangeSlider
     );
     expect(fillColorSpy).toHaveBeenCalledTimes(1);
@@ -104,6 +173,7 @@ describe("Input range slider component", () => {
   test("Should update left slider value when the difference between max value and min value is less or equal minGap (1)", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-input-range-slider
+        label={label}
         min={1}
         max={5}
         initialMinValueCursor={1}
@@ -121,6 +191,7 @@ describe("Input range slider component", () => {
   test("Should not update left slider value when the difference between max value and min value is less or equal minGap (1)", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-input-range-slider
+        label={label}
         min={1}
         max={5}
         initialMinValueCursor={2}
@@ -135,6 +206,7 @@ describe("Input range slider component", () => {
   test("Should update right slider value when the difference between max value and min value is less or equal minGap (1)", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-input-range-slider
+        label={label}
         min={1}
         max={5}
         initialMinValueCursor={1}
@@ -152,6 +224,7 @@ describe("Input range slider component", () => {
   test("Should not update right slider value when the difference between max value and min value is less or equal minGap (1)", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-input-range-slider
+        label={label}
         min={1}
         max={5}
         initialMinValueCursor={2}
