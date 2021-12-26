@@ -18,6 +18,7 @@ export class InputRangeSlider {
   @Prop() max = 10;
   @Prop() initialMinValueCursor: number;
   @Prop() initialMaxValueCursor: number;
+  @Prop() label: string;
 
   @Event() minValueUpdated: EventEmitter<number>;
   @Event() maxValueUpdated: EventEmitter<number>;
@@ -61,6 +62,7 @@ export class InputRangeSlider {
 
   render() {
     return [
+      <label>{this.label}</label>,
       <div class="wrapper">
         <span class="indicator" ref={element => this.leftSliderDisplayValueRef = element}>
           {this.min}
@@ -71,6 +73,7 @@ export class InputRangeSlider {
             ref={element => this.sliderTrackRef = element}
           />
           <input
+            title={this.label}
             type="range"
             min={this.min}
             max={this.max}
@@ -79,6 +82,7 @@ export class InputRangeSlider {
             ref={element => this.leftSliderRef = element}
           />
           <input
+            title={this.label}
             type="range"
             min={this.min}
             max={this.max}

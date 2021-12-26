@@ -32,6 +32,7 @@ export namespace Components {
     interface RhInputRangeSlider {
         "initialMaxValueCursor": number;
         "initialMinValueCursor": number;
+        "label": string;
         "max": number;
         "min": number;
         "minGap": number;
@@ -184,6 +185,7 @@ declare namespace LocalJSX {
     interface RhInputRangeSlider {
         "initialMaxValueCursor"?: number;
         "initialMinValueCursor"?: number;
+        "label"?: string;
         "max"?: number;
         "min"?: number;
         "minGap"?: number;

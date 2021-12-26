@@ -11,6 +11,7 @@
 | ----------------------- | -------------------------- | ----------- | -------- | ----------- |
 | `initialMaxValueCursor` | `initial-max-value-cursor` |             | `number` | `undefined` |
 | `initialMinValueCursor` | `initial-min-value-cursor` |             | `number` | `undefined` |
+| `label`                 | `label`                    |             | `string` | `undefined` |
 | `max`                   | `max`                      |             | `number` | `10`        |
 | `min`                   | `min`                      |             | `number` | `1`         |
 | `minGap`                | `min-gap`                  |             | `number` | `1`         |

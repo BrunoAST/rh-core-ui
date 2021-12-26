@@ -12,10 +12,15 @@
   border-radius: 50%;
 }
 
+label {
+  color: $gray-dark;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 22px;
 
   .indicator {
     padding: 8px;
