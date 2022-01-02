@@ -1,3 +1,4 @@
+import { Meta } from "@storybook/html";
 import "ionicons";
 
 export default {
@@ -16,7 +17,8 @@ export default {
       table: {
         defaultValue: {
           summary: "basic"
-        }
+        },
+        category: "Propriedades"
       }
     },
     ionIconName: {
@@ -25,7 +27,18 @@ export default {
       table: {
         defaultValue: {
           summary: "undefined"
-        }
+        },
+        category: "Propriedades"
+      }
+    },
+    ionIconColor: {
+      control: { type: "text" },
+      description: "Define a cor do ícone",
+      table: {
+        defaultValue: {
+          summary: "undefined"
+        },
+        category: "Propriedades"
       }
     },
     disabled: {
@@ -34,7 +47,8 @@ export default {
       table: {
         defaultValue: {
           summary: "false"
-        }
+        },
+        category: "Propriedades"
       }
     },
     ariaLabel: {
@@ -43,7 +57,8 @@ export default {
       table: {
         defaultValue: {
           summary: "undefined"
-        }
+        },
+        category: "Propriedades"
       }
     },
     slot: {
@@ -55,20 +70,23 @@ export default {
       table: {
         defaultValue: {
           summary: "CustomEvent<any>"
-        }
+        },
+        category: "Eventos"
       }
     }
   },
   args: {
     disabled: false,
-    ionIconName: ""
+    ionIconName: "",
+    ionIconColor: ""
   }
-}
+} as Meta;
 
-const Template = ({ variant, ionIconName, ariaLabel, disabled, slot }) => {
+const Template = ({ variant, ionIconName, ionIconColor, ariaLabel, disabled, slot }) => {
   const button = document.createElement("rh-button");
   button.variant = variant;
   button.ionIconName = ionIconName;
+  button.ionIconColor = ionIconColor;
   button.ariaLabel = ariaLabel;
   button.disabled = disabled;
   button.innerHTML = slot;

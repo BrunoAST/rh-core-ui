@@ -18,6 +18,7 @@ export namespace Components {
     interface RhButton {
         "ariaLabel": string;
         "disabled": boolean;
+        "ionIconColor": string;
         "ionIconName": string;
         "variant": ButtonVariant;
     }
@@ -170,6 +171,7 @@ declare namespace LocalJSX {
     interface RhButton {
         "ariaLabel"?: string;
         "disabled"?: boolean;
+        "ionIconColor"?: string;
         "ionIconName"?: string;
         "onClicked"?: (event: CustomEvent<any>) => void;
         "variant"?: ButtonVariant;
