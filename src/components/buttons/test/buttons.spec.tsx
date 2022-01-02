@@ -1,6 +1,7 @@
 import { h } from "@stencil/core";
 import componentSetup from "../../../utils/component-setup/component-setup";
 import { Buttons } from "../buttons";
+import faker from "faker";
 
 describe("Buttons component", () => {
   test("Should receive a value via slot", async () => {
@@ -105,5 +106,27 @@ describe("Buttons component", () => {
     );
     shadowRoot.querySelector("button").click();
     expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  test("Should not receive a button border color when ionIconName is not set", async () => {
+    const color = faker.internet.color();
+    const { shadowRoot } = await componentSetup(
+      <rh-button ionIconColor={color} />,
+      Buttons
+    );
+    const button = shadowRoot.querySelector("button");
+    expect(button.style.borderColor).toBe("");
+  });
+
+  test("Should receive an ionIconColor when it have an ionIconName", async () => {
+    const color = faker.internet.color();
+    const { shadowRoot } = await componentSetup(
+      <rh-button ionIconName="save" ionIconColor={color} />,
+      Buttons
+    );
+    const button = shadowRoot.querySelector("button");
+    const ionIcon = shadowRoot.querySelector("ion-icon");
+    expect(button.style.borderColor).toBe(color);
+    expect(ionIcon.style.color).toBe(color);
   });
 });
