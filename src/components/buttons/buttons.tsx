@@ -1,6 +1,6 @@
 import { Component, h, Prop, Event, EventEmitter } from "@stencil/core";
 import { ButtonVariant } from "./types/button-variant";
-import 'ionicons';
+import "ionicons";
 
 @Component({
   tag: "rh-button",
@@ -8,10 +8,11 @@ import 'ionicons';
   shadow: true
 })
 export class Buttons {
-  @Prop({ attribute: "disabled", mutable: true, reflect: true }) disabled = false;
-  @Prop({ attribute: "ionIconName" }) ionIconName: string;
-  @Prop({ attribute: "variant" }) variant: ButtonVariant = "basic";
-  @Prop({ attribute: "ariaLabel" }) ariaLabel: string;
+  @Prop({ mutable: true, reflect: true }) disabled = false;
+  @Prop() ionIconName: string;
+  @Prop() ionIconColor: string;
+  @Prop() variant: ButtonVariant = "basic";
+  @Prop() ariaLabel: string;
 
   @Event() clicked: EventEmitter;
 
@@ -19,12 +20,13 @@ export class Buttons {
     return [
       <button
         class={`ripple ${this.variant}`}
+        style={{ borderColor: this.ionIconName && this.ionIconColor }}
         aria-disabled={this.disabled}
         disabled={this.disabled}
         onClick={() => this.clicked.emit()}
         aria-label={this.ariaLabel}
       >
-        {this.ionIconName && <ion-icon name={this.ionIconName}></ion-icon>}
+        {this.ionIconName && <ion-icon style={{ color: this.ionIconColor }} name={this.ionIconName} />}
         {this.variant !== "icon" && <slot></slot>}
       </button>
     ];

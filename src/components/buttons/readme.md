@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                                                         | Default     |
-| ------------- | ------------- | ----------- | ------------------------------------------------------------ | ----------- |
-| `ariaLabel`   | `arialabel`   |             | `string`                                                     | `undefined` |
-| `disabled`    | `disabled`    |             | `boolean`                                                    | `false`     |
-| `ionIconName` | `ioniconname` |             | `string`                                                     | `undefined` |
-| `variant`     | `variant`     |             | `"basic" \| "filled" \| "icon" \| "stroked" \| "underlined"` | `"basic"`   |
+| Property       | Attribute        | Description | Type                                                         | Default     |
+| -------------- | ---------------- | ----------- | ------------------------------------------------------------ | ----------- |
+| `ariaLabel`    | `aria-label`     |             | `string`                                                     | `undefined` |
+| `disabled`     | `disabled`       |             | `boolean`                                                    | `false`     |
+| `ionIconColor` | `ion-icon-color` |             | `string`                                                     | `undefined` |
+| `ionIconName`  | `ion-icon-name`  |             | `string`                                                     | `undefined` |
+| `variant`      | `variant`        |             | `"basic" \| "filled" \| "icon" \| "stroked" \| "underlined"` | `"basic"`   |
 
 
 ## Events
