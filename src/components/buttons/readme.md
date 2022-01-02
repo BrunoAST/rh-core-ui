@@ -25,6 +25,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [rh-action-list](../action-list)
+
 ### Depends on
 
 - ion-icon
@@ -33,6 +37,7 @@
 ```mermaid
 graph TD;
   rh-button --> ion-icon
+  rh-action-list --> rh-button
   style rh-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

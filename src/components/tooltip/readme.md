@@ -18,11 +18,13 @@
 
 ### Used by
 
+ - [rh-action-list](../action-list)
  - [rh-side-bar-items](../side-bar/components/side-bar-items)
 
 ### Graph
 ```mermaid
 graph TD;
+  rh-action-list --> rh-tooltip
   rh-side-bar-items --> rh-tooltip
   style rh-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```

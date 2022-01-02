@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ActionListFieldConfig } from "./components/action-list/types/action-list-field-config";
 import { BreadcrumbsPaths } from "./components/breadcrumbs/types/breadcrumbs-paths";
 import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { InputTextType } from "./components/input-text/types/input-text-type";
@@ -12,6 +13,10 @@ import { SelectOptions } from "./components/select/types/select-options";
 import { MenuItems } from "./shared/types/menu-items";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
+    interface RhActionList {
+        "fieldConfigs": ActionListFieldConfig[];
+        "items": any[];
+    }
     interface RhBreadcrumbs {
         "paths": BreadcrumbsPaths[];
     }
@@ -83,6 +88,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRhActionListElement extends Components.RhActionList, HTMLStencilElement {
+    }
+    var HTMLRhActionListElement: {
+        prototype: HTMLRhActionListElement;
+        new (): HTMLRhActionListElement;
+    };
     interface HTMLRhBreadcrumbsElement extends Components.RhBreadcrumbs, HTMLStencilElement {
     }
     var HTMLRhBreadcrumbsElement: {
@@ -150,6 +161,7 @@ declare global {
         new (): HTMLRhTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "rh-action-list": HTMLRhActionListElement;
         "rh-breadcrumbs": HTMLRhBreadcrumbsElement;
         "rh-button": HTMLRhButtonElement;
         "rh-input-error-message": HTMLRhInputErrorMessageElement;
@@ -164,6 +176,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface RhActionList {
+        "fieldConfigs"?: ActionListFieldConfig[];
+        "items"?: any[];
+        "onDeleteClicked"?: (event: CustomEvent<any>) => void;
+        "onEditClicked"?: (event: CustomEvent<any>) => void;
+    }
     interface RhBreadcrumbs {
         "onPathClicked"?: (event: CustomEvent<string>) => void;
         "paths"?: BreadcrumbsPaths[];
@@ -243,6 +261,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "rh-action-list": RhActionList;
         "rh-breadcrumbs": RhBreadcrumbs;
         "rh-button": RhButton;
         "rh-input-error-message": RhInputErrorMessage;
@@ -260,6 +279,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rh-action-list": LocalJSX.RhActionList & JSXBase.HTMLAttributes<HTMLRhActionListElement>;
             "rh-breadcrumbs": LocalJSX.RhBreadcrumbs & JSXBase.HTMLAttributes<HTMLRhBreadcrumbsElement>;
             "rh-button": LocalJSX.RhButton & JSXBase.HTMLAttributes<HTMLRhButtonElement>;
             "rh-input-error-message": LocalJSX.RhInputErrorMessage & JSXBase.HTMLAttributes<HTMLRhInputErrorMessageElement>;

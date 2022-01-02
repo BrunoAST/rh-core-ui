@@ -1,0 +1,44 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/media-breakpoint";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $primary-lighter;
+
+    @include media-breakpoint("small") {
+      flex-direction: column;
+    }
+
+    .detail {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      gap: 1rem;
+
+      @include media-breakpoint("small") {
+        font-size: 0.8rem;
+        word-break: break-word;
+        grid-auto-flow: row;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
