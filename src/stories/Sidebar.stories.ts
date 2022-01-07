@@ -1,6 +1,7 @@
 import { Meta } from '@storybook/html';
 import { MenuItems } from '../shared/types/menu-items';
 import 'ionicons';
+import { backgroundBase } from './shared/background-base';
 
 export default {
   title: "Componentes/Sidebar",
@@ -11,16 +12,21 @@ export default {
     componentSubtitle: "Em dispositivos móveis, um backdrop será exibido quando o menu estiver expandido. " +
       "Quando o menu estiver colapsado e um 'hover' for realizado em algum item da lista, um tooltip será exibido. " +
       "O conteúdo filho da sidebar 'slot' não será empurrado para a direita também",
-    docs: { inlineStories: false, iframeHeight: 500 },
+    // docs: { inlineStories: false, iframeHeight: 500 },
+    backgrounds: backgroundBase,
   },
   argTypes: {
     menuItems: {
       control: { type: "object" },
       description: "Lista que renderiza os itens do menu",
+      type: {
+        required: true
+      },
       table: {
         defaultValue: {
           summary: "MenuItems[]"
-        }
+        },
+        category: "Propriedades"
       }
     },
     currentActiveIndex: {
@@ -29,7 +35,8 @@ export default {
       table: {
         defaultValue: {
           summary: "-"
-        }
+        },
+        category: "Propriedades"
       }
     },
     isCollapsed: {
@@ -37,7 +44,8 @@ export default {
       table: {
         defaultValue: {
           summary: "CustomEvent<boolean>"
-        }
+        },
+        category: "Eventos"
       }
     },
     itemClicked: {
@@ -45,7 +53,8 @@ export default {
       table: {
         defaultValue: {
           summary: "CustomEvent<string>"
-        }
+        },
+        category: "Eventos"
       }
     },
     slot: {
