@@ -12,7 +12,7 @@ export default {
     componentSubtitle: "Em dispositivos móveis, um backdrop será exibido quando o menu estiver expandido. " +
       "Quando o menu estiver colapsado e um 'hover' for realizado em algum item da lista, um tooltip será exibido. " +
       "O conteúdo filho da sidebar 'slot' não será empurrado para a direita também",
-    // docs: { inlineStories: false, iframeHeight: 500 },
+    docs: { inlineStories: false, iframeHeight: 500 },
     backgrounds: backgroundBase,
   },
   argTypes: {
