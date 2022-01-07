@@ -233,7 +233,7 @@ declare namespace LocalJSX {
     }
     interface RhSideBar {
         "currentActiveIndex"?: number;
-        "menuItems"?: MenuItems[];
+        "menuItems": MenuItems[];
         "onIsCollapsed"?: (event: CustomEvent<boolean>) => void;
     }
     interface RhSideBarItems {

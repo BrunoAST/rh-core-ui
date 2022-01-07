@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property             | Attribute              | Description | Type          | Default     |
-| -------------------- | ---------------------- | ----------- | ------------- | ----------- |
-| `currentActiveIndex` | `current-active-index` |             | `number`      | `undefined` |
-| `menuItems`          | --                     |             | `MenuItems[]` | `[]`        |
+| Property                 | Attribute              | Description | Type          | Default     |
+| ------------------------ | ---------------------- | ----------- | ------------- | ----------- |
+| `currentActiveIndex`     | `current-active-index` |             | `number`      | `undefined` |
+| `menuItems` _(required)_ | --                     |             | `MenuItems[]` | `undefined` |
 
 
 ## Events

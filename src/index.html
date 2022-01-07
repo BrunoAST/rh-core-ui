@@ -22,35 +22,25 @@
     ></script>
   </head>
 
-  <body
-    style="margin: 0; padding: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;"
-  >
-    <div style="width: 80%;">
-      <rh-input-range-slider
-        label="Selecione o intervalo para nota ideal da competência"
-        initial-min-value-cursor="2"
-        initial-max-value-cursor="8"
-      ></rh-input-range-slider>
-      <button onclick="logValues()">Log current value</button>
-    </div>
+  <body style="margin: 0; padding: 0;">
+    <rh-side-bar>
+      <div>
+        I'm a slot content
+      </div>
+    </rh-side-bar>
   </body>
 
   <script>
-    const el = document.querySelector("rh-input-range-slider");
-    let min;
-    let max;
+    const el = document.querySelector("rh-side-bar");
 
-    el.addEventListener("maxValueUpdated", (event) => {
-      max = event.detail
-    });
-
-    el.addEventListener("minValueUpdated", (event) => {
-      min = event.detail
-    });
-
-    function logValues() {
-      console.log({ min, max });
-    }
+    el.menuItems = [
+      { name: "Início", url: "http://google.com", ionIconName: "home" },
+      { name: "Fatores", url: "http://facebook.com", ionIconName: "options" },
+      { name: "Perguntas", url: "http://amazon.com", ionIconName: "chatbox-ellipses" },
+      { name: "Usuários", url: "http://youtube.com", ionIconName: "people" },
+      { name: "Relatórios", url: "http://twitter.com", ionIconName: "clipboard" },
+      { name: "Resultados", url: "http://hbo.com", ionIconName: "bar-chart" }
+    ];
   </script>
 
 </html>

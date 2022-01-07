@@ -1,12 +1,13 @@
-import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Listen, Prop } from "@stencil/core";
 import 'ionicons';
+
+import { dispatchWindowEvent } from "../../shared/helpers/window-event";
 import { MenuItems } from "../../shared/types/menu-items";
 
 @Component({
   tag: "rh-side-bar",
   styleUrl: "./side-bar.scss",
-  shadow: true,
-  assetsDirs: ["assets"]
+  shadow: true
 })
 export class SideBar {
   containerRef: HTMLElement;
@@ -15,8 +16,27 @@ export class SideBar {
 
   @Event() isCollapsed: EventEmitter<boolean>;
 
-  @Prop({ attribute: "menu-items", mutable: true, reflect: true }) menuItems: MenuItems[] = [];
+  @Prop({ mutable: true, reflect: true }) menuItems!: MenuItems[];
   @Prop({ mutable: true, reflect: true }) currentActiveIndex: number;
+
+  @Listen("resize", { target: "window" })
+  onWindowResize(event: Event): void {
+    const width = (event.target as Window).innerWidth;
+    this.backdropRef.classList.remove("backdrop__active");
+    if (width < 960) {
+      this.containerRef.classList.add("container__collapsed");
+      this.mainContentRef.classList.add("main-content__collapsed");
+      this.isCollapsed.emit(true);
+    } else {
+      this.containerRef.classList.remove("container__collapsed");
+      this.mainContentRef.classList.remove("main-content__collapsed");
+      this.isCollapsed.emit(false);
+    }
+  }
+
+  componentDidRender(): void {
+    dispatchWindowEvent("resize");
+  }
 
   toggle(): void {
     this.containerRef.classList.toggle("container__collapsed");
