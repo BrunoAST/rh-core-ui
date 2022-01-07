@@ -2,6 +2,7 @@
 @import "../../theme/partials/font";
 @import "../../theme/reset.scss";
 @import "../../theme/font-family.scss";
+@import "../../theme/mixin/media-breakpoint";
 
 @mixin transition($transition-property: all) {
   transition: $transition-property 300ms ease-out;
@@ -24,8 +25,6 @@ $container-width-collapsed: 90px;
   overflow-x: hidden;
   z-index: 100;
 
-  border: 1px solid;
-
   &__collapsed {
     width: $container-width-collapsed;
     align-items: center;
@@ -44,7 +43,7 @@ $container-width-collapsed: 90px;
 .main-content {
   margin-left: calc(#{$container-width-collapsed} + 16px);
 
-  @media (min-width: 960px) {
+  @include media-breakpoint("medium") {
     @include transition();
     margin-left: calc(#{$container-width-expanded} + 16px);
 
@@ -87,7 +86,7 @@ $container-width-collapsed: 90px;
   pointer-events: none;
 
   &__active {
-    @media (max-width: 960px) {
+    @include media-breakpoint("medium") {
       opacity: 1;
       pointer-events: all;
     }
