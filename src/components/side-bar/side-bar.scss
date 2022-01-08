@@ -43,7 +43,7 @@ $container-width-collapsed: 90px;
 .main-content {
   margin-left: calc(#{$container-width-collapsed} + 16px);
 
-  @include media-breakpoint("medium") {
+  @include media-breakpoint("minimum-medium") {
     @include transition();
     margin-left: calc(#{$container-width-expanded} + 16px);
 
