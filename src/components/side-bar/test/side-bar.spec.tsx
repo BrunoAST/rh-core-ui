@@ -56,7 +56,7 @@ describe("SideBar component", () => {
       <rh-side-bar menuItems={menuItems} onIsCollapsed={(event) => isCollapsed = event.detail} />,
       SideBar
     );
-    window.innerWidth = 500;
+    (window as any).innerWidth = 500;
     dispatchWindowEvent("resize");
     expect(shadowRoot.querySelector("main").classList.contains("main-content__collapsed")).toBeTruthy();
     expect(shadowRoot.querySelector(".container").classList.contains("container__collapsed")).toBeTruthy();
@@ -70,10 +70,10 @@ describe("SideBar component", () => {
       <rh-side-bar menuItems={menuItems} onIsCollapsed={(event) => isCollapsed = event.detail} />,
       SideBar
     );
-    window.innerWidth = 500;
+    (window as any).innerWidth = 500;
     dispatchWindowEvent("resize");
     expect(shadowRoot.querySelector("main").classList.contains("main-content__collapsed")).toBeTruthy();
-    window.innerWidth = 1080;
+    (window as any).innerWidth = 1080;
     dispatchWindowEvent("resize");
     expect(shadowRoot.querySelector("main").classList.contains("main-content__collapsed")).toBeFalsy();
     expect(shadowRoot.querySelector(".container").classList.contains("container__collapsed")).toBeFalsy();
