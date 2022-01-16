@@ -22,25 +22,17 @@
     ></script>
   </head>
 
-  <body style="margin: 0; padding: 0;">
-    <rh-side-bar>
-      <div>
-        I'm a slot content
-      </div>
-    </rh-side-bar>
+  <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <rh-pagination></rh-pagination>
   </body>
 
   <script>
-    const el = document.querySelector("rh-side-bar");
-
-    el.menuItems = [
-      { name: "Início", url: "http://google.com", ionIconName: "home" },
-      { name: "Fatores", url: "http://facebook.com", ionIconName: "options" },
-      { name: "Perguntas", url: "http://amazon.com", ionIconName: "chatbox-ellipses" },
-      { name: "Usuários", url: "http://youtube.com", ionIconName: "people" },
-      { name: "Relatórios", url: "http://twitter.com", ionIconName: "clipboard" },
-      { name: "Resultados", url: "http://hbo.com", ionIconName: "bar-chart" }
-    ];
+    const el = document.querySelector("rh-pagination");
+    el.total = 5;
+    el.initialActivePage = 1;
+    el.addEventListener("page", (event) => {
+      console.log("PAGE EMITTED: ", event.detail);
+    });
   </script>
 
 </html>

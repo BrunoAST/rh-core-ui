@@ -55,6 +55,11 @@ export namespace Components {
         "type": InputTextType;
         "value": string;
     }
+    interface RhPagination {
+        "initialActivePage": number;
+        "maxVisiblePages": number;
+        "total": number;
+    }
     interface RhSelect {
         "label": string;
         "options": SelectOptions[];
@@ -130,6 +135,12 @@ declare global {
         prototype: HTMLRhInputTextElement;
         new (): HTMLRhInputTextElement;
     };
+    interface HTMLRhPaginationElement extends Components.RhPagination, HTMLStencilElement {
+    }
+    var HTMLRhPaginationElement: {
+        prototype: HTMLRhPaginationElement;
+        new (): HTMLRhPaginationElement;
+    };
     interface HTMLRhSelectElement extends Components.RhSelect, HTMLStencilElement {
     }
     var HTMLRhSelectElement: {
@@ -168,6 +179,7 @@ declare global {
         "rh-input-label": HTMLRhInputLabelElement;
         "rh-input-range-slider": HTMLRhInputRangeSliderElement;
         "rh-input-text": HTMLRhInputTextElement;
+        "rh-pagination": HTMLRhPaginationElement;
         "rh-select": HTMLRhSelectElement;
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
@@ -225,6 +237,12 @@ declare namespace LocalJSX {
         "type"?: InputTextType;
         "value"?: string;
     }
+    interface RhPagination {
+        "initialActivePage"?: number;
+        "maxVisiblePages"?: number;
+        "onPageClicked"?: (event: CustomEvent<number>) => void;
+        "total"?: number;
+    }
     interface RhSelect {
         "label"?: string;
         "onCurrentSelectedValue"?: (event: CustomEvent<string>) => void;
@@ -268,6 +286,7 @@ declare namespace LocalJSX {
         "rh-input-label": RhInputLabel;
         "rh-input-range-slider": RhInputRangeSlider;
         "rh-input-text": RhInputText;
+        "rh-pagination": RhPagination;
         "rh-select": RhSelect;
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
@@ -286,6 +305,7 @@ declare module "@stencil/core" {
             "rh-input-label": LocalJSX.RhInputLabel & JSXBase.HTMLAttributes<HTMLRhInputLabelElement>;
             "rh-input-range-slider": LocalJSX.RhInputRangeSlider & JSXBase.HTMLAttributes<HTMLRhInputRangeSliderElement>;
             "rh-input-text": LocalJSX.RhInputText & JSXBase.HTMLAttributes<HTMLRhInputTextElement>;
+            "rh-pagination": LocalJSX.RhPagination & JSXBase.HTMLAttributes<HTMLRhPaginationElement>;
             "rh-select": LocalJSX.RhSelect & JSXBase.HTMLAttributes<HTMLRhSelectElement>;
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;

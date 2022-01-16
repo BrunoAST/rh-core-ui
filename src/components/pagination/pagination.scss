@@ -1,0 +1,72 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/media-breakpoint";
+
+@mixin active() {
+  background-color: $tertiary-lighter;
+  border-color: $tertiary-dark;
+  color: $font-primary;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .pagination-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: $gray-accent;
+    cursor: pointer;
+    font-weight: bold;
+    pointer-events: all;
+
+    &:not(&__disabled):hover {
+      color: $tertiary;
+    }
+
+    &__previous {
+      transform: rotate(-180deg);
+    }
+
+    &__invisible {
+      display: none;
+      pointer-events: none;
+    }
+
+    &__disabled {
+      cursor: not-allowed;
+      color: $gray-lighter;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__item {
+      cursor: pointer;
+      color: $gray-accent;
+      border: 1px solid $gray-accent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+
+      &:hover {
+        @include active;
+      }
+    }
+
+    .active {
+      @include active;
+    }
+  }
+}
