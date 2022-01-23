@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event                  | Description | Type                  |
-| ---------------------- | ----------- | --------------------- |
-| `currentSelectedValue` |             | `CustomEvent<string>` |
+| Event           | Description | Type                  |
+| --------------- | ----------- | --------------------- |
+| `valueSelected` |             | `CustomEvent<string>` |
 
 
 ## Dependencies

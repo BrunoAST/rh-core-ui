@@ -245,7 +245,7 @@ declare namespace LocalJSX {
     }
     interface RhSelect {
         "label"?: string;
-        "onCurrentSelectedValue"?: (event: CustomEvent<string>) => void;
+        "onValueSelected"?: (event: CustomEvent<string>) => void;
         "options"?: SelectOptions[];
         "placeholder"?: string;
     }

@@ -15,7 +15,7 @@ export class Select {
   @Prop() placeholder: string = "";
   @Prop() options: SelectOptions[] = [];
 
-  @Event() currentSelectedValue: EventEmitter<string>;
+  @Event() valueSelected: EventEmitter<string>;
 
   @State() selectedValue = "";
   @State() selectedIndex = -1;
@@ -26,7 +26,7 @@ export class Select {
 
   @Watch("selectedValue")
   emitOnSelectedValueChange(): void {
-    this.currentSelectedValue.emit(this.selectedValue);
+    this.valueSelected.emit(this.selectedValue);
   }
 
   @Listen("click", { target: "body" })
