@@ -16,14 +16,6 @@ const mockScrollIntoViewOptionsList = (shadowRoot: ShadowRoot) => {
 }
 
 describe("Select component", () => {
-  test("Should render the label", async () => {
-    const { shadowRoot } = await componentSetup(
-      <rh-select label={label} />,
-      Select
-    );
-    expect(shadowRoot.querySelector(".label").textContent).toBe(label);
-  });
-
   test("Should render placeholder", async () => {
     const placeholder = faker.random.word();
     const { shadowRoot } = await componentSetup(
@@ -44,7 +36,7 @@ describe("Select component", () => {
     });
   });
 
-  test("Should update selected value when an options is clicked", async () => {
+  test("Should update selected value when an option is clicked", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
       Select
@@ -54,7 +46,27 @@ describe("Select component", () => {
     expect(shadowRoot.querySelector(".selected").textContent).toBe(selectOptions[0].title);
   });
 
-  test("Should not update selected value when value/title are empty", async () => {
+  test("Should receive a value via prop", async () => {
+    const options = [{ value: "Item 1", title: "Item 1" }];
+    const value = "Item 1";
+    const { shadowRoot } = await componentSetup(
+      <rh-select value={value} options={options} />,
+      Select
+    );
+    expect(shadowRoot.querySelector(".selected").textContent).toBe(value);
+  });
+
+  test("Should not update the selected value when the inserted prop value is not found", async () => {
+    const options = [{ value: "Item 1", title: "Item 1" }];
+    const value = "Value not found";
+    const { shadowRoot } = await componentSetup(
+      <rh-select value={value} options={options} />,
+      Select
+    );
+    expect(shadowRoot.querySelector(".selected").textContent).toBe("");
+  });
+
+  test("Should not update selected value when value or title is empty", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={[{ value: "", title: "Empty value" }]} />,
       Select
@@ -87,16 +99,16 @@ describe("Select component", () => {
   });
 
   test("Should emit the selected value", async () => {
-    let selectedValue;
+    let valueSelected;
     const { shadowRoot } = await componentSetup(
-      <rh-select label={label} options={selectOptions} onValueSelected={(event) => selectedValue = event.detail} />,
+      <rh-select label={label} options={selectOptions} onValueSelected={(event) => valueSelected = event.detail} />,
       Select
     );
     (shadowRoot.querySelector(".options-container").children[0] as HTMLLIElement).click();
-    expect(selectedValue).toBe(selectOptions[0].value);
+    expect(valueSelected).toBe(selectOptions[0].value);
   });
 
-  test("Should navigate to next option in list when press in ArrowDown", async () => {
+  test("Should navigate to next option in the list when ArrowDown is pressed", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
       Select
@@ -109,7 +121,7 @@ describe("Select component", () => {
     expect(optionsElementList(shadowRoot)[notExpectedOptionsHoveredIndex].classList.contains("is-hovered")).toBeFalsy();
   });
 
-  test("Should navigate to previous option in list when press in ArrowUp", async () => {
+  test("Should navigate to previous option in the list when ArrowUp is pressed", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
       Select
@@ -148,7 +160,7 @@ describe("Select component", () => {
     expect(optionsElementList(shadowRoot)[notExpectedOptionsHoveredIndex].classList.contains("is-hovered")).toBeFalsy();
   });
 
-  test("Should select an option when press Enter", async () => {
+  test("Should select an option when Enter is pressed", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
       Select
@@ -160,7 +172,7 @@ describe("Select component", () => {
     expect(shadowRoot.querySelector(".selected").textContent).toBe(expectedOptionToBeSelected.title);
   });
 
-  test("Should close options when press Escape", async () => {
+  test("Should close options when Escape is pressed", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
       Select
