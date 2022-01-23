@@ -19,12 +19,14 @@
 ### Used by
 
  - [rh-input-text](../../../components/input-text)
+ - [rh-select](../../../components/select)
  - [rh-text-area](../../../components/text-area)
 
 ### Graph
 ```mermaid
 graph TD;
   rh-input-text --> rh-input-label
+  rh-select --> rh-input-label
   rh-text-area --> rh-input-label
   style rh-input-label fill:#f9f,stroke:#333,stroke-width:4px
 ```

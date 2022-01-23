@@ -103,7 +103,7 @@ export class Select {
   render() {
     return [
       <div class="select-container">
-        <span class="label">{this.label}</span>
+        <rh-input-label label={this.label} />
         <div role="radiogroup" class="select-box">
           <ul class="options-container" ref={element => this.optionsContainerRef = element}>
             {

@@ -1,5 +1,4 @@
 @import "../../theme/partials/colors";
-@import "../../theme/partials/font";
 @import "../../theme/reset";
 @import "../../theme/font-family";
 @import "../../theme/mixin/focus-mixin";
@@ -9,18 +8,16 @@
   flex-direction: column;
 }
 
-.label {
-  color: $primary-accent;
-  font-weight: normal;
-  margin-bottom: 8px;
-}
-
 .select-box {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  min-width: 70px;
+  margin-top: 0.5rem;
   width: 100%;
+  background-color: $white;
+
+  @include focus-outline;
 
   .options-container {
     z-index: 999;
@@ -30,7 +27,6 @@
     background-color: $white;
     color: $gray-dark;
     font-weight: normal;
-    font-size: $default;
     max-height: 0;
     opacity: 0;
     width: 100%;
@@ -56,7 +52,7 @@
 
   .selected,
   .option {
-    padding: 10px 16px;
+    padding: 8px 12px;
     cursor: pointer;
   }
 
@@ -64,6 +60,12 @@
     &.is-hovered,
     &:hover {
       background-color: rgba($primary-lighter, 0.5);
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $primary-accent;
+      color: $white;
     }
 
     &:not(:first-child) {
@@ -75,18 +77,15 @@
     }
   }
 
-  label {
-    cursor: pointer;
-  }
-
   .selected {
     order: 0;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     background-color: $white;
-    border: 1px solid $primary-accent;
+    border: 1px solid $gray-accent;
     border-radius: 8px;
     @include focus-outline;
 
