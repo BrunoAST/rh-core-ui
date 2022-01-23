@@ -89,7 +89,7 @@ describe("Select component", () => {
   test("Should emit the selected value", async () => {
     let selectedValue;
     const { shadowRoot } = await componentSetup(
-      <rh-select label={label} options={selectOptions} onCurrentSelectedValue={(event) => selectedValue = event.detail} />,
+      <rh-select label={label} options={selectOptions} onValueSelected={(event) => selectedValue = event.detail} />,
       Select
     );
     (shadowRoot.querySelector(".options-container").children[0] as HTMLLIElement).click();
