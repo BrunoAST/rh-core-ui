@@ -64,6 +64,7 @@ export namespace Components {
         "label": string;
         "options": SelectOptions[];
         "placeholder": string;
+        "value": string;
     }
     interface RhSideBar {
         "currentActiveIndex": number;
@@ -248,6 +249,7 @@ declare namespace LocalJSX {
         "onValueSelected"?: (event: CustomEvent<string>) => void;
         "options"?: SelectOptions[];
         "placeholder"?: string;
+        "value"?: string;
     }
     interface RhSideBar {
         "currentActiveIndex"?: number;

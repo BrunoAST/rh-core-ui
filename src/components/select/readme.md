@@ -12,6 +12,7 @@
 | `label`       | `label`       |             | `string`          | `undefined` |
 | `options`     | --            |             | `SelectOptions[]` | `[]`        |
 | `placeholder` | `placeholder` |             | `string`          | `""`        |
+| `value`       | `value`       |             | `string`          | `undefined` |
 
 
 ## Events

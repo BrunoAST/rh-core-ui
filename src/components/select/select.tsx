@@ -11,22 +11,22 @@ export class Select {
   selectedRef: HTMLDivElement;
   optionsContainerRef: HTMLUListElement;
 
+  @Prop({ mutable: true }) value: string;
   @Prop() label: string;
   @Prop() placeholder: string = "";
   @Prop() options: SelectOptions[] = [];
 
   @Event() valueSelected: EventEmitter<string>;
 
-  @State() selectedValue = "";
   @State() selectedIndex = -1;
 
   get optionsList(): Element[] {
     return Array.from(this.optionsContainerRef.children);
   }
 
-  @Watch("selectedValue")
-  emitOnSelectedValueChange(): void {
-    this.valueSelected.emit(this.selectedValue);
+  @Watch("value")
+  emitOnValueChange(): void {
+    this.valueSelected.emit(this.value);
   }
 
   @Listen("click", { target: "body" })
@@ -53,14 +53,18 @@ export class Select {
     }
   }
 
+  componentDidRender(): void {
+    const index = this.options.findIndex(option => option.value === this.value);
+    index > -1 && this.onOptionSelected(this.value, this.options[index].title, index);
+  }
+
   onOptionSelected(value: string, title: string, index: number): void {
-    this.closeOptions();
-    if (value === this.selectedValue || !value || !title) {
+    if (this.selectedRef.textContent === value || !title || index < 0) {
       return;
     }
     this.selectedRef.textContent = title;
-    this.selectedValue = value;
-    this.selectedIndex = index;
+    this.value = value;
+    this.closeOptions();
   }
 
   private toggleActive(): void {

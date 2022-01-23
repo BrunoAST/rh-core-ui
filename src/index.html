@@ -22,17 +22,29 @@
     ></script>
   </head>
 
-  <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <rh-pagination></rh-pagination>
+  <body
+    style="display: flex; justify-content: center; align-items: center; height: 100vh;"
+  >
+    <rh-select></rh-select>
   </body>
 
   <script>
-    const el = document.querySelector("rh-pagination");
-    el.total = 5;
-    el.initialActivePage = 1;
-    el.addEventListener("page", (event) => {
-      console.log("PAGE EMITTED: ", event.detail);
-    });
+    const el = document.querySelector("rh-select");
+    el.options = [
+      {
+        value: "1",
+        title: "1"
+      },
+      {
+        value: "2",
+        title: "2"
+      },
+      {
+        value: "3",
+        title: "3"
+      }
+    ];
+    el.value = "2";
   </script>
 
 </html>
