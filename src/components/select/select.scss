@@ -89,6 +89,10 @@
     border-radius: 8px;
     @include focus-outline;
 
+    & > span {
+      color: $gray-accent;
+    }
+
     .icon {
       transition: all 400ms;
     }
