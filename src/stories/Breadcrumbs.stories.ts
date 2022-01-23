@@ -17,7 +17,8 @@ export default {
       table: {
         defaultValue: {
           summary: "BreadcrumbsPaths[]"
-        }
+        },
+        category: "Propriedades"
       }
     },
     pathClicked: {
@@ -25,7 +26,8 @@ export default {
       table: {
         defaultValue: {
           summary: "CustomEvent<string>"
-        }
+        },
+        category: "Eventos"
       }
     }
   },

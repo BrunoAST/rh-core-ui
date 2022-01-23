@@ -7,7 +7,7 @@ export default {
   parameters: {
     layout: "centered",
     actions: {
-      handles: ["currentSelectedValue"]
+      handles: ["valueSelected"]
     }
   },
   argTypes: {
@@ -17,7 +17,8 @@ export default {
       table: {
         defaultValue: {
           summary: "''"
-        }
+        },
+        category: "Propriedades"
       }
     },
     placeholder: {
@@ -26,7 +27,8 @@ export default {
       table: {
         defaultValue: {
           summary: "''"
-        }
+        },
+        category: "Propriedades"
       }
     },
     options: {
@@ -35,15 +37,17 @@ export default {
       table: {
         defaultValue: {
           summary: "SelectOptions[]"
-        }
+        },
+        category: "Propriedades"
       }
     },
-    currentSelectedValue: {
+    valueSelected: {
       description: "Evento que emite o valor selecionado pelo usuário",
       table: {
         defaultValue: {
           summary: "CustomEvent<string>"
-        }
+        },
+        category: "Eventos"
       }
     }
   },

@@ -13,7 +13,8 @@ export default {
       table: {
         defaultValue: {
           summary: ""
-        }
+        },
+        category: "Propriedades"
       }
     },
     position: {
@@ -23,7 +24,8 @@ export default {
       table: {
         defaultValue: {
           summary: "top"
-        }
+        },
+        category: "Propriedades"
       }
     },
     ariaDescribedBy: {
@@ -32,7 +34,8 @@ export default {
       table: {
         defaultValue: {
           summary: "undefined"
-        }
+        },
+        category: "Propriedades"
       }
     },
     slot: {

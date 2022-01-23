@@ -12,7 +12,8 @@ export default {
       table: {
         defaultValue: {
           summary: "false"
-        }
+        },
+        category: "Propriedades"
       }
     },
     slot: {

@@ -5,7 +5,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "undefined"
-      }
+      },
+      category: "Propriedades"
     }
   },
   name: {
@@ -14,7 +15,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: ""
-      }
+      },
+      category: "Propriedades"
     }
   },
   placeholder: {
@@ -23,7 +25,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: ""
-      }
+      },
+      category: "Propriedades"
     }
   },
   label: {
@@ -32,7 +35,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: ""
-      }
+      },
+      category: "Propriedades"
     }
   },
   ariaLabel: {
@@ -41,7 +45,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: ""
-      }
+      },
+      category: "Propriedades"
     }
   },
   isInvalid: {
@@ -50,7 +55,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "false"
-      }
+      },
+      category: "Propriedades"
     }
   },
   isRequired: {
@@ -59,7 +65,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "false"
-      }
+      },
+      category: "Propriedades"
     }
   },
   minLength: {
@@ -67,7 +74,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "undefined"
-      }
+      },
+      category: "Propriedades"
     }
   },
   maxLength: {
@@ -75,7 +83,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "undefined"
-      }
+      },
+      category: "Propriedades"
     }
   },
   valueUpdated: {
@@ -83,7 +92,8 @@ export const inputsBaseArgTypes = {
     table: {
       defaultValue: {
         summary: "CustomEvent<any>"
-      }
+      },
+      category: "Eventos"
     }
   }
 }

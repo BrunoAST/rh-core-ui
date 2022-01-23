@@ -15,7 +15,8 @@ export default {
       table: {
         defaultValue: {
           summary: "text"
-        }
+        },
+        category: "Propriedades"
       }
     },
     ...inputsBaseArgTypes

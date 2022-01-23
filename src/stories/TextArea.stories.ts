@@ -14,7 +14,8 @@ export default {
       table: {
         defaultValue: {
           summary: "20"
-        }
+        },
+        category: "Propriedades"
       }
     },
     rows: {
@@ -23,7 +24,8 @@ export default {
       table: {
         defaultValue: {
           summary: "3"
-        }
+        },
+        category: "Propriedades"
       }
     }
   },
