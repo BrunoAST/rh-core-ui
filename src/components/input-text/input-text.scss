@@ -1,5 +1,4 @@
 @import "../../theme/partials/colors";
-@import "../../theme/partials/font";
 @import "../../theme/reset";
 @import "../../theme/font-family";
 @import "../../theme/mixin/focus-mixin";
@@ -33,8 +32,7 @@
   }
 
   &:focus-within {
-    .input-wrapper .icon:not(.invalid-icon),
-    label:not(.invalid-label) {
+    .input-wrapper .icon:not(.invalid-icon) {
       color: $primary-accent;
     }
 
