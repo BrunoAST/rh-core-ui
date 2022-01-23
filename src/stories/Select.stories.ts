@@ -11,6 +11,16 @@ export default {
     }
   },
   argTypes: {
+    value: {
+      control: { type: "text" },
+      description: "Valor atual presente no select",
+      table: {
+        defaultValue: {
+          summary: "undefined"
+        },
+        category: "Propriedades"
+      }
+    },
     label: {
       control: { type: "text" },
       description: "Label padrão que será exibido no topo do select",
@@ -91,8 +101,9 @@ export default {
   }
 } as Meta;
 
-const Template = ({ options, label, placeholder }) => {
+const Template = ({ value, options, label, placeholder }) => {
   const select = document.createElement("rh-select");
+  select.value = value;
   select.options = options;
   select.label = label;
   select.placeholder = placeholder;
