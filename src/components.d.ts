@@ -62,6 +62,7 @@ export namespace Components {
     }
     interface RhSelect {
         "label": string;
+        "name": string;
         "options": SelectOptions[];
         "placeholder": string;
         "value": string;
@@ -246,6 +247,7 @@ declare namespace LocalJSX {
     }
     interface RhSelect {
         "label"?: string;
+        "name"?: string;
         "onValueSelected"?: (event: CustomEvent<string>) => void;
         "options"?: SelectOptions[];
         "placeholder"?: string;

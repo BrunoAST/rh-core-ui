@@ -10,6 +10,7 @@
 | Property      | Attribute     | Description | Type              | Default     |
 | ------------- | ------------- | ----------- | ----------------- | ----------- |
 | `label`       | `label`       |             | `string`          | `undefined` |
+| `name`        | `name`        |             | `string`          | `undefined` |
 | `options`     | --            |             | `SelectOptions[]` | `[]`        |
 | `placeholder` | `placeholder` |             | `string`          | `""`        |
 | `value`       | `value`       |             | `string`          | `undefined` |

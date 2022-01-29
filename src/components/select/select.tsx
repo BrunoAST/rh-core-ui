@@ -8,11 +8,12 @@ import { SelectOptions } from "./types/select-options";
   shadow: true
 })
 export class Select {
-  selectedRef: HTMLDivElement;
+  currentValueRef: HTMLSpanElement;
   optionsContainerRef: HTMLUListElement;
 
   @Prop({ mutable: true }) value: string;
   @Prop() label: string;
+  @Prop() name: string;
   @Prop() placeholder: string = "";
   @Prop() options: SelectOptions[] = [];
 
@@ -36,7 +37,6 @@ export class Select {
 
   @Listen("keydown", { target: "body" })
   supportKeyboardNavigation(event: KeyboardEvent): void {
-    event.preventDefault();
     switch (event.key) {
       case "ArrowDown":
         this.handleArrowDown();
@@ -59,10 +59,10 @@ export class Select {
   }
 
   onOptionSelected(value: string, title: string, index: number): void {
-    if (this.selectedRef.textContent === value || !title || index < 0) {
+    if (this.currentValueRef.textContent === value || !title || index < 0) {
       return;
     }
-    this.selectedRef.textContent = title;
+    this.currentValueRef.textContent = title;
     this.value = value;
     this.closeOptions();
   }
@@ -118,7 +118,7 @@ export class Select {
                   data-value={option.value}
                   onClick={() => this.onOptionSelected(option.value, option.title, index)}
                 >
-                  <input type="radio" class="radio" id={index.toString()} />
+                  <input type="radio" class="radio" name={this.name} id={index.toString()} />
                   <label htmlFor={index.toString()}>{option.title}</label>
                 </li>
               )
@@ -127,10 +127,9 @@ export class Select {
           <div
             tabIndex={0}
             class="selected"
-            ref={element => this.selectedRef = element}
             onClick={() => this.toggleActive()}
           >
-            <span>{this.placeholder}</span>
+            <span ref={element => this.currentValueRef = element}>{this.placeholder}</span>
             <ion-icon class="icon" name="chevron-down" />
           </div>
         </div>
