@@ -21,6 +21,16 @@ export default {
         category: "Propriedades"
       }
     },
+    name: {
+      control: { type: "text" },
+      description: "Nome do form control submetido com o formulário como parte do conjunto `name/value`",
+      table: {
+        defaultValue: {
+          summary: ""
+        },
+        category: "Propriedades"
+      }
+    },
     label: {
       control: { type: "text" },
       description: "Label padrão que será exibido no topo do select",
@@ -63,6 +73,7 @@ export default {
   },
   args: {
     label: "Selecione uma competência para a afirmação",
+    name: "field",
     placeholder: "Selecione",
     options: [
       {
@@ -101,9 +112,10 @@ export default {
   }
 } as Meta;
 
-const Template = ({ value, options, label, placeholder }) => {
+const Template = ({ value, name, options, label, placeholder }) => {
   const select = document.createElement("rh-select");
   select.value = value;
+  select.name = name;
   select.options = options;
   select.label = label;
   select.placeholder = placeholder;
