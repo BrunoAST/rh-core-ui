@@ -25,6 +25,12 @@ describe("Select component", () => {
     expect(shadowRoot.querySelector(".selected > span").textContent).toBe(placeholder);
   });
 
+  test("Should receive a name", async () => {
+    const name = faker.random.word();
+    const { shadowRoot } = await componentSetup(<rh-select name={name} options={selectOptions} />, Select);
+    expect(shadowRoot.querySelector("input").getAttribute("name")).toBe(name);
+  });
+
   test("Should render options", async () => {
     const { shadowRoot } = await componentSetup(
       <rh-select label={label} options={selectOptions} />,
