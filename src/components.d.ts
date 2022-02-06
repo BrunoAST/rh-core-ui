@@ -11,6 +11,8 @@ import { ButtonVariant } from "./components/buttons/types/button-variant";
 import { InputTextType } from "./components/input-text/types/input-text-type";
 import { SelectOptions } from "./components/select/types/select-options";
 import { MenuItems } from "./shared/types/menu-items";
+import { ToastType } from "./components/toast/types/toast-type";
+import { ToastPosition } from "./components/toast/types/toast-position";
 import { TooltipPosition } from "./components/tooltip/types/tooltip-position";
 export namespace Components {
     interface RhActionList {
@@ -87,6 +89,14 @@ export namespace Components {
         "placeholder": string;
         "rows": number;
         "value": string;
+    }
+    interface RhToast {
+        "autoHideDuration": number;
+        "header": string;
+        "isVisible": boolean;
+        "message": string;
+        "position": ToastPosition;
+        "type": ToastType;
     }
     interface RhTooltip {
         "ariaDescribedBy": string;
@@ -167,6 +177,12 @@ declare global {
         prototype: HTMLRhTextAreaElement;
         new (): HTMLRhTextAreaElement;
     };
+    interface HTMLRhToastElement extends Components.RhToast, HTMLStencilElement {
+    }
+    var HTMLRhToastElement: {
+        prototype: HTMLRhToastElement;
+        new (): HTMLRhToastElement;
+    };
     interface HTMLRhTooltipElement extends Components.RhTooltip, HTMLStencilElement {
     }
     var HTMLRhTooltipElement: {
@@ -186,6 +202,7 @@ declare global {
         "rh-side-bar": HTMLRhSideBarElement;
         "rh-side-bar-items": HTMLRhSideBarItemsElement;
         "rh-text-area": HTMLRhTextAreaElement;
+        "rh-toast": HTMLRhToastElement;
         "rh-tooltip": HTMLRhTooltipElement;
     }
 }
@@ -277,6 +294,15 @@ declare namespace LocalJSX {
         "rows"?: number;
         "value"?: string;
     }
+    interface RhToast {
+        "autoHideDuration"?: number;
+        "header"?: string;
+        "isVisible"?: boolean;
+        "message": string;
+        "onClosed"?: (event: CustomEvent<void>) => void;
+        "position"?: ToastPosition;
+        "type"?: ToastType;
+    }
     interface RhTooltip {
         "ariaDescribedBy"?: string;
         "position"?: TooltipPosition;
@@ -295,6 +321,7 @@ declare namespace LocalJSX {
         "rh-side-bar": RhSideBar;
         "rh-side-bar-items": RhSideBarItems;
         "rh-text-area": RhTextArea;
+        "rh-toast": RhToast;
         "rh-tooltip": RhTooltip;
     }
 }
@@ -314,6 +341,7 @@ declare module "@stencil/core" {
             "rh-side-bar": LocalJSX.RhSideBar & JSXBase.HTMLAttributes<HTMLRhSideBarElement>;
             "rh-side-bar-items": LocalJSX.RhSideBarItems & JSXBase.HTMLAttributes<HTMLRhSideBarItemsElement>;
             "rh-text-area": LocalJSX.RhTextArea & JSXBase.HTMLAttributes<HTMLRhTextAreaElement>;
+            "rh-toast": LocalJSX.RhToast & JSXBase.HTMLAttributes<HTMLRhToastElement>;
             "rh-tooltip": LocalJSX.RhTooltip & JSXBase.HTMLAttributes<HTMLRhTooltipElement>;
         }
     }

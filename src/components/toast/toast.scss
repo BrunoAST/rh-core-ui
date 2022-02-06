@@ -1,0 +1,125 @@
+@import "../../theme/partials/colors";
+@import "../../theme/partials/font";
+@import "../../theme/reset";
+@import "../../theme/font-family";
+@import "../../theme/mixin/input-mixin";
+
+@mixin container-color($color) {
+  &::before {
+    content: "";
+    display: block;
+    min-height: 70px;
+    width: 5px;
+    background-color: $color;
+    border-radius: 20px;
+  }
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: $white;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  max-width: 400px;
+  min-height: 70px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  &.top-center {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: slide-from-top 500ms ease forwards;
+  }
+
+  &.top-right {
+    top: 2rem;
+    right: 2rem;
+    opacity: 0;
+    animation: slide-from-right 500ms ease forwards;
+  }
+
+  &.bottom-center {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slide-from-bottom 500ms ease forwards;
+  }
+
+  &.bottom-right {
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0;
+    animation: slide-from-right 500ms ease forwards;
+  }
+
+  &.info {
+    @include container-color($primary);
+  }
+
+  &.warning {
+    @include container-color(#f0a92d);
+  }
+
+  &.success {
+    @include container-color(#20a779);
+  }
+
+  &.error {
+    @include container-color($red-light);
+  }
+
+  .title {
+    color: $font-primary;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .message {
+    color: $gray-accent;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    right: -50px;
+  }
+  50% {
+    right: 2.5rem;
+  }
+  100% {
+    opacity: 1;
+    right: 2rem;
+  }
+}
+
+@keyframes slide-from-top {
+  0% {
+    top: -50px;
+  }
+  50% {
+    top: 2.5rem;
+  }
+  100% {
+    opacity: 1;
+    top: 2rem;
+  }
+}
+
+@keyframes slide-from-bottom {
+  0% {
+    bottom: -50px;
+  }
+  50% {
+    bottom: 2.5rem;
+  }
+  100% {
+    opacity: 1;
+    bottom: 2rem;
+  }
+}
