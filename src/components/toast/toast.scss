@@ -87,7 +87,7 @@
 
 @keyframes slide-from-right {
   0% {
-    right: -50px;
+    right: 0;
   }
   50% {
     right: 2.5rem;
@@ -100,7 +100,7 @@
 
 @keyframes slide-from-top {
   0% {
-    top: -50px;
+    top: 0;
   }
   50% {
     top: 2.5rem;
@@ -113,7 +113,7 @@
 
 @keyframes slide-from-bottom {
   0% {
-    bottom: -50px;
+    bottom: 0;
   }
   50% {
     bottom: 2.5rem;
